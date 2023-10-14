@@ -15,9 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: cadetblue;
 }
-ul {
-  list-style: none;
-}
+
 img {
   max-width: 100%;
 }

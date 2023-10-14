@@ -7,18 +7,36 @@
   border-bottom: 1px solid #ddd;
   border-bottom-right-radius: 15px;
 }
-.logo-div {
+.logo-link {
   display: flex;
   align-items: center;
 }
 
 .logo-image {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
 }
 
 .logo-text {
-  font-weight:500;
-  font-size: 29px;
+  font-weight: 500;
+  font-size: 25px;
+  color: #ed9121;
+}
+.navigation {
+  display: flex;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-link {
+  margin-right: 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #666;
 }
