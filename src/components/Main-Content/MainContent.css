@@ -36,4 +36,12 @@
   
   .product-description {
     color: #666;
+    margin-bottom: 10px;
   }
+  .expand-button{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 4px;
+    font-weight: 500;
+}

@@ -1,21 +1,17 @@
+import { useState } from "react";
 import "./MainContent.css";
 
 function MainContent({ products }) {
   // console.log(products);
+  const [expandedText, setExpandedText] = useState(null);
 
-  function shortenText(description, limit) {
-    if (description.length <= limit) {
-      return description;
+  const toggleExpand = (productId) => {
+    if (expandedText === productId) {
+      setExpandedText(null);
+    } else {
+      setExpandedText(productId);
     }
-    const slicedText = description.slice(0, limit);
-    const lastSpaceIndex = slicedText.lastIndexOf(" ");
-
-    if (lastSpaceIndex !== -1) {
-      return slicedText.slice(0, lastSpaceIndex) + "...";
-    }
-    return slicedText + "...";
-  }
-
+  };
   return (
     <main className="main-content">
       {products.map((product) => (
@@ -27,9 +23,24 @@ function MainContent({ products }) {
             alt={product.title}
           />
           <span className="product-price">${product.price}</span>
-          <p className="product-description">
-          {shortenText(product.description, 100)}
-          </p>
+
+          {expandedText === product.id ? (
+            <p className="product-description">{product.description}</p>
+          ) : (
+            <p className="product-description">
+              {product.description.length > 100
+                ? product.description.slice(0, 100) + "..."
+                : product.description}
+            </p>
+          )}
+          {product.description.length > 100 ? (
+            <button
+              className="expand-button"
+              onClick={() => toggleExpand(product.id)}
+            >
+              {expandedText === product.id ? "Read Less" : "Read More"}
+            </button>
+          ) : null}
         </article>
       ))}
     </main>
