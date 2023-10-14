@@ -1,10 +1,10 @@
-import React from "react";
+import "./Footer.css";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>&copy; {new Date().getFullYear()} Ecommerce Shop</p>
+        <p>&copy; {new Date().getFullYear()} e-Shop </p>
         <ul className="footer-links">
           <li>
             <a href="/about">About Us</a>

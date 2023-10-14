@@ -15,7 +15,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: cadetblue;
 }
-
+button{
+  cursor: pointer;
+}
+ul{
+  list-style: none;
+}
 img {
   max-width: 100%;
 }

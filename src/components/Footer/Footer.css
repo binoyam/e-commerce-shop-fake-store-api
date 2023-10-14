@@ -1,0 +1,37 @@
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-top-left-radius: 15px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer p {
+  display: flex;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links li {
+  margin-right: 10px;
+}
+
+.footer-links li:last-child {
+  margin-right: 0;
+}
+
+.footer-links a {
+  color: #333;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}

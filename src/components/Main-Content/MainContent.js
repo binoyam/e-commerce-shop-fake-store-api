@@ -29,18 +29,16 @@ function MainContent({ products }) {
           ) : (
             <p className="product-description">
               {product.description.length > 100
-                ? product.description.slice(0, 100) + "..."
+                ? product.description.slice(0, 60) + "..."
                 : product.description}
             </p>
           )}
-          {product.description.length > 100 ? (
-            <button
-              className="expand-button"
-              onClick={() => toggleExpand(product.id)}
-            >
-              {expandedText === product.id ? "Read Less" : "Read More"}
-            </button>
-          ) : null}
+          <button
+            className="expand-button"
+            onClick={() => toggleExpand(product.id)}
+          >
+            {expandedText === product.id ? "Read Less" : "Read More"}
+          </button>
         </article>
       ))}
     </main>
