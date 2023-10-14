@@ -14,7 +14,7 @@ function App() {
       .get(BASEURL)
       .then((res) => {
         const productsList = res.data;
-        console.log(productsList);
+        // console.log(productsList);
         setProducts(productsList);
       })
       .catch((err) => {
