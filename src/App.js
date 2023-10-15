@@ -6,12 +6,20 @@ import MainContent from "./components/Main-Content/MainContent";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const BASEURL = 'https://fakestoreapi.com/products'
+  const BASEURL = "https://fakestoreapi.com/products";
   const [products, setProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   useEffect(() => {
+    fetchProducts();
+  }, [selectedCategory]);
+  function fetchProducts() {
+    let url = BASEURL;
+    if (selectedCategory) {
+      url += `/category/${selectedCategory}`;
+    }
     axios
-      .get(BASEURL)
+      .get(url)
       .then((res) => {
         const productsList = res.data;
         // console.log(productsList);
@@ -20,13 +28,19 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-
+  }
+  function handleCategoryChange(category) {
+    setSelectedCategory(category);
+  }
   return (
     <div className="App">
-      <Header />
+      <Header handleCategoryChange={handleCategoryChange} />
 
-      <MainContent products={products} />
+      <MainContent
+        selectedCategory={selectedCategory}
+        fetchProducts={fetchProducts}
+        products={products}
+      />
 
       <Footer />
     </div>

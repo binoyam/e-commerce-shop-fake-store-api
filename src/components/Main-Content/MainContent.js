@@ -1,45 +1,35 @@
-import { useState } from "react";
 import "./MainContent.css";
+import ProductList from "../Product-List/ProductList";
+import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 
-function MainContent({ products }) {
-  const [expandedText, setExpandedText] = useState(null);
+function MainContent({ products, selectedCategory, fetchProducts }) {
+  useEffect(() => {
+    fetchProducts(selectedCategory);
+  }, [selectedCategory, fetchProducts]);
 
-  const toggleExpand = (productId) => {
-    if (expandedText === productId) {
-      setExpandedText(null);
-    } else {
-      setExpandedText(productId);
-    }
-  };
   return (
     <main className="main-content">
-      {products.map((product) => (
-        <article className="product-box" key={product.id}>
-          <h3 className="product-title">{product.title.slice(0, 20)}</h3>
-          <img
-            className="product-image"
-            src={product.image}
-            alt={product.title}
-          />
-          <span className="product-price">${product.price}</span>
-
-          {expandedText === product.id ? (
-            <p className="product-description">{product.description}</p>
-          ) : (
-            <p className="product-description">
-              {product.description.length > 100
-                ? product.description.slice(0, 60) + "..."
-                : product.description}
-            </p>
-          )}
-          <button
-            className="expand-button"
-            onClick={() => toggleExpand(product.id)}
-          >
-            {expandedText === product.id ? "Read Less" : "Read More"}
-          </button>
-        </article>
-      ))}
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={<ProductList products={products} />}
+        />
+        <Route
+          path="/mens-clothing"
+          element={<ProductList products={products} />}
+        />
+        <Route
+          path="/womens-clothing"
+          element={<ProductList products={products} />}
+        />
+        <Route
+          path="/electronics"
+          element={<ProductList products={products} />}
+        />
+        <Route path="/jewelery" element={<ProductList products={products} />} />
+      </Routes>
     </main>
   );
 }

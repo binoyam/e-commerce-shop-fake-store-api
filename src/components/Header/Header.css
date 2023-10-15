@@ -41,9 +41,35 @@
 .nav-link:hover {
   color: #666;
 }
-.cart-icon{
-  width: 17px;
-  height: 17px;
-  margin-right: 5px;
-  stroke: #ed9121;
+
+.cart-account-div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.cart-drop-down {
+  display: none;
+}
+.cart {
+  position: relative;
+  width: 22px;
+  height: 20px;
+  cursor: pointer;
+}
+.cart-icon {
+  width: 100%;
+  object-fit: cover;
+}
+.cart-counter {
+  position: absolute;
+  top: -6px;
+  left: 90%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-weight: 800;
+  padding: 1px 3px 1px ;
+  background-color: rgba(237, 145, 33, 0.938);
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: center;
 }
