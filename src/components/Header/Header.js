@@ -3,11 +3,11 @@ import Logo from "../../Assets/logo.svg";
 import { Link } from "react-router-dom";
 import CartIcon from "../../Assets/icon-cart.svg";
 
-function Header({ setSelectesCategory }) {
+function Header({ setSelectedCategory }) {
   return (
     <header className="header">
       <div className="logo-div">
-        <Link to="/" className="logo-link">
+        <Link to="/home" className="logo-link">
           <img src={Logo} alt="Logo" className="logo-image" />
           <span className="logo-text">e-Shop</span>
         </Link>
@@ -16,7 +16,7 @@ function Header({ setSelectesCategory }) {
         <ul className="nav-links">
           <li>
             <Link
-              onClick={() => setSelectesCategory("men%27s%20clothing")}
+              onClick={() => setSelectedCategory("men%27s%20clothing")}
               to="/category/men%27s%20clothing"
               className="nav-link"
             >
@@ -25,7 +25,7 @@ function Header({ setSelectesCategory }) {
           </li>
           <li>
             <Link
-              onClick={() => setSelectesCategory("women%27s%20clothing")}
+              onClick={() => setSelectedCategory("women%27s%20clothing")}
               to="/category/womens-clothing"
               className="nav-link"
             >
@@ -34,7 +34,7 @@ function Header({ setSelectesCategory }) {
           </li>
           <li>
             <Link
-              onClick={() => setSelectesCategory("electronics")}
+              onClick={() => setSelectedCategory("electronics")}
               to="/category/electronics"
               className="nav-link"
             >
@@ -43,7 +43,7 @@ function Header({ setSelectesCategory }) {
           </li>
           <li>
             <Link
-              onClick={() => setSelectesCategory("jewelery")}
+              onClick={() => setSelectedCategory("jewelery")}
               to="/category/jewelery"
               className="nav-link"
             >

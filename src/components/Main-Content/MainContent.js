@@ -2,7 +2,7 @@ import "./MainContent.css";
 import ProductList from "../Product-List/ProductList";
 import { Route, Routes } from "react-router-dom";
 
-function MainContent({ products, fetchProducts }) {
+function MainContent({ products}) {
   return (
     <main className="main-content">
       <Routes>
@@ -10,25 +10,25 @@ function MainContent({ products, fetchProducts }) {
         <Route
           path="/category/:category"
           element={
-            <ProductList fetchProducts={fetchProducts} products={products} />
+            <ProductList products={products} />
           }
         />
         <Route
           path="/category/:category"
           element={
-            <ProductList fetchProducts={fetchProducts} products={products} />
+            <ProductList products={products} />
           }
         />
         <Route
           path="/category/:category"
           element={
-            <ProductList fetchProducts={fetchProducts} products={products} />
+            <ProductList products={products} />
           }
         />
         <Route
           path="/category/:category"
           element={
-            <ProductList fetchProducts={fetchProducts} products={products} />
+            <ProductList products={products} />
           }
         />
       </Routes>

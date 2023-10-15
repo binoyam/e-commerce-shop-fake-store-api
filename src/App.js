@@ -1,9 +1,10 @@
 import "./App.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import MainContent from "./components/Main-Content/MainContent";
 import Footer from "./components/Footer/Footer";
-import { useEffect, useState } from "react";
-import axios from "axios";
+
 function App() {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -30,9 +31,9 @@ function App() {
   }
   return (
     <div className="App">
-      <Header setSelectesCategory={setSelectedCategory} />
+      <Header setSelectedCategory={setSelectedCategory} />
 
-      <MainContent fetchProducts={fetchProducts} products={products} />
+      <MainContent products={products} />
 
       <Footer />
     </div>
