@@ -7,8 +7,8 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
+  const [selectedCategory, setSelectedCategory] = useState("");
+  // console.log(selectedCategory);
   useEffect(() => {
     fetchProducts(selectedCategory);
   }, [selectedCategory]);
@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <Header setSelectedCategory={setSelectedCategory} />
-
+      
       <MainContent products={products} />
 
       <Footer />

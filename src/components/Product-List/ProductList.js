@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ProductList.css";
 
 function ProductList({ products }) {
-  console.log(products);
+  // console.log(products);
   const [expandedText, setExpandedText] = useState(null);
 
   const toggleExpand = (productId) => {

@@ -6,7 +6,7 @@ function MainContent({ products}) {
   return (
     <main className="main-content">
       <Routes>
-        <Route exact path="/" element={<ProductList products={products} />} />
+        <Route exact path="/products" element={<ProductList products={products} />} />
         <Route
           path="/category/:category"
           element={

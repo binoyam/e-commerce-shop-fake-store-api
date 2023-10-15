@@ -16,6 +16,15 @@ function Header({ setSelectedCategory }) {
         <ul className="nav-links">
           <li>
             <Link
+              onClick={() => setSelectedCategory("")}
+              to="/products"
+              className="nav-link"
+            >
+              All
+            </Link>
+          </li>
+          <li>
+            <Link
               onClick={() => setSelectedCategory("men%27s%20clothing")}
               to="/category/mens-clothing"
               className="nav-link"
