@@ -19,7 +19,6 @@ function App() {
     if (category) {
       url += `/category/${category}`;
     }
-
     axios
       .get(url)
       .then((response) => {

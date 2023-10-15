@@ -7,7 +7,7 @@ function Header({ setSelectedCategory }) {
   return (
     <header className="header">
       <div className="logo-div">
-        <Link to="/home" className="logo-link">
+        <Link to="/" className="logo-link">
           <img src={Logo} alt="Logo" className="logo-image" />
           <span className="logo-text">e-Shop</span>
         </Link>
@@ -17,7 +17,7 @@ function Header({ setSelectedCategory }) {
           <li>
             <Link
               onClick={() => setSelectedCategory("men%27s%20clothing")}
-              to="/category/men%27s%20clothing"
+              to="/category/mens-clothing"
               className="nav-link"
             >
               Men
