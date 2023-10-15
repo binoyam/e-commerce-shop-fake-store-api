@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ProductList.css";
 
 function ProductList({ products }) {
+  // console.log(products);
   const [expandedText, setExpandedText] = useState(null);
 
   const toggleExpand = (productId) => {
@@ -11,6 +12,7 @@ function ProductList({ products }) {
       setExpandedText(productId);
     }
   };
+
   return (
     <>
       {products.map((product) => (
