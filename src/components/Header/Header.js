@@ -4,7 +4,7 @@ import Logo from "../../Assets/logo.svg";
 import { Link } from "react-router-dom";
 import CartIcon from "../../Assets/icon-cart.svg";
 
-function Header({ handleCategoryChange }) {
+function Header() {
 
   return (
     <header className="header">
@@ -18,8 +18,7 @@ function Header({ handleCategoryChange }) {
         <ul className="nav-links">
           <li>
             <Link
-              onClick={() => handleCategoryChange("men")}
-              to="/mens-clothing"
+              to="/category/mens-clothing"
               className="nav-link"
             >
               Men
@@ -27,8 +26,7 @@ function Header({ handleCategoryChange }) {
           </li>
           <li>
             <Link
-              onClick={() => handleCategoryChange("women")}
-              to="/womens-clothing"
+              to="/category/womens-clothing"
               className="nav-link"
             >
               Women
@@ -36,8 +34,7 @@ function Header({ handleCategoryChange }) {
           </li>
           <li>
             <Link
-              onClick={() => handleCategoryChange("electronics")}
-              to="/electronics"
+              to="/category/electronics"
               className="nav-link"
             >
               Electronics
@@ -45,8 +42,7 @@ function Header({ handleCategoryChange }) {
           </li>
           <li>
             <Link
-              onClick={() => handleCategoryChange("jewlery")}
-              to="/jewelery"
+              to="/category/jewelery"
               className="nav-link"
             >
               Jewelery
