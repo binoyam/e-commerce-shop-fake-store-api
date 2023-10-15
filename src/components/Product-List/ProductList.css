@@ -20,11 +20,10 @@
 }
 
 .product-price {
-  display: inline-block;
+  display: block;
   font-size: 20px;
   font-weight: 700;
   color: #333;
-  margin-bottom: 10px;
 }
 
 .product-description {
@@ -37,4 +36,20 @@
   padding: 5px;
   border-radius: 4px;
   font-weight: 500;
+}
+.add-to-cart-btn {
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 5px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  margin: 5px 0;
+  transition: all 0.2s ease-in;
+}
+.add-to-cart-btn:hover {
+  color: #ed9121;
+  background-color: #f1f1f1;
+  border: 1px solid black;
 }

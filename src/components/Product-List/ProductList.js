@@ -24,6 +24,7 @@ function ProductList({ products }) {
             alt={product.title}
           />
           <span className="product-price">${product.price}</span>
+          <button className="add-to-cart-btn">Add to Cart</button>
 
           {expandedText === product.id ? (
             <p className="product-description">{product.description}</p>
