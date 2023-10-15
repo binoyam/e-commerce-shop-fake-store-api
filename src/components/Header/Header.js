@@ -1,11 +1,9 @@
-import React, { useState } from "react";
 import "./Header.css";
 import Logo from "../../Assets/logo.svg";
 import { Link } from "react-router-dom";
 import CartIcon from "../../Assets/icon-cart.svg";
 
 function Header() {
-
   return (
     <header className="header">
       <div className="logo-div">
@@ -17,34 +15,22 @@ function Header() {
       <nav className="navigation">
         <ul className="nav-links">
           <li>
-            <Link
-              to="/category/mens-clothing"
-              className="nav-link"
-            >
+            <Link to="/category/mens-clothing" className="nav-link">
               Men
             </Link>
           </li>
           <li>
-            <Link
-              to="/category/womens-clothing"
-              className="nav-link"
-            >
+            <Link to="/category/womens-clothing" className="nav-link">
               Women
             </Link>
           </li>
           <li>
-            <Link
-              to="/category/electronics"
-              className="nav-link"
-            >
+            <Link to="/category/electronics" className="nav-link">
               Electronics
             </Link>
           </li>
           <li>
-            <Link
-              to="/category/jewelery"
-              className="nav-link"
-            >
+            <Link to="/category/jewelery" className="nav-link">
               Jewelery
             </Link>
           </li>
@@ -56,7 +42,7 @@ function Header() {
           <span className="cart-counter">10</span>
         </div>
         <div className="account">
-          <a href="#">Account</a>
+          Account
         </div>
       </div>
       <div className="cart-drop-down">
