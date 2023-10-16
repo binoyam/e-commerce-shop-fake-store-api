@@ -3,6 +3,7 @@ import Logo from "../../Assets/logo.svg";
 import { Link } from "react-router-dom";
 import CartIcon from "../../Assets/icon-cart.svg";
 import { useState } from "react";
+import Cart from "../Cart/Cart";
 
 function Header({ setSelectedCategory, selectedProducts }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -74,16 +75,7 @@ function Header({ setSelectedCategory, selectedProducts }) {
         </div>
         <div className="account">Account</div>
       </div>
-      <div
-        className={isCartOpen ? "cart-drop-down show-cart" : "cart-drop-down"}
-      >
-        <span className="empty-cart">Your cart is empty</span>
-        <div className="cart-content">
-        <p className="cart-header">Cart</p>
-      
-          
-        </div>
-      </div>
+      <Cart selectedProducts={selectedProducts} isCartOpen={isCartOpen} />
     </header>
   );
 }
