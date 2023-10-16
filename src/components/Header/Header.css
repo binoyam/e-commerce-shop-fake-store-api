@@ -7,6 +7,7 @@
   border-bottom: 1px solid #ddd;
   border-bottom-right-radius: 15px;
   margin: 0 20px;
+  position: relative; /* for cart drop down */
 }
 .logo-link {
   display: flex;
@@ -47,9 +48,7 @@
   align-items: center;
   gap: 20px;
 }
-.cart-drop-down {
-  display: none;
-}
+
 .cart {
   position: relative;
   width: 22px;
@@ -67,9 +66,40 @@
   transform: translateX(-50%);
   color: #ffffff;
   font-weight: 800;
-  padding: 1px 3px 1px ;
-  background-color: rgba(237, 145, 33, 0.938);
+  padding: 1px 3px 1px;
+  background-color: rgba(237, 145, 33, 0.937);
   border-radius: 4px;
   font-size: 12px;
   text-align: center;
+}
+.cart-drop-down {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  right: 100px;
+  bottom: 80px;
+  width: 5%;
+  height: 0px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border-bottom-left-radius: 15px;
+  box-shadow: -5px 5px 30px -10px cadetblue;
+  transition: all 0.2s ease-out;
+}
+.cart-drop-down.show-cart {
+  opacity: 1;
+  visibility: visible;
+  right: 20px;
+  bottom: -310px;
+  width: 35%;
+  height: 300px;
+}
+.cart-header {
+  display: block;
+  padding: 20px 20px 10px;
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border-bottom: 1px solid #ed9121;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ProductList.css";
+import CartIcon from '../../Assets/icon-cart-btn.svg'
 
 function ProductList({ products }) {
   // console.log(products);
@@ -24,7 +25,7 @@ function ProductList({ products }) {
             alt={product.title}
           />
           <span className="product-price">${product.price}</span>
-          <button className="add-to-cart-btn">Add to Cart</button>
+          <button className="add-to-cart-btn"><img src={CartIcon} alt="Cart" /> Add to Cart</button>
 
           {expandedText === product.id ? (
             <p className="product-description">{product.description}</p>

@@ -2,8 +2,13 @@ import "./Header.css";
 import Logo from "../../Assets/logo.svg";
 import { Link } from "react-router-dom";
 import CartIcon from "../../Assets/icon-cart.svg";
+import { useState } from "react";
 
 function Header({ setSelectedCategory }) {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  function toggleCartDropDown() {
+    setIsCartOpen(!isCartOpen);
+  }
   return (
     <header className="header">
       <div className="logo-div">
@@ -62,14 +67,14 @@ function Header({ setSelectedCategory }) {
         </ul>
       </nav>
       <div className="cart-account-div">
-        <div className="cart">
+        <div onClick={toggleCartDropDown} className="cart">
           <img src={CartIcon} alt="Cart-icon" className="cart-icon" />
           <span className="cart-counter">10</span>
         </div>
         <div className="account">Account</div>
       </div>
-      <div className="cart-drop-down">
-        <p className="header">Cart</p>
+      <div className={isCartOpen ? "cart-drop-down show-cart" : "cart-drop-down"}>
+        <p className="cart-header">Cart</p>
       </div>
     </header>
   );
