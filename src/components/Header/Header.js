@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import CartIcon from "../../Assets/icon-cart.svg";
 import { useState } from "react";
 
-function Header({ setSelectedCategory }) {
+function Header({ setSelectedCategory, selectedProducts }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
+  console.log(selectedProducts);
   function toggleCartDropDown() {
     setIsCartOpen(!isCartOpen);
   }
@@ -22,7 +23,7 @@ function Header({ setSelectedCategory }) {
           <li>
             <Link
               onClick={() => setSelectedCategory("")}
-              to="/products"
+              to="/"
               className="nav-link"
             >
               All
@@ -75,6 +76,10 @@ function Header({ setSelectedCategory }) {
       </div>
       <div className={isCartOpen ? "cart-drop-down show-cart" : "cart-drop-down"}>
         <p className="cart-header">Cart</p>
+        <span className="empty-cart">Your cart is empty</span>
+        <div className="cart-content">
+            {/* <h1>{selectedProducts.id}</h1> */}
+        </div>
       </div>
     </header>
   );

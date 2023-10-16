@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./ProductList.css";
-import CartIcon from '../../Assets/icon-cart-btn.svg'
+import CartIcon from "../../Assets/icon-cart-btn.svg";
 
-function ProductList({ products }) {
+function ProductList({ products, setSelectedProducts }) {
   // console.log(products);
   const [expandedText, setExpandedText] = useState(null);
 
@@ -25,7 +25,12 @@ function ProductList({ products }) {
             alt={product.title}
           />
           <span className="product-price">${product.price}</span>
-          <button className="add-to-cart-btn"><img src={CartIcon} alt="Cart" /> Add to Cart</button>
+          <button
+            onClick={() => setSelectedProducts(product)}
+            className="add-to-cart-btn"
+          >
+            <img src={CartIcon} alt="Cart" /> Add to Cart
+          </button>
 
           {expandedText === product.id ? (
             <p className="product-description">{product.description}</p>

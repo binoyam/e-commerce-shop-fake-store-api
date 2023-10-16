@@ -8,7 +8,12 @@ import Footer from "./components/Footer/Footer";
 function App() {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedProducts, setSelectedProducts] = useState([]);
   // console.log(selectedCategory);
+
+  const handleAddToCart = (product) => {
+    setSelectedProducts(product);
+  };
   useEffect(() => {
     fetchProducts(selectedCategory);
   }, [selectedCategory]);
@@ -30,9 +35,9 @@ function App() {
   }
   return (
     <div className="App">
-      <Header setSelectedCategory={setSelectedCategory} />
+      <Header selectedProduct={selectedProducts} setSelectedCategory={setSelectedCategory} />
       
-      <MainContent products={products} />
+      <MainContent setSelectedProducts={handleAddToCart} products={products} />
 
       <Footer />
     </div>
