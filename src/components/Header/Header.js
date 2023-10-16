@@ -74,11 +74,14 @@ function Header({ setSelectedCategory, selectedProducts }) {
         </div>
         <div className="account">Account</div>
       </div>
-      <div className={isCartOpen ? "cart-drop-down show-cart" : "cart-drop-down"}>
-        <p className="cart-header">Cart</p>
+      <div
+        className={isCartOpen ? "cart-drop-down show-cart" : "cart-drop-down"}
+      >
         <span className="empty-cart">Your cart is empty</span>
         <div className="cart-content">
-            {/* <h1>{selectedProducts.id}</h1> */}
+        <p className="cart-header">Cart</p>
+      
+          
         </div>
       </div>
     </header>

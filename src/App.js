@@ -35,7 +35,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Header selectedProduct={selectedProducts} setSelectedCategory={setSelectedCategory} />
+      <Header selectedProducts={selectedProducts} setSelectedCategory={setSelectedCategory} />
       
       <MainContent setSelectedProducts={handleAddToCart} products={products} />
 
