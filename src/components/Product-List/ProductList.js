@@ -3,7 +3,7 @@ import "./ProductList.css";
 import CartIcon from "../../Assets/icon-cart-btn.svg";
 
 function ProductList({ products, addToCart }) {
- /* READ MORE / READ LESS FUNCTION*/
+  /* READ MORE / READ LESS FUNCTION*/
   const [expandedText, setExpandedText] = useState(null);
   const toggleExpand = (productId) => {
     if (expandedText === productId) {
@@ -12,10 +12,10 @@ function ProductList({ products, addToCart }) {
       setExpandedText(productId);
     }
   };
- /* ADD TO CART HANDLER */
+  /* ADD TO CART HANDLER */
   const handleAddToCart = (product) => {
-    addToCart(product)
-  }
+    addToCart(product);
+  };
 
   return (
     <>

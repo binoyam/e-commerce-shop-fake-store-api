@@ -6,17 +6,14 @@ import MainContent from "./components/Main-Content/MainContent";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedProducts, setSelectedProducts] = useState([]);
-  // console.log(selectedCategory);
-  const [cartItems, setCartItems] = useState([]);
-
+  const [products, setProducts] = useState([]); /* ALL PRODUCTS */
+  const [selectedCategory, setSelectedCategory] =
+    useState(""); /* CATEGORY STATE */
+  const [cartItems, setCartItems] = useState([]); /* CART ITEMS STATE */
+  /* FUCTION TO ADD PRODUCTS TO CART */
   const addToCart = (product) => {
     setCartItems((prevCartItems) => [...prevCartItems, product]);
   };
-
- 
 
   useEffect(() => {
     fetchProducts(selectedCategory);
@@ -39,10 +36,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Header
-        cartItems={cartItems}
-        setSelectedCategory={setSelectedCategory}
-      />
+      <Header cartItems={cartItems} setSelectedCategory={setSelectedCategory} />
 
       <MainContent addToCart={addToCart} products={products} />
 
