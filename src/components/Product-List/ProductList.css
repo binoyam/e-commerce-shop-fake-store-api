@@ -4,8 +4,12 @@
   padding: 20px;
   text-align: left;
   border-bottom-right-radius: 5px;
+  cursor: pointer;
+  z-index: 9;
 }
-
+.product-box:hover{
+  scale: 1.005;
+}
 .product-title {
   text-align: center;
   font-size: 18px;
