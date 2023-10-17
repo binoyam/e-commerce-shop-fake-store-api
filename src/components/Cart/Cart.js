@@ -1,5 +1,7 @@
-import React from "react";
 import "./Cart.css";
+import RemoveIcon from '../../Assets/icon-remove.svg'
+
+
 function Cart({ cartItems, isCartOpen }) {
   console.log(cartItems);
   return (
@@ -13,17 +15,16 @@ function Cart({ cartItems, isCartOpen }) {
                 <div className="cart-item-image">
                   <img src={item.image} alt="product" />
                 </div>
-                <div className="cart-item-detail">
-                  <h3 className="item-name">{item.title}</h3>
-                  <div className="cart-item-pricing-detatil">
-                    <span class="price">${item.price}</span>
-                    <span class="times">&times;</span>
-                    <span class="amount">$counter</span>
-                    <span class="total">$$total.00</span>
+                <div className="cart-item-details">
+                  <span className="item-name">{item.title}</span>
+                  <div className="cart-item-pricing-detail">
+                    <span class="item-price">${item.price}</span>
+                    <span class="multiply-sign">&times;</span>
+                    <span class="item-amount">$counter</span>
+                    <span class="item-price-total">$$total.00</span>
                   </div>
-                  <button class="delete"></button>
                 </div>
-                <button>Checkout</button>
+                  <button class="item-remove-btn"><img src={RemoveIcon} alt="remove" /></button>
               </li>
             ))}
           </ul>
