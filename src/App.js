@@ -10,10 +10,14 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedProducts, setSelectedProducts] = useState([]);
   // console.log(selectedCategory);
+  const [cartItems, setCartItems] = useState([]);
 
-  const handleAddToCart = (product) => {
-    setSelectedProducts(product);
+  const addToCart = (product) => {
+    setCartItems((prevCartItems) => [...prevCartItems, product]);
   };
+
+ 
+
   useEffect(() => {
     fetchProducts(selectedCategory);
   }, [selectedCategory]);
@@ -35,9 +39,12 @@ function App() {
   }
   return (
     <div className="App">
-      <Header selectedProducts={selectedProducts} setSelectedCategory={setSelectedCategory} />
-      
-      <MainContent setSelectedProducts={handleAddToCart} products={products} />
+      <Header
+        cartItems={cartItems}
+        setSelectedCategory={setSelectedCategory}
+      />
+
+      <MainContent addToCart={addToCart} products={products} />
 
       <Footer />
     </div>

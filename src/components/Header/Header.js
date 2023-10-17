@@ -5,9 +5,10 @@ import CartIcon from "../../Assets/icon-cart.svg";
 import { useState } from "react";
 import Cart from "../Cart/Cart";
 
-function Header({ setSelectedCategory, selectedProducts }) {
+function Header({ setSelectedCategory, cartItems }) {
+
   const [isCartOpen, setIsCartOpen] = useState(false);
-  console.log(selectedProducts);
+  
   function toggleCartDropDown() {
     setIsCartOpen(!isCartOpen);
   }
@@ -75,7 +76,7 @@ function Header({ setSelectedCategory, selectedProducts }) {
         </div>
         <div className="account">Account</div>
       </div>
-      <Cart selectedProducts={selectedProducts} isCartOpen={isCartOpen} />
+      <Cart cartItems={cartItems} isCartOpen={isCartOpen} />
     </header>
   );
 }

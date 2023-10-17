@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import "./ProductList.css";
 import CartIcon from "../../Assets/icon-cart-btn.svg";
 
-function ProductList({ products, setSelectedProducts }) {
-  // console.log(products);
+function ProductList({ products, addToCart }) {
+ /* READ MORE / READ LESS FUNCTION*/
   const [expandedText, setExpandedText] = useState(null);
-
   const toggleExpand = (productId) => {
     if (expandedText === productId) {
       setExpandedText(null);
@@ -13,6 +12,10 @@ function ProductList({ products, setSelectedProducts }) {
       setExpandedText(productId);
     }
   };
+ /* ADD TO CART HANDLER */
+  const handleAddToCart = (product) => {
+    addToCart(product)
+  }
 
   return (
     <>
@@ -26,7 +29,7 @@ function ProductList({ products, setSelectedProducts }) {
           />
           <span className="product-price">${product.price}</span>
           <button
-            onClick={() => setSelectedProducts(product)}
+            onClick={() => handleAddToCart(product)}
             className="add-to-cart-btn"
           >
             <img src={CartIcon} alt="Cart" /> Add to Cart
