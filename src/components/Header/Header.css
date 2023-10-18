@@ -24,25 +24,6 @@
   font-size: 25px;
   color: #ed9121;
 }
-.navigation {
-  display: flex;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-
-.nav-link {
-  margin-right: 20px;
-  color: #333;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  color: #000000;
-}
-
 .nav-right {
   display: flex;
   align-items: center;

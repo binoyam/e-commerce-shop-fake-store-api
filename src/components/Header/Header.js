@@ -4,7 +4,7 @@ import CartIcon from "../../Assets/icon-cart.svg";
 import { useState } from "react";
 import Cart from "../Header - Cart/Cart";
 import { Link } from "react-router-dom";
-import Nav from "../Header - NAV/Nav";
+import Nav from "../Header-Nav/Nav";
 
 function Header({ setSelectedCategory, cartItems, removeFromCart }) {
   /* CART STATE/ OPEN OR CLOSE CART */
@@ -31,7 +31,14 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
           ) : null}
         </div>
 
-        <div className="account">asfh</div>
+        <div className="account">
+          <span>You are not logged in</span>
+          <img src="" alt="" />
+          <div className="account-info">
+            <span className="username"></span>
+            <button className="logout"></button>
+          </div>
+        </div>
       </div>
 
       <Cart
