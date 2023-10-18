@@ -6,9 +6,8 @@ import { useState } from "react";
 import Cart from "../Cart/Cart";
 
 function Header({ setSelectedCategory, cartItems, removeFromCart }) {
-
   const [isCartOpen, setIsCartOpen] = useState(false);
-  
+  // console.log(cartItems.length)
   function toggleCartDropDown() {
     setIsCartOpen(!isCartOpen);
   }
@@ -72,11 +71,17 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
       <div className="cart-account-div">
         <div onClick={toggleCartDropDown} className="cart">
           <img src={CartIcon} alt="Cart-icon" className="cart-icon" />
-          <span className="cart-counter">10</span>
+          {cartItems.length > 0 ? (
+            <span className="cart-counter">{cartItems.length}</span>
+          ) : null}
         </div>
         <div className="account">Account</div>
       </div>
-      <Cart removeFromCart={removeFromCart} cartItems={cartItems} isCartOpen={isCartOpen} />
+      <Cart
+        removeFromCart={removeFromCart}
+        cartItems={cartItems}
+        isCartOpen={isCartOpen}
+      />
     </header>
   );
 }

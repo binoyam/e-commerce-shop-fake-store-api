@@ -10,7 +10,7 @@ function Cart({ cartItems, isCartOpen, removeFromCart }) {
       <div className="cart-content">
         {isCartOpen && cartItems.length > 0 ? (
           <ul className="cart-items-list">
-            {cartItems.map(({id, image, title, price, quantity}) => (
+            {cartItems.map(({ id, image, title, price, quantity }) => (
               <li className="cart-item" key={id}>
                 <div className="cart-item-image">
                   <img src={image} alt="product" />
