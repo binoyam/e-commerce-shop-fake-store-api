@@ -17,7 +17,7 @@ function Cart({ cartItems, isCartOpen }) {
                 </div>
                 <div className="cart-item-details">
                   <span className="item-name">{item.title}</span>
-                  <div className="cart-item-pricing-detail">
+                  <div className="item-pricing-detail">
                     <span class="item-price">${item.price}</span>
                     <span class="multiply-sign">&times;</span>
                     <span class="item-amount">$counter</span>
