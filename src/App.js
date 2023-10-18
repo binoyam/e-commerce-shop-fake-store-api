@@ -10,11 +10,25 @@ function App() {
   const [selectedCategory, setSelectedCategory] =
     useState(""); /* CATEGORY STATE */
   const [cartItems, setCartItems] = useState([]); /* CART ITEMS STATE */
-  /* FUCTION TO ADD PRODUCTS TO CART */
+  /* FUCTION TO ADD ITEMS TO CART */
   const addToCart = (product) => {
-    setCartItems((prevCartItems) => [...prevCartItems, product]);
-  };
+    const existingItem = cartItems.find((item) => item.id === product.id);
 
+    if (existingItem) {
+      const updatedCartItems = cartItems.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setCartItems(updatedCartItems);
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
+  };
+  /* FUNCTION TO REMVOE ITEMS FROM CART */
+
+  const removeFromCart = (itemId) => {
+    const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
+    setCartItems(updatedCartItems);
+  };
   useEffect(() => {
     fetchProducts(selectedCategory);
   }, [selectedCategory]);
@@ -36,7 +50,11 @@ function App() {
   }
   return (
     <div className="App">
-      <Header cartItems={cartItems} setSelectedCategory={setSelectedCategory} />
+      <Header
+        removeFromCart={removeFromCart}
+        cartItems={cartItems}
+        setSelectedCategory={setSelectedCategory}
+      />
 
       <MainContent addToCart={addToCart} products={products} />
 

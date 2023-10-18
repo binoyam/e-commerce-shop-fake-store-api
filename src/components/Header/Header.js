@@ -5,7 +5,7 @@ import CartIcon from "../../Assets/icon-cart.svg";
 import { useState } from "react";
 import Cart from "../Cart/Cart";
 
-function Header({ setSelectedCategory, cartItems }) {
+function Header({ setSelectedCategory, cartItems, removeFromCart }) {
 
   const [isCartOpen, setIsCartOpen] = useState(false);
   
@@ -76,7 +76,7 @@ function Header({ setSelectedCategory, cartItems }) {
         </div>
         <div className="account">Account</div>
       </div>
-      <Cart cartItems={cartItems} isCartOpen={isCartOpen} />
+      <Cart removeFromCart={removeFromCart} cartItems={cartItems} isCartOpen={isCartOpen} />
     </header>
   );
 }

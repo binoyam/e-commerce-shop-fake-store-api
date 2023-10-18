@@ -1,30 +1,37 @@
 import "./Cart.css";
-import RemoveIcon from '../../Assets/icon-remove.svg'
+import RemoveIcon from "../../Assets/icon-remove.svg";
 
-
-function Cart({ cartItems, isCartOpen }) {
+function Cart({ cartItems, isCartOpen, removeFromCart }) {
   console.log(cartItems);
+
   return (
     <div className={isCartOpen ? "cart-drop-down show-cart" : "cart-drop-down"}>
       <p className="cart-header">Cart</p>
       <div className="cart-content">
         {isCartOpen && cartItems.length > 0 ? (
           <ul className="cart-items-list">
-            {cartItems.map((item) => (
-              <li className="cart-item" key={item.id}>
+            {cartItems.map(({id, image, title, price, quantity}) => (
+              <li className="cart-item" key={id}>
                 <div className="cart-item-image">
-                  <img src={item.image} alt="product" />
+                  <img src={image} alt="product" />
                 </div>
                 <div className="cart-item-details">
-                  <span className="item-name">{item.title}</span>
+                  <span className="item-name">{title}</span>
                   <div className="item-pricing-detail">
-                    <span className="item-price">${item.price}</span>
+                    <span className="item-price">${price}</span>
                     <span className="multiply-sign">&times;</span>
-                    <span className="item-amount">$counter</span>
-                    <span className="item-price-total">$total.00</span>
+                    <span className="item-amount">{quantity}</span>
+                    <span className="item-price-total">
+                      ${(quantity * price).toFixed(2)}
+                    </span>
                   </div>
                 </div>
-                  <button className="item-remove-btn"><img src={RemoveIcon} alt="remove" /></button>
+                <button
+                  onClick={() => removeFromCart(id)}
+                  className="item-remove-btn"
+                >
+                  <img src={RemoveIcon} alt="remove" />
+                </button>
               </li>
             ))}
           </ul>
