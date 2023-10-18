@@ -18,13 +18,13 @@ function Cart({ cartItems, isCartOpen }) {
                 <div className="cart-item-details">
                   <span className="item-name">{item.title}</span>
                   <div className="item-pricing-detail">
-                    <span class="item-price">${item.price}</span>
-                    <span class="multiply-sign">&times;</span>
-                    <span class="item-amount">$counter</span>
-                    <span class="item-price-total">$$total.00</span>
+                    <span className="item-price">${item.price}</span>
+                    <span className="multiply-sign">&times;</span>
+                    <span className="item-amount">$counter</span>
+                    <span className="item-price-total">$total.00</span>
                   </div>
                 </div>
-                  <button class="item-remove-btn"><img src={RemoveIcon} alt="remove" /></button>
+                  <button className="item-remove-btn"><img src={RemoveIcon} alt="remove" /></button>
               </li>
             ))}
           </ul>
