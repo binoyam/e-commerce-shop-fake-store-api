@@ -1,15 +1,18 @@
 import "./App.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "./components/Header/Header";
 import MainContent from "./components/Main-Content/MainContent";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [products, setProducts] = useState([]); /* ALL PRODUCTS */
-  const [selectedCategory, setSelectedCategory] =
-    useState(""); /* CATEGORY STATE */
-  const [cartItems, setCartItems] = useState([]); /* CART ITEMS STATE */
+  /* ALL PRODUCTS STATE */
+  const [products, setProducts] = useState([]);
+  /* CATEGORY STATE */
+  const [selectedCategory, setSelectedCategory] = useState("");
+  /* CART ITEMS STATE */
+  const [cartItems, setCartItems] = useState([]);
+
   /* FUCTION TO ADD ITEMS TO CART */
   const addToCart = (product) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
@@ -23,16 +26,17 @@ function App() {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
   };
-  /* FUNCTION TO REMVOE ITEMS FROM CART */
 
+  /* FUNCTION TO REMoVOE ITEMS FROM CART */
   const removeFromCart = (itemId) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updatedCartItems);
   };
+  /* FUNCTION TO CHANGE CATEGORY*/
   useEffect(() => {
     fetchProducts(selectedCategory);
   }, [selectedCategory]);
-
+  /* FUNCTION TO FETCH PRODUCTS */
   function fetchProducts(category) {
     let url = "https://fakestoreapi.com/products";
 
@@ -48,6 +52,7 @@ function App() {
         console.log("Error fetching products:", error);
       });
   }
+
   return (
     <div className="App">
       <Header
