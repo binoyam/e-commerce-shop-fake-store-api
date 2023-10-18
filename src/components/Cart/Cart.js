@@ -42,5 +42,5 @@ function Cart({ cartItems, isCartOpen, removeFromCart }) {
     </div>
   );
 }
-// checkout button with all the selected products and total price
+// checkout button with all the selected products and total price 
 export default Cart;
