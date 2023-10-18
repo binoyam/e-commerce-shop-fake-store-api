@@ -60,7 +60,7 @@ function App() {
         cartItems={cartItems}
         setSelectedCategory={setSelectedCategory}
       />
-
+      
       <MainContent addToCart={addToCart} products={products} />
 
       <Footer />

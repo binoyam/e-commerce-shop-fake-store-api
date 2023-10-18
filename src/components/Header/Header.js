@@ -1,13 +1,14 @@
 import "./Header.css";
 import Logo from "../../Assets/logo.svg";
-import { Link } from "react-router-dom";
 import CartIcon from "../../Assets/icon-cart.svg";
 import { useState } from "react";
-import Cart from "../Cart/Cart";
+import Cart from "../Header - Cart/Cart";
+import { Link } from "react-router-dom";
+import Nav from "../Header - NAV/Nav";
 
 function Header({ setSelectedCategory, cartItems, removeFromCart }) {
+  /* CART STATE/ OPEN OR CLOSE CART */
   const [isCartOpen, setIsCartOpen] = useState(false);
-  // console.log(cartItems.length)
   function toggleCartDropDown() {
     setIsCartOpen(!isCartOpen);
   }
@@ -19,64 +20,20 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
           <span className="logo-text">e-Shop</span>
         </Link>
       </div>
-      <nav className="navigation">
-        <ul className="nav-links">
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("")}
-              to="/"
-              className="nav-link"
-            >
-              All
-            </Link>
-          </li>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("men%27s%20clothing")}
-              to="/category/mens-clothing"
-              className="nav-link"
-            >
-              Men
-            </Link>
-          </li>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("women%27s%20clothing")}
-              to="/category/womens-clothing"
-              className="nav-link"
-            >
-              Women
-            </Link>
-          </li>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("electronics")}
-              to="/category/electronics"
-              className="nav-link"
-            >
-              Electronics
-            </Link>
-          </li>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("jewelery")}
-              to="/category/jewelery"
-              className="nav-link"
-            >
-              Jewelery
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <div className="cart-account-div">
-        <div onClick={toggleCartDropDown} className="cart">
+
+      <Nav setSelectedCategory={setSelectedCategory} />
+
+      <div className="nav-right">
+        <div onClick={toggleCartDropDown} className="cart-nav">
           <img src={CartIcon} alt="Cart-icon" className="cart-icon" />
           {cartItems.length > 0 ? (
             <span className="cart-counter">{cartItems.length}</span>
           ) : null}
         </div>
-        <div className="account">Account</div>
+
+        <div className="account">asfh</div>
       </div>
+
       <Cart
         removeFromCart={removeFromCart}
         cartItems={cartItems}
