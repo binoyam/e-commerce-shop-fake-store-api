@@ -85,5 +85,7 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
     </header>
   );
 }
-
+// improve the cart and account layout
+// Account drop down like google, then you havent signed up minamin,
+//  then sign up or sign in, welcome back when signgin in
 export default Header;

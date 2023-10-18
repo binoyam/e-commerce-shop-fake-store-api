@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 function MainContent({ products, addToCart }) {
 
 
-
+// NEXT PAGE WHEN A PRODUCT IS CLICKED ON WITH MORE DESCRIPTION ABOUT THAT PRODUCT
   return (
     <main className="main-content">
       <Routes>
