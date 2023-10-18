@@ -13,7 +13,11 @@
   display: flex;
   align-items: center;
 }
-
+.logo-div{
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
 .logo-image {
   width: 30px;
   height: 30px;
@@ -23,6 +27,7 @@
   font-weight: 500;
   font-size: 25px;
   color: #ed9121;
+  letter-spacing: 2px;
 }
 .nav-right {
   display: flex;

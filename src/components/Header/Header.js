@@ -14,12 +14,12 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
   }
   return (
     <header className="header">
-      <div className="logo-div">
-        <Link to="/" className="logo-link">
+      <Link to="/" className="logo-link" onClick={() => setSelectedCategory("")}>
+        <div className="logo-div">
           <img src={Logo} alt="Logo" className="logo-image" />
-          <span className="logo-text">e-Shop</span>
-        </Link>
-      </div>
+          <span className="logo-text">bt-Shop</span>
+        </div>
+      </Link>
 
       <Nav setSelectedCategory={setSelectedCategory} />
 

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./ProductList.css";
 import CartIcon from "../../Assets/icon-cart-btn.svg";
+import ProductDescription from "../Product-Description/ProductDescription";
 
 function ProductList({ products, addToCart }) {
   /* READ MORE / READ LESS FUNCTION*/
+  const [selectedProduct, setSelectedProduct] = useState(null)
   const [expandedText, setExpandedText] = useState(null);
   const toggleExpand = (productId) => {
     if (expandedText === productId) {
@@ -16,11 +18,13 @@ function ProductList({ products, addToCart }) {
   const handleAddToCart = (product) => {
     addToCart(product);
   };
-
+   const handleProductClick = (product) =>{
+    setSelectedProduct(product)
+   }
   return (
     <>
-      {products.map((product) => (
-        <article className="product-box" key={product.id}>
+      {!selectedProduct && products.map((product) => (
+        <article className="product-box" key={product.id} onClick={() => handleProductClick(product)}>
           <h3 className="product-title">{product.title.slice(0, 20)}</h3>
           <img
             className="product-image"
@@ -52,6 +56,10 @@ function ProductList({ products, addToCart }) {
           </button>
         </article>
       ))}
+
+      {selectedProduct && (
+        <ProductDescription product={selectedProduct} />
+      )}
     </>
   );
 }

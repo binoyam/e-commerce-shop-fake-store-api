@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>&copy; {new Date().getFullYear()} e-Shop </p>
+        <p>&copy; {new Date().getFullYear()} bt-Shop </p>
         <ul className="footer-links">
           <li>
             <a href="/about">About Us</a>

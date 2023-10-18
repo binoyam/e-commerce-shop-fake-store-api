@@ -1,19 +1,10 @@
 import { Link } from "react-router-dom";
-import './Nav.css'
+import "./Nav.css";
 
 function Nav({ setSelectedCategory }) {
   return (
     <nav className="navigation">
       <ul className="nav-links">
-        <li>
-          <Link
-            onClick={() => setSelectedCategory("")}
-            to="/"
-            className="nav-link"
-          >
-            All
-          </Link>
-        </li>
         <li>
           <Link
             onClick={() => setSelectedCategory("men%27s%20clothing")}

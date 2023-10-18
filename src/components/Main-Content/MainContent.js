@@ -10,20 +10,7 @@ function MainContent({ products, addToCart }) {
     <main className="main-content">
       <Routes>
         <Route
-          exact
           path="/"
-          element={<ProductList addToCart={addToCart} products={products} />}
-        />
-        <Route
-          path="/category/:category"
-          element={<ProductList addToCart={addToCart} products={products} />}
-        />
-        <Route
-          path="/category/:category"
-          element={<ProductList addToCart={addToCart} products={products} />}
-        />
-        <Route
-          path="/category/:category"
           element={<ProductList addToCart={addToCart} products={products} />}
         />
         <Route
