@@ -5,6 +5,8 @@ import "./ProductDescription.css";
 import PlusIcon from "../../Assets/icon-plus.svg";
 import MinusIcon from "../../Assets/icon-minus.svg";
 import Arrow from "../../Assets/arrow-left.svg";
+
+
 function ProductDescription({ products, addToCart }) {
   //   console.log(products);
   const { id } = useParams();
