@@ -35,14 +35,14 @@
   color: #666;
   margin-bottom: 10px;
 }
-.expand-button {
+.view-more-btn {
   background-color: #fff;
   border: 1px solid #ddd;
   padding: 5px;
   border-radius: 4px;
   font-weight: 500;
 }
-.expand-button:active {
+.view-more-btn:active {
   border: 1px solid #ed9121;
 }
 .add-to-cart-btn {

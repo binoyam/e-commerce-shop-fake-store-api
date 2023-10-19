@@ -13,6 +13,13 @@ function App() {
   /* CART ITEMS STATE */
   const [cartItems, setCartItems] = useState([]);
 
+  /* STORE CART DATA ON LOCAL STORAGE */
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cartItems");
+    if (storedCart) {
+      setCartItems(JSON.parse(storedCart));
+    }
+  }, []);
   /* FUCTION TO ADD ITEMS TO CART */
   const addToCart = (product) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
@@ -22,8 +29,11 @@ function App() {
         item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
       );
       setCartItems(updatedCartItems);
+      localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
     } else {
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+      const updatedCartItems = [...cartItems, { ...product, quantity: 1 }]
+      setCartItems(updatedCartItems);
+      localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
     }
   };
 
@@ -31,6 +41,7 @@ function App() {
   const removeFromCart = (itemId) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updatedCartItems);
+    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
   };
   /* FUNCTION TO CHANGE CATEGORY*/
   useEffect(() => {
@@ -60,7 +71,7 @@ function App() {
         cartItems={cartItems}
         setSelectedCategory={setSelectedCategory}
       />
-      
+
       <MainContent addToCart={addToCart} products={products} />
 
       <Footer />

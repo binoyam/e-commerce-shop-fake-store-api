@@ -14,7 +14,7 @@
   box-shadow: -5px 5px 30px -10px cadetblue;
   transition: all 0.2s ease-out;
   z-index: 9;
-  background-color: rgb(255, 255, 255,0.95);
+  background-color: rgba(255, 255, 255);
 }
 /* CART DROP-DOWN + VISIBLE */
 .cart-drop-down.show-cart {

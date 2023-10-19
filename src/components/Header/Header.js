@@ -2,9 +2,9 @@ import "./Header.css";
 import Logo from "../../Assets/logo.svg";
 import CartIcon from "../../Assets/icon-cart.svg";
 import { useState } from "react";
-import Cart from "../Header - Cart/Cart";
 import { Link } from "react-router-dom";
 import Nav from "../Header-Nav/Nav";
+import Cart from "../Header - Cart/Cart";
 
 function Header({ setSelectedCategory, cartItems, removeFromCart }) {
   /* CART STATE/ OPEN OR CLOSE CART */
