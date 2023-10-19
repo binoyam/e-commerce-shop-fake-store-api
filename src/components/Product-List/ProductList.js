@@ -25,8 +25,8 @@ function ProductList({ products, addToCart }) {
   return (
     <>
       {products.map((product) => (
-        <Link key={product.id} to={`/product/${product.id}`}>
-          <article className="product-box">
+        <Link  className="product-box" key={product.id} to={`/product/${product.id}`}>
+          <article>
             <h3 className="product-title">{product.title.slice(0, 20)}</h3>
             <img
               className="product-image"

@@ -1,6 +1,7 @@
 import "./MainContent.css";
 import ProductList from "../Product-List/ProductList";
 import { Route, Routes } from "react-router-dom";
+import ProductDescription from "../Product-Description/ProductDescription";
 
 function MainContent({ products, addToCart }) {
 
@@ -19,7 +20,7 @@ function MainContent({ products, addToCart }) {
         />
         <Route
           path="/product/:id"
-          element={<ProductList addToCart={addToCart} products={products} />}
+          element={<ProductDescription addToCart={addToCart} products={products} />}
         />
       </Routes>
     </main>

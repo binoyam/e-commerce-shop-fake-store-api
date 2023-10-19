@@ -7,7 +7,7 @@ import MinusIcon from '../../Assets/icon-minus.svg'
 
 function ProductDescription({ product, addToCart }) {
   console.log(product);
-  const { title, price, description, rating, image } = product;
+  const { id, title, price, description, rating, image } = product;
   return (
     <div className="product-description-page">
       <Link to="/" className="">
