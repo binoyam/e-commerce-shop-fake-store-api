@@ -4,7 +4,6 @@ import ProductItem from "../Product-Item/ProductItem";
 
 function ProductList({ products, addToCart }) {
   /* READ MORE / READ LESS FUNCTION*/
-  // const [selectedProduct, setSelectedProduct] = useState(null);
   const [expandedText, setExpandedText] = useState(null);
   const toggleExpand = (productId) => {
     if (expandedText === productId) {

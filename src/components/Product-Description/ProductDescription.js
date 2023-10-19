@@ -6,10 +6,10 @@ import PlusIcon from "../../Assets/icon-plus.svg";
 import MinusIcon from "../../Assets/icon-minus.svg";
 
 function ProductDescription({ products, addToCart }) {
-  console.log(products);
+//   console.log(products);
   const { id } = useParams();
-  const selectedProduct = products.find((product) => product.id === id);
-  console.log(selectedProduct);
+  const selectedProduct = products.find((product) => product.id.toString() === id);
+//   console.log(selectedProduct);
   return (
     <div className="product-description-page">
       <Link to="/" className="">
@@ -33,8 +33,8 @@ function ProductDescription({ products, addToCart }) {
               <img src={PlusIcon} alt="Plus" />
             </button>
           </div>
-          <button className="add-to-cart-btn">
-            <img src={CartIcon} alt="Cart" /> Add to Cart
+          <button onClick={() => addToCart(selectedProduct)} className="add-to-cart-btn">
+            <img src={CartIcon} alt="Cart"/> Add to Cart
           </button>
         </div>
       </div>

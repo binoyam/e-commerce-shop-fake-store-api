@@ -19,7 +19,7 @@ function MainContent({ products, addToCart }) {
 
         <Route
           path="/product/:id"
-          element={<ProductDescription products={products} />}
+          element={<ProductDescription products={products} addToCart={addToCart} />}
         />
       </Routes>
     </main>
