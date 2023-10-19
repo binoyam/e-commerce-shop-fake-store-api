@@ -58,7 +58,7 @@ function ProductList({ products, addToCart }) {
       ))}
 
       {selectedProduct && (
-        <ProductDescription product={selectedProduct} />
+        <ProductDescription addToCart={addToCart} product={selectedProduct} />
       )}
     </>
   );
