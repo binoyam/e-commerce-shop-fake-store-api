@@ -6,7 +6,6 @@ import PlusIcon from "../../Assets/icon-plus.svg";
 import MinusIcon from "../../Assets/icon-minus.svg";
 import Arrow from "../../Assets/arrow-left.svg";
 
-
 function ProductDescription({ products, addToCart }) {
   //   console.log(products);
   const { id } = useParams();
@@ -29,25 +28,26 @@ function ProductDescription({ products, addToCart }) {
           <img src={selectedProduct.image} alt="product" />
         </div>
         <div className="product-details">
-          <h1>{selectedProduct.title}</h1>
-          <p>$ {selectedProduct.price}</p>
-          <p>{selectedProduct.description}</p>
-
-          <div className="quantity-selector">
-            <button className="minus-btn">
-              <img src={MinusIcon} alt="minus" />
-            </button>
-            <span className="quantity">5</span>
-            <button className="plus-btn">
-              <img src={PlusIcon} alt="Plus" />
+          <h1 className="prd-name">{selectedProduct.title}</h1>
+          <p className="prd-price">$ {selectedProduct.price}</p>
+          <p className="prd-description">{selectedProduct.description}</p>
+          <div className="product-amount-cart">
+            <div className="quantity-selector">
+              <button className="minus-btn">
+                <img src={MinusIcon} alt="minus" />
+              </button>
+              <span className="quantity">5</span>
+              <button className="plus-btn">
+                <img src={PlusIcon} alt="Plus" />
+              </button>
+            </div>
+            <button
+              onClick={() => addToCart(selectedProduct)}
+              className="add-to-cart-btn"
+            >
+              <img src={CartIcon} alt="Cart" /> Add to Cart
             </button>
           </div>
-          <button
-            onClick={() => addToCart(selectedProduct)}
-            className="add-to-cart-btn"
-          >
-            <img src={CartIcon} alt="Cart" /> Add to Cart
-          </button>
         </div>
       </div>
     </div>
