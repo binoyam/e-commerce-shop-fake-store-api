@@ -4,9 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import ProductDescription from "../Product-Description/ProductDescription";
 
 function MainContent({ products, addToCart }) {
-
-
-// NEXT PAGE WHEN A PRODUCT IS CLICKED ON WITH MORE DESCRIPTION ABOUT THAT PRODUCT
+  // NEXT PAGE WHEN A PRODUCT IS CLICKED ON WITH MORE DESCRIPTION ABOUT THAT PRODUCT
   return (
     <main className="main-content">
       <Routes>
@@ -18,9 +16,10 @@ function MainContent({ products, addToCart }) {
           path="/category/:category"
           element={<ProductList addToCart={addToCart} products={products} />}
         />
+
         <Route
           path="/product/:id"
-          element={<ProductDescription addToCart={addToCart} products={products} />}
+          element={<ProductDescription products={products} />}
         />
       </Routes>
     </main>
