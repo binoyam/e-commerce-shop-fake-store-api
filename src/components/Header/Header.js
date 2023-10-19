@@ -32,7 +32,7 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
         </div>
 
         <div className="account">
-          <span>You are not logged in</span>
+          <span>Account</span>
           <img src="" alt="" />
           <div className="account-info">
             <span className="username"></span>

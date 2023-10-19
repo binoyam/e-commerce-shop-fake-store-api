@@ -53,3 +53,9 @@
     height: 100%;
     object-fit: contain;
 }
+.loading{
+    font-size: 35px;
+    letter-spacing: 4px;
+    margin-top: 30%;
+    text-align: center;
+}

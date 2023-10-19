@@ -10,6 +10,9 @@ function ProductDescription({ products, addToCart }) {
   const { id } = useParams();
   const selectedProduct = products.find((product) => product.id.toString() === id);
 //   console.log(selectedProduct);
+if(!products){
+    return <div className="loading">Please Wait a moment...</div>
+}
   return (
     <div className="product-description-page">
       <Link to="/" className="">

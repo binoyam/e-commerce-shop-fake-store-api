@@ -34,7 +34,10 @@
   align-items: center;
   gap: 20px;
 }
-
+.account{
+  display: flex;
+  align-items: center;
+}
 .cart-nav {
   position: relative;
   width: 22px;

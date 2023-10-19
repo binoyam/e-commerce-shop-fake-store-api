@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import "./ProductItem.css";
 import CartIcon from "../../Assets/icon-cart-btn.svg";
 
-function ProductItem({ product, expandedText, handleAddToCart, toggleExpand }) {
-//   console.log(product);
+function ProductItem({ product, handleAddToCart }) {
+  //   console.log(product);
   return (
     <article className="product-box">
       <h3 className="product-title">{product.title.slice(0, 20)}</h3>
@@ -16,23 +16,10 @@ function ProductItem({ product, expandedText, handleAddToCart, toggleExpand }) {
         <img src={CartIcon} alt="Cart" /> Add to Cart
       </button>
 
-      {expandedText === product.id ? (
-        <p className="product-description">{product.description}</p>
-      ) : (
-        <p className="product-description">
-          {product.description.length > 100
-            ? product.description.slice(0, 60) + "..."
-            : product.description}
-        </p>
-      )}
-      <button
-        className="expand-button"
-        onClick={() => toggleExpand(product.id)}
-      >
-        {expandedText === product.id ? "Read Less" : "Read More"}
-      </button>
+      <p className="product-description">{product.description.slice(0, 70)}...</p>
+
       <Link to={`/product/${product.id}`}>
-        View Details
+        <button className="expand-button">View Details</button>
       </Link>
     </article>
   );
