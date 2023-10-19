@@ -1,7 +1,6 @@
-import React from "react";
+import "./ProductDescription.css";
 import { Link, useParams } from "react-router-dom";
 import CartIcon from "../../Assets/icon-cart-btn.svg";
-import "./ProductDescription.css";
 import PlusIcon from "../../Assets/icon-plus.svg";
 import MinusIcon from "../../Assets/icon-minus.svg";
 import Arrow from "../../Assets/arrow-left.svg";
@@ -36,16 +35,17 @@ function ProductDescription({ products, addToCart }) {
               <button className="minus-btn">
                 <img src={MinusIcon} alt="minus" />
               </button>
-              <span className="quantity">5</span>
+              <span className="quantity">50</span>
               <button className="plus-btn">
                 <img src={PlusIcon} alt="Plus" />
               </button>
             </div>
             <button
               onClick={() => addToCart(selectedProduct)}
-              className="add-to-cart-btn"
+              className="prd-add-to-cart"
             >
-              <img src={CartIcon} alt="Cart" /> Add to Cart
+              Add to Cart
+              <img src={CartIcon} alt="Cart" />
             </button>
           </div>
         </div>
