@@ -6,15 +6,14 @@ import MinusIcon from "../../Assets/icon-minus.svg";
 import Arrow from "../../Assets/arrow-left.svg";
 
 function ProductDescription({ products, addToCart }) {
-  //   console.log(products);
   const { id } = useParams();
   const selectedProduct = products.find(
     (product) => product.id.toString() === id
   );
-  //   console.log(selectedProduct);
   if (!products) {
     return <div className="loading">Please Wait a moment...</div>;
   }
+  console.log(selectedProduct);
   return (
     <div className="product-description-page">
       <Link className="back-btn" to="/">
@@ -53,5 +52,4 @@ function ProductDescription({ products, addToCart }) {
     </div>
   );
 }
-// style the page
 export default ProductDescription;
