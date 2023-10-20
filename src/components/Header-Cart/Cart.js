@@ -39,6 +39,7 @@ function Cart({ cartItems, isCartOpen, removeFromCart }) {
           <span className="empty-cart">Your cart is empty</span>
         )}
       </div>
+      <button>CHECKOUT</button>
     </div>
   );
 }
