@@ -37,11 +37,11 @@ function Cart({ cartItems, isCartOpen, removeFromCart }) {
           </ul>
         ) : (
           <span className="empty-cart">Your cart is empty</span>
-        )}
+          )}
       </div>
-      <button>CHECKOUT</button>
+         {cartItems.length > 0 && <button className="checkout-btn">CHECKOUT</button>}
     </div>
   );
 }
-// checkout button with all the selected products and total price 
+
 export default Cart;
