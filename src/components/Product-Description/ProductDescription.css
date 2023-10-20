@@ -35,7 +35,7 @@
 .product-info {
   width: 900px;
   max-width: 100%;
-  height: 350px;
+  min-height: 350px;
   max-height: 100%;
   margin: 0 auto;
   display: flex;
@@ -99,7 +99,7 @@
   padding: 5px 10px;
 }
 /* PRODUCT AMOUNT COUNTER */
-.quantity{
+.quantity {
   color: #fff;
   font-size: 16px;
   font-weight: 600;

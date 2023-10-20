@@ -1,5 +1,4 @@
 import "./Header.css";
-import Logo from "../../Assets/logo.svg";
 import CartIcon from "../../Assets/icon-cart.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -16,8 +15,7 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
     <header className="header">
       <Link to="/" className="logo-link" onClick={() => setSelectedCategory("")}>
         <div className="logo-div">
-          <img src={Logo} alt="Logo" className="logo-image" />
-          <span className="logo-text">bt-Shop</span>
+          <span className="logo-text">bt-shop</span>
         </div>
       </Link>
 
