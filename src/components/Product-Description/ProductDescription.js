@@ -7,26 +7,21 @@ import Arrow from "../../Assets/arrow-left.svg";
 import { useState } from "react";
 
 function ProductDescription({ products, addToCart }) {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1)
   const { id } = useParams();
   const selectedProduct = products.find(
     (product) => product.id.toString() === id
   );
-  // if (!products) {
-  //   return <div className="loading">Please Wait a moment...</div>;
-  // }
-    // const handleAddToCart = (product, quantity){
-    //   const product = 
-    // }
+
   const increaseQuantity = () => {
     setQuantity(quantity + 1)
   };
   const decreaseQuantity = () => {
-    if (quantity > 0) {
+    if (quantity > 1) {
       setQuantity(quantity - 1);
     }
   };
-  console.log(quantity);
+  // console.log(quantity);
   return (
     <div className="product-description-page">
       <Link className="back-btn" to="/">
@@ -53,7 +48,7 @@ function ProductDescription({ products, addToCart }) {
               </button>
             </div>
             <button
-              onClick={() => addToCart(selectedProduct)}
+              onClick={() => addToCart(selectedProduct, quantity)}
               className="prd-add-to-cart"
             >
               Add to Cart

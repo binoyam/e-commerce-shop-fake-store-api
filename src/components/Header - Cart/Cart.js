@@ -2,7 +2,7 @@ import "./Cart.css";
 import RemoveIcon from "../../Assets/icon-remove.svg";
 
 function Cart({ cartItems, isCartOpen, removeFromCart }) {
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className={isCartOpen ? "cart-drop-down show-cart" : "cart-drop-down"}>

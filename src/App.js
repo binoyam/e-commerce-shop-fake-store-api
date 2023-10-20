@@ -21,17 +21,17 @@ function App() {
     }
   }, []);
   /* FUCTION TO ADD ITEMS TO CART */
-  const addToCart = (product) => {
+  const addToCart = (product, quantity) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
-    console.log(cartItems);
+    // console.log(cartItems);
     if (existingItem) {
       const updatedCartItems = cartItems.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
       );
       setCartItems(updatedCartItems);
       localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
     } else {
-      const updatedCartItems = [...cartItems, { ...product, quantity: 1 }]
+      const updatedCartItems = [...cartItems, { ...product, quantity: quantity }]
       setCartItems(updatedCartItems);
       localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
     }
