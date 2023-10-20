@@ -16,7 +16,7 @@ function Cart({ cartItems, isCartOpen, removeFromCart }) {
                   <img src={image} alt="product" />
                 </div>
                 <div className="cart-item-details">
-                  <span className="item-name">{title}</span>
+                  <span className="item-name">{title.slice(0, 60)}</span>
                   <div className="item-pricing-detail">
                     <span className="item-price">${price}</span>
                     <span className="multiply-sign">&times;</span>

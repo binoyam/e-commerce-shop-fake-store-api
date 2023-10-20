@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./ProductItem.css";
 import CartIcon from "../../Assets/icon-cart-btn.svg";
 
-function ProductItem({ product, handleAddToCart }) {
+function ProductItem({ product, addToCart }) {
   //   console.log(product);
   return (
     <article className="product-box">
@@ -10,7 +10,7 @@ function ProductItem({ product, handleAddToCart }) {
       <img className="product-image" src={product.image} alt={product.title} />
       <span className="product-price">${product.price}</span>
       <button
-        onClick={() => handleAddToCart(product)}
+        onClick={() => addToCart(product)}
         className="add-to-cart-btn"
       >
         <img src={CartIcon} alt="Cart" /> Add to Cart
@@ -18,7 +18,7 @@ function ProductItem({ product, handleAddToCart }) {
 
       <p className="product-description">{product.description.slice(0, 70)}...</p>
 
-      <Link to={`/product/${product.id}`}>
+      <Link className="view-details-link" to={`/product/${product.id}`}>
         <button className="view-more-btn">View Details</button>
       </Link>
     </article>
