@@ -7,6 +7,7 @@ import Arrow from "../../Assets/arrow-left.svg";
 import { useState } from "react";
 
 function ProductDescription({ products, addToCart }) {
+  /* SELECTED QUANTITY STATE */
   const [quantity, setQuantity] = useState(1)
   const { id } = useParams();
   const selectedProduct = products.find(
