@@ -2,8 +2,9 @@ import "./MainContent.css";
 import ProductList from "../Product-List/ProductList";
 import { Route, Routes } from "react-router-dom";
 import ProductDescription from "../Product-Description/ProductDescription";
+import Checkout from "../Checkout/Checkout";
 
-function MainContent({ products, addToCart }) {
+function MainContent({ products, addToCart, cartItems, removeFromCart }) {
   return (
     <main className="main-content">
       <Routes>
@@ -20,6 +21,12 @@ function MainContent({ products, addToCart }) {
           path="/product/:id"
           element={
             <ProductDescription products={products} addToCart={addToCart} />
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <Checkout cartItems={cartItems} removeFromCart={removeFromCart} />
           }
         />
       </Routes>

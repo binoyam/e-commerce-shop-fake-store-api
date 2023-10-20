@@ -43,6 +43,7 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
         removeFromCart={removeFromCart}
         cartItems={cartItems}
         isCartOpen={isCartOpen}
+        closeCart={toggleCartDropDown}
       />
     </header>
   );

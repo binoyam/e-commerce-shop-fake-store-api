@@ -26,12 +26,17 @@ function App() {
     // console.log(cartItems);
     if (existingItem) {
       const updatedCartItems = cartItems.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + quantity }
+          : item
       );
       setCartItems(updatedCartItems);
       localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
     } else {
-      const updatedCartItems = [...cartItems, { ...product, quantity: quantity }]
+      const updatedCartItems = [
+        ...cartItems,
+        { ...product, quantity: quantity },
+      ];
       setCartItems(updatedCartItems);
       localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
     }
@@ -72,7 +77,12 @@ function App() {
         setSelectedCategory={setSelectedCategory}
       />
 
-      <MainContent addToCart={addToCart} products={products} />
+      <MainContent
+        cartItems={cartItems}
+        removeFromCart={removeFromCart}
+        addToCart={addToCart}
+        products={products}
+      />
 
       <Footer />
     </div>

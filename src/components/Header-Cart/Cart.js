@@ -1,7 +1,8 @@
 import "./Cart.css";
 import RemoveIcon from "../../Assets/icon-remove.svg";
+import { Link } from "react-router-dom";
 
-function Cart({ cartItems, isCartOpen, removeFromCart }) {
+function Cart({ cartItems, isCartOpen, removeFromCart, closeCart }) {
   // console.log(cartItems);
 
   return (
@@ -39,7 +40,10 @@ function Cart({ cartItems, isCartOpen, removeFromCart }) {
           <span className="empty-cart">Your cart is empty</span>
           )}
       </div>
-         {cartItems.length > 0 && <button className="checkout-btn">CHECKOUT</button>}
+         {cartItems.length > 0 && 
+         <Link to='/checkout'>
+         <button className="checkout-btn" onClick={closeCart}>CHECKOUT</button>
+         </Link>}
     </div>
   );
 }
