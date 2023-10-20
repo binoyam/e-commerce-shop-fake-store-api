@@ -8,15 +8,22 @@ import { useState } from "react";
 
 function ProductDescription({ products, addToCart }) {
   /* SELECTED QUANTITY STATE */
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
   const selectedProduct = products.find(
     (product) => product.id.toString() === id
   );
-
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1)
+  /* helper Function to set quantity back to 1 and add to cart */
+  const handleAddToCart = () => {
+    addToCart(selectedProduct, quantity);
+    setQuantity(1);
   };
+  /* FUNCTION FOR PLUS BUTTON*/
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
+  /* FUNCTION FOR MINUS BUTTON*/
   const decreaseQuantity = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
@@ -48,10 +55,7 @@ function ProductDescription({ products, addToCart }) {
                 <img src={PlusIcon} alt="Plus" />
               </button>
             </div>
-            <button
-              onClick={() => addToCart(selectedProduct, quantity)}
-              className="prd-add-to-cart"
-            >
+            <button onClick={handleAddToCart} className="prd-add-to-cart">
               Add to Cart
               <img src={CartIcon} alt="Cart" />
             </button>
