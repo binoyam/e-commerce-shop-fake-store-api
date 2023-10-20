@@ -1,10 +1,53 @@
 .checkout-page {
-    padding: 50px;
-    width: 100%;
-    height: calc(100vh - 57px - 120px);
-    position: relative; /* for back button */
-    background-color: white;
-    border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-  
-  }
+  padding: 20px;
+  width: 100%;
+  min-height: calc(100vh - 57px - 120px);
+  position: relative; /* for back button */
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.checkout-header {
+  text-align: center;
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.chk-out.cart-items-list {
+  width: 50%;
+}
+
+.chk-out.cart-item {
+  cursor: pointer;
+  height: 80px;
+}
+.chk-out.cart-item:hover {
+  background-color: aquamarine;
+}
+.chk-out.item-pricing-detail {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.chk-out.item-price-total {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  font-weight: 600;
+  margin-left: 8px;
+}
+.chk-out.item-price-total {
+  margin-left: 0;
+}
+.equal-sign {
+  margin: 0 7px;
+}
+.cart-item-details {
+  width: 75%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 0 5px;
+}
