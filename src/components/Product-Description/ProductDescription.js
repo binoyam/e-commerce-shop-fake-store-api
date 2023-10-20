@@ -4,16 +4,29 @@ import CartIcon from "../../Assets/icon-cart-btn.svg";
 import PlusIcon from "../../Assets/icon-plus.svg";
 import MinusIcon from "../../Assets/icon-minus.svg";
 import Arrow from "../../Assets/arrow-left.svg";
+import { useState } from "react";
 
 function ProductDescription({ products, addToCart }) {
+  const [quantity, setQuantity] = useState(0);
   const { id } = useParams();
   const selectedProduct = products.find(
     (product) => product.id.toString() === id
   );
-  if (!products) {
-    return <div className="loading">Please Wait a moment...</div>;
-  }
-  console.log(selectedProduct);
+  // if (!products) {
+  //   return <div className="loading">Please Wait a moment...</div>;
+  // }
+    // const handleAddToCart = (product, quantity){
+    //   const product = 
+    // }
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1)
+  };
+  const decreaseQuantity = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  };
+  console.log(quantity);
   return (
     <div className="product-description-page">
       <Link className="back-btn" to="/">
@@ -31,11 +44,11 @@ function ProductDescription({ products, addToCart }) {
           <p className="prd-description">{selectedProduct.description}</p>
           <div className="product-amount-cart">
             <div className="quantity-selector">
-              <button className="minus-btn">
+              <button className="minus-btn" onClick={decreaseQuantity}>
                 <img src={MinusIcon} alt="minus" />
               </button>
-              <span className="quantity">50</span>
-              <button className="plus-btn">
+              <span className="quantity">{quantity}</span>
+              <button className="plus-btn" onClick={increaseQuantity}>
                 <img src={PlusIcon} alt="Plus" />
               </button>
             </div>

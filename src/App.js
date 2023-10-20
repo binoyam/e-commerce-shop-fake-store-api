@@ -23,7 +23,7 @@ function App() {
   /* FUCTION TO ADD ITEMS TO CART */
   const addToCart = (product) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
-
+    console.log(cartItems);
     if (existingItem) {
       const updatedCartItems = cartItems.map((item) =>
         item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item

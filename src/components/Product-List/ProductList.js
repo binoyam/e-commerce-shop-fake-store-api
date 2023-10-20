@@ -6,6 +6,7 @@ function ProductList({ products, addToCart }) {
   /* ADD TO CART HANDLER */
   const handleAddToCart = (product) => {
     addToCart(product);
+
   };
 
   return (
