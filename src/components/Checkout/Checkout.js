@@ -19,20 +19,19 @@ function Checkout({ cartItems, removeFromCart }) {
             <div className="chk-out cart-item-details">
               <span className="chk-out item-name">{title}</span>
               <div className="chk-out item-pricing-detail">
-                <span className="chk-out item-price">Unit Price: ${price}</span>
-
+                <span className="chk-out item-price unit">
+                  Unit Price: ${price}
+                </span>
                 <span className="chk-out item-amount">
-                  Quantity:{" "}{quantity}
+                  Quantity: {quantity}
                 </span>
                 <div className="chk-out item-price-total">
                   Item Total:
-                  <span className="chk-out item-price">${price}</span>
+                  <span className="chk-out item-price"> ${price}</span>
                   <span className="chk-out multiply-sign">&times;</span>
-                  <span className="chk-out item-amount">
-                    {quantity}
-                  </span> 
-                  <span className="equal-sign">=</span>
-                  ${(quantity * price).toFixed(2)}
+                  <span className="chk-out item-amount">{quantity}</span>
+                  <span className="equal-sign">=</span>$
+                  {(quantity * price).toFixed(2)}
                 </div>
               </div>
             </div>
