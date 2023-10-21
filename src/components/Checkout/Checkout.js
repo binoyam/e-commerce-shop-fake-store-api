@@ -7,8 +7,9 @@ function Checkout({ cartItems, removeFromCart }) {
   return (
     <div className="checkout-page">
       <span className="checkout-header">
-        Checkout ({cartItems.length} Items)
-      </span>
+        Checkout{" "}(  
+        <span className="checkout-amount">{cartItems.length} Items</span>
+        )</span>
       <span className="chk-out-list-header">Cart Items</span>
       <ul className="chk-out cart-items-list">
         {cartItems.map(({ id, image, title, price, quantity }) => (
@@ -45,7 +46,7 @@ function Checkout({ cartItems, removeFromCart }) {
         ))}
       </ul>
       <div className="total-price-div">
-        <span>Total: {}</span>
+        Total:
       </div>
     </div>
   );
