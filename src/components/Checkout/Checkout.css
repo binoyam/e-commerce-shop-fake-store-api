@@ -42,9 +42,6 @@
   margin-top: 6px;
   margin-right: 20px;
 }
-.chk-out.cart-item:hover {
-  background-color: aquamarine;
-}
 /* CART ITEM ::AFTER LINE DIVIDER */
 .chk-out.cart-item::after {
   position: absolute;
