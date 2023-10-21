@@ -5,41 +5,66 @@
   position: relative; /* for back button */
   border-top-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  /* background: url(../../Assets//bg-cart.svg);
+  background-color: #ffffff;
+  /*background-image: url(../../Assets/bg-cart.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; */
-  background-color: #ffffff;
 }
+/* CHECKOUT HEADER*/
 .checkout-header {
-  text-align: center;
+  text-align: left;
   display: block;
   font-weight: 700;
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
+/* LIST HEADER */
 .chk-out-list-header {
   font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 3px;
   text-align: center;
   display: block;
-  border-bottom: 1px solid;
+  border-bottom: 2px solid cadetblue;
+  padding-bottom: 10px;
 }
+/* CART ITEMS LIST */
 .chk-out.cart-items-list {
-  width: 50%;
+  width: 45%;
+  flex-wrap: wrap;
+  height: 500px;
 }
-
+/* CART ITEM */
 .chk-out.cart-item {
   cursor: pointer;
   height: 100px;
+  margin-top: 6px;
+  margin-right: 20px;
 }
 .chk-out.cart-item:hover {
   background-color: aquamarine;
 }
+/* CART ITEM ::AFTER LINE DIVIDER */
+.chk-out.cart-item::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 20px);
+  bottom: -10px;
+  margin: 0 auto;
+  background-color: #ed9121;
+}
+/* PRICE DETAIL DIV */
 .chk-out.item-pricing-detail {
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
 }
+/* UNIT-PRICE */
 .chk-out.item-price.unit {
   margin: 0;
 }
@@ -47,25 +72,21 @@
   min-width: 50px;
   margin-left: 5px;
 }
+/* ITEM-TOTAL */
 .chk-out.item-price-total {
   display: flex;
   align-items: center;
   color: #000000;
   font-weight: 600;
   margin-left: 8px;
-}
-.chk-out.item-price-total {
   margin-left: 0;
 }
+/* EQUAL SIGN */
 .equal-sign {
   margin: 0 7px;
 }
-.cart-item-details {
+.chk-out.cart-item-details {
   width: 75%;
   max-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
-  padding: 0 5px;
+  padding: 5px;
 }

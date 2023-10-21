@@ -72,7 +72,6 @@
 }
 .cart-item:not(:first-child){
   margin-top: 6px;
-
 }
 .cart-item:not(:last-child)::after {
   position: absolute;

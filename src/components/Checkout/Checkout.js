@@ -9,8 +9,8 @@ function Checkout({ cartItems, removeFromCart }) {
       <span className="checkout-header">
         Checkout ({cartItems.length} Items)
       </span>
+      <span className="chk-out-list-header">Cart Items</span>
       <ul className="chk-out cart-items-list">
-        <span className="chk-out-list-header">Cart Items</span>
         {cartItems.map(({ id, image, title, price, quantity }) => (
           <li className="chk-out cart-item" key={id}>
             <div className="chk-out cart-item-image">
