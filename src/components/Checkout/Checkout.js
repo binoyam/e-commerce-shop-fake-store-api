@@ -56,7 +56,7 @@ function Checkout({ cartItems, removeFromCart }) {
           <div className="order">Order Summary</div>
           <div>
             <p>Items ({cartItems.length}):</p>
-            <p>${calculateTotal()}</p>
+            <p>${calculateTotal().toFixed(2)}</p>
           </div>
           <div>
             <p>Shipping & handling:</p>
@@ -64,7 +64,7 @@ function Checkout({ cartItems, removeFromCart }) {
           </div>
           <div>
             <p>Total before tax: </p>
-            <p>${calculateTotal()}</p>
+            <p>${calculateTotal().toFixed(2)}</p>
           </div>
           <div className="estimated-tax">
             <p>Estimated tax to be collected: </p>
@@ -79,5 +79,5 @@ function Checkout({ cartItems, removeFromCart }) {
     </div>
   );
 }
-
+// STYLE THE ORDER SUMMARY, create functions for tax , before tax...
 export default Checkout;
