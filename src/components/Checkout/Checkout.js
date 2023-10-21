@@ -1,15 +1,23 @@
 import "./Checkout.css";
-import DeleteIcon from "../../Assets/icon-close.svg";
+import DeleteIcon from "../../Assets/remove-item-icon.svg";
 import "../Header-Cart/Cart.css";
 
 function Checkout({ cartItems, removeFromCart }) {
-  console.log(cartItems);
+  //   console.log(cartItems);
+  const calculateTotal = () => {
+    let total = 0;
+    cartItems.forEach((item) => {
+      total += item.price * item.quantity;
+    });
+    return total;
+  };
+
   return (
     <div className="checkout-page">
       <span className="checkout-header">
-        Checkout{" "}(  
-        <span className="checkout-amount">{cartItems.length} Items</span>
-        )</span>
+        Checkout (
+        <span className="checkout-amount">{cartItems.length} Items</span>)
+      </span>
       <span className="chk-out-list-header">Cart Items</span>
       <ul className="chk-out cart-items-list">
         {cartItems.map(({ id, image, title, price, quantity }) => (
@@ -44,10 +52,30 @@ function Checkout({ cartItems, removeFromCart }) {
             </button>
           </li>
         ))}
+        <div className="total-order-summary">
+          <div className="order">Order Summary</div>
+          <div>
+            <p>Items ({cartItems.length}):</p>
+            <p>${calculateTotal()}</p>
+          </div>
+          <div>
+            <p>Shipping & handling:</p>
+            <p>$0.00</p>
+          </div>
+          <div>
+            <p>Total before tax: </p>
+            <p>${calculateTotal()}</p>
+          </div>
+          <div className="estimated-tax">
+            <p>Estimated tax to be collected: </p>
+            <p>${(calculateTotal() * 0.15).toFixed(2)}</p>
+          </div>
+          <div className="order-total">
+            <p>Order total:</p>
+            <p>${(calculateTotal() * 0.15 + calculateTotal()).toFixed(2)}</p>
+          </div>
+        </div>
       </ul>
-      <div className="total-price-div">
-        Total:
-      </div>
     </div>
   );
 }

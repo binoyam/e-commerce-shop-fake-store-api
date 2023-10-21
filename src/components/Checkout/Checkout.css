@@ -107,10 +107,6 @@
   margin: 0 7px;
 }
 
-/* CHECKOUT TOTAL  */
-.total-price-div {
-  margin-top: 40px;
-}
 /* REMOVE ITEM BUTTON */
 .chk-out.item-remove-btn {
   max-width: 5%;
@@ -124,4 +120,36 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+.chk-out.item-remove-btn:active {
+  scale: 2;
+}
+/* CHECKOUT TOTAL  */
+.total-order-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  font-size: 18px;
+  width: 80%;
+}
+.order {
+  color: #000000;
+  font-weight: 700;
+}
+.total-order-summary div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.estimated-tax {
+  margin: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+.order-total{
+    color: #9e0000;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
