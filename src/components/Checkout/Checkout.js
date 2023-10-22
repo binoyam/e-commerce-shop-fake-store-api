@@ -52,30 +52,30 @@ function Checkout({ cartItems, removeFromCart }) {
             </button>
           </li>
         ))}
-        <div className="total-order-summary">
-          <div className="order">Order Summary</div>
-          <div>
-            <p>Items ({cartItems.length}):</p>
-            <p>${calculateTotal().toFixed(2)}</p>
-          </div>
-          <div>
-            <p>Shipping & handling:</p>
-            <p>$0.00</p>
-          </div>
-          <div>
-            <p>Total before tax: </p>
-            <p>${calculateTotal().toFixed(2)}</p>
-          </div>
-          <div className="estimated-tax">
-            <p>Estimated tax to be collected: </p>
-            <p>${(calculateTotal() * 0.15).toFixed(2)}</p>
-          </div>
-          <div className="order-total">
-            <p>Order total:</p>
-            <p>${(calculateTotal() * 0.15 + calculateTotal()).toFixed(2)}</p>
-          </div>
-        </div>
       </ul>
+      <div className="total-order-summary">
+        <div className="order">Order Summary</div>
+        <div>
+          <p>Items ({cartItems.length}):</p>
+          <p>${calculateTotal().toFixed(2)}</p>
+        </div>
+        <div>
+          <p>Shipping & handling:</p>
+          <p>$0.00</p>
+        </div>
+        <div>
+          <p>Total before tax: </p>
+          <p>${calculateTotal().toFixed(2)}</p>
+        </div>
+        <div className="estimated-tax">
+          <p>Estimated tax to be collected: </p>
+          <p>${(calculateTotal() * 0.15).toFixed(2)}</p>
+        </div>
+        <div className="order-total">
+          <p>Order total:</p>
+          <p>${(calculateTotal() * 0.15 + calculateTotal()).toFixed(2)}</p>
+        </div>
+      </div>
     </div>
   );
 }

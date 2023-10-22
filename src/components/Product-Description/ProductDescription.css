@@ -2,7 +2,7 @@
   padding: 50px;
   width: 100%;
   height: calc(100vh - 57px - 120px);
-  position: relative; /* for back button */
+  position: relative; /* for back button*/
   background-color: white;
   border-top-left-radius: 15px;
   border-bottom-right-radius: 15px;
