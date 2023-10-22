@@ -1,9 +1,9 @@
 /* CHECKOUT TOTAL  */
 .order-summary-wrapper {
   position: absolute;
-  right: 20px;
+  left: 20px;
   bottom: 20px;
-  width: 45%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,4 +41,19 @@
   font-size: 25px;
   font-weight: 700;
   letter-spacing: 2px;
+}
+.payment {
+  position: absolute;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -420px;
+  background-color: rgb(99, 95, 160);
+  padding: 15px 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+.payment:hover {
+  background-color: cadetblue;
 }
