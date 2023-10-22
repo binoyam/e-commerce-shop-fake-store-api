@@ -1,7 +1,7 @@
-import React from "react";
+import './PaymentPage.css'
 
 function PaymentPage() {
-  return <div>PaymentPage</div>;
+  return <div className="payment-page">PaymentPage</div>;
 }
 
 export default PaymentPage;

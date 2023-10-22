@@ -1,0 +1,8 @@
+.payment-page {
+  width: 100%;
+  min-height: calc(100vh - 57px - 115px);
+  padding: 20px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #ffffff;
+}

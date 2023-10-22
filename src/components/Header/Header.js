@@ -34,7 +34,7 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
           <img src="" alt="" />
           <div className="account-info">
             <span className="username"></span>
-            <button className="logout"></button>
+            {/* <button className="logout">Your are not signed in</button> */}
           </div>
         </div>
       </div>
@@ -48,7 +48,5 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
     </header>
   );
 }
-// improve the cart and account layout
-// Account drop down like google, then you havent signed up minamin,
-//  then sign up or sign in, welcome back when signgin in
+
 export default Header;
