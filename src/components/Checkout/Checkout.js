@@ -1,16 +1,10 @@
 import "./Checkout.css";
 import DeleteIcon from "../../Assets/remove-item-icon.svg";
 import "../Header-Cart/Cart.css";
+import OrderSummary from "../Checkout-OrderSummary/OrderSummary";
 
 function Checkout({ cartItems, removeFromCart }) {
   //   console.log(cartItems);
-  const calculateTotal = () => {
-    let total = 0;
-    cartItems.forEach((item) => {
-      total += item.price * item.quantity;
-    });
-    return total;
-  };
 
   return (
     <div className="checkout-page">
@@ -53,31 +47,9 @@ function Checkout({ cartItems, removeFromCart }) {
           </li>
         ))}
       </ul>
-      <div className="total-order-summary">
-        <div className="order">Order Summary</div>
-        <div>
-          <p>Items ({cartItems.length}):</p>
-          <p>${calculateTotal().toFixed(2)}</p>
-        </div>
-        <div>
-          <p>Shipping & handling:</p>
-          <p>$0.00</p>
-        </div>
-        <div>
-          <p>Total before tax: </p>
-          <p>${calculateTotal().toFixed(2)}</p>
-        </div>
-        <div className="estimated-tax">
-          <p>Estimated tax to be collected: </p>
-          <p>${(calculateTotal() * 0.15).toFixed(2)}</p>
-        </div>
-        <div className="order-total">
-          <p>Order total:</p>
-          <p>${(calculateTotal() * 0.15 + calculateTotal()).toFixed(2)}</p>
-        </div>
-      </div>
+      <OrderSummary cartItems={cartItems} />
     </div>
   );
 }
-// STYLE THE ORDER SUMMARY, create functions for tax , before tax...
+
 export default Checkout;
