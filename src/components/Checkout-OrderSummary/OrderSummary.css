@@ -1,5 +1,5 @@
 /* CHECKOUT TOTAL  */
-.total-order-summary {
+.order-summary-wrapper {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -7,19 +7,29 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* gap: 5px; */
-  font-size: 18px;
+  gap: 5px;
 }
-.order {
+/* ORDER SUMMARY HEADER */
+.order-summary-header {
+  font-size: 18px;
   color: #000000;
   font-weight: 700;
   border-bottom: 1px solid cadetblue;
 }
-.total-order-summary div {
+.order-items,
+.shipping,
+.before-tax,
+.estimated-tax,
+.order-total {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+.left {
+  color: #000000;
 }
 .estimated-tax {
   margin: 0;

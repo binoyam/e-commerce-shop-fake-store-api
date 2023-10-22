@@ -11,22 +11,22 @@ function OrderSummary({ cartItems }) {
   };
 
   return (
-    <div className="total-order-summary">
-      <div className="order">Order Summary</div>
-      <div>
-        <p>Items ({cartItems.length}):</p>
+    <div className="order-summary-wrapper">
+      <div className="order-summary-header">Order Summary</div>
+      <div className="order-items">
+        <p className="left">Items ({cartItems.length}):</p>
         <p>${calculateTotal().toFixed(2)}</p>
       </div>
-      <div>
-        <p>Shipping & handling:</p>
+      <div className="shipping">
+        <p className="left">Shipping & handling:</p>
         <p>$0.00</p>
       </div>
-      <div>
-        <p>Total before tax: </p>
+      <div className="before-tax">
+        <p className="left">Total before tax: </p>
         <p>${calculateTotal().toFixed(2)}</p>
       </div>
       <div className="estimated-tax">
-        <p>Estimated tax to be collected: </p>
+        <p className="left">Estimated tax to be collected: </p>
         <p>${(calculateTotal() * TAX_RATE).toFixed(2)}</p>
       </div>
       <div className="order-total">
