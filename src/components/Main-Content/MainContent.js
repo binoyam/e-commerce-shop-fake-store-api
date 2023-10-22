@@ -3,7 +3,7 @@ import ProductList from "../Product-List/ProductList";
 import { Route, Routes } from "react-router-dom";
 import ProductDescription from "../Product-Description/ProductDescription";
 import Checkout from "../Checkout/Checkout";
-
+import PaymentPage from '../Payment/PaymentPage'
 function MainContent({ products, addToCart, cartItems, removeFromCart }) {
   return (
     <main className="main-content">
@@ -29,6 +29,7 @@ function MainContent({ products, addToCart, cartItems, removeFromCart }) {
             <Checkout cartItems={cartItems} removeFromCart={removeFromCart} />
           }
         />
+        <Route path="/payment" element={<PaymentPage />} />
       </Routes>
     </main>
   );

@@ -42,18 +42,26 @@
   font-weight: 700;
   letter-spacing: 2px;
 }
+.tax {
+  color: #9e0000;
+}
+/* PAYMENT BUTTON */
 .payment {
   position: absolute;
-  display: block;
-  top: 50%;
-  transform: translateY(-50%);
-  right: -420px;
+  top: 70%;
+  right: -50%;
+  /* transform: translateY(-50%); */
   background-color: rgb(99, 95, 160);
-  padding: 15px 30px;
+  padding: 15px;
   color: white;
   font-size: 16px;
   font-weight: 700;
+  border-radius: 5px;
+  transition: all 0.2s ease;
 }
 .payment:hover {
-  background-color: cadetblue;
+  background-color: rgba(255, 255, 255, 0.493);
+  border:1px solid #ed9121;
+  color: #333;
+  border-radius: 15px;
 }
