@@ -32,7 +32,7 @@ function ProductDescription({ products, addToCart }) {
   // console.log(quantity);
   return (
     <div className="product-description-page">
-      <Link className="back-btn" to="/">
+      <Link to="/" className="back-btn">
         <img src={Arrow} alt="arrow-left" />
         Back
       </Link>

@@ -31,6 +31,9 @@
   height: 18px;
   object-fit: cover;
 }
+.back-btn:hover {
+  background-color: #ed9121;
+}
 /* PRODCUT IMAGE / DETAILS WRAPPER */
 .product-info {
   width: 900px;
@@ -99,12 +102,12 @@
   border-radius: 3px;
   padding: 5px 10px;
 }
-.quantity-selector:hover{
+.quantity-selector:hover {
   background-color: cadetblue;
   border: none;
 }
-.quantity-selector:hover .quantity{
- color: #ffffff;
+.quantity-selector:hover .quantity {
+  color: #ffffff;
 }
 /* PRODUCT AMOUNT COUNTER */
 .quantity {
@@ -154,12 +157,12 @@
   outline: none;
   transition: background-color color border 0.3s ease-in-out;
 }
-.prd-add-to-cart:hover{
+.prd-add-to-cart:hover {
   border: none;
   background-color: #333;
   color: #ffffff;
 }
-.prd-add-to-cart:active{
+.prd-add-to-cart:active {
   scale: 1.1;
 }
 .loading {
