@@ -23,8 +23,8 @@ function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
         </button>
       )}
 
-      {isMenuOpen && (
-        <ul className="nav-links">
+    
+        <ul className={isMenuOpen ? "nav-links show" : "nav-links hide"}>
           <li>
             <Link
               onClick={() => setSelectedCategory("men%27s%20clothing")}
@@ -62,7 +62,7 @@ function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
             </Link>
           </li>
         </ul>
-      )}
+  
     </nav>
   );
 }
