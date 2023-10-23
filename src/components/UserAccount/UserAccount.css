@@ -21,3 +21,13 @@
   border:2px solid #ed9121;
   border-radius: 30%;
 }
+.user-account-details{
+    position: fixed;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 500px;
+    background-color: #ffffff;
+    z-index: 9999;
+}
