@@ -1,5 +1,5 @@
 import "./UserAccount.css";
-import UserIcon from "../../Assets/user-icon.svg";
+import UserIcon from "../../Assets/avatar.svg";
 
 function UserAccount() {
   return (
