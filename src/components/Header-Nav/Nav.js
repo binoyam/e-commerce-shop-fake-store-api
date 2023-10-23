@@ -4,12 +4,11 @@ import MenuIcon from "../../Assets/icon-menu.svg";
 import CloseMenuIcon from "../../Assets/close-for-menu.svg";
 
 function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
-
-  function toggleMenu(){
-    setIsMenuOpen(!isMenuOpen)
+  function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen);
   }
-  function closeMenu(){
-    setIsMenuOpen(false)
+  function closeMenu() {
+    setIsMenuOpen(false);
   }
   return (
     <nav className="navigation">
@@ -23,46 +22,44 @@ function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
         </button>
       )}
 
-    
-        <ul className={isMenuOpen ? "nav-links show" : "nav-links hide"}>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("men%27s%20clothing")}
-              to="/category/mens-clothing"
-              className="nav-link"
-            >
-              Men
-            </Link>
-          </li>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("women%27s%20clothing")}
-              to="/category/womens-clothing"
-              className="nav-link"
-            >
-              Women
-            </Link>
-          </li>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("electronics")}
-              to="/category/electronics"
-              className="nav-link"
-            >
-              Electronics
-            </Link>
-          </li>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("jewelery")}
-              to="/category/jewelery"
-              className="nav-link"
-            >
-              Jewelery
-            </Link>
-          </li>
-        </ul>
-  
+      <ul className={isMenuOpen ? "nav-links show" : "nav-links hide"}>
+        <li>
+          <Link
+            onClick={() => setSelectedCategory("men%27s%20clothing")}
+            to="/category/mens-clothing"
+            className="nav-link"
+          >
+            Men
+          </Link>
+        </li>
+        <li>
+          <Link
+            onClick={() => setSelectedCategory("women%27s%20clothing")}
+            to="/category/womens-clothing"
+            className="nav-link"
+          >
+            Women
+          </Link>
+        </li>
+        <li>
+          <Link
+            onClick={() => setSelectedCategory("electronics")}
+            to="/category/electronics"
+            className="nav-link"
+          >
+            Electronics
+          </Link>
+        </li>
+        <li>
+          <Link
+            onClick={() => setSelectedCategory("jewelery")}
+            to="/category/jewelery"
+            className="nav-link"
+          >
+            Jewelery
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }

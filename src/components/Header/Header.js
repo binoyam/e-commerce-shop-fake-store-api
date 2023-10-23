@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Nav from "../Header-Nav/Nav";
 import Cart from "../Header-Cart/Cart";
-
+import UserAccount from "../UserAccount/UserAccount";
 function Header({ setSelectedCategory, cartItems, removeFromCart }) {
   /* CART STATE/ OPEN OR CLOSE CART */
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -39,14 +39,7 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
           ) : null}
         </div>
 
-        <div className="account">
-          <span>Account</span>
-          <img src="" alt="" />
-          <div className="account-info">
-            <span className="username"></span>
-            {/* <button className="logout">Your are not signed in</button> */}
-          </div>
-        </div>
+        <UserAccount />
       </div>
 
       <Cart
