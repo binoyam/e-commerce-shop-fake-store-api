@@ -11,15 +11,25 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
   function toggleCartDropDown() {
     setIsCartOpen(!isCartOpen);
   }
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="header">
-      <Link to="/" className="logo-link" onClick={() => setSelectedCategory("")}>
+      <Link
+        to="/"
+        className="logo-link"
+        onClick={() => setSelectedCategory("")}
+      >
         <div className="logo-div">
           <span className="logo-text">bt-shop</span>
         </div>
       </Link>
 
-      <Nav setSelectedCategory={setSelectedCategory} />
+      <Nav
+        setSelectedCategory={setSelectedCategory}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
 
       <div className="nav-right">
         <div onClick={toggleCartDropDown} className="cart-nav">

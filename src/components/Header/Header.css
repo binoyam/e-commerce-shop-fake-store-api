@@ -7,7 +7,7 @@
   border-bottom: 1px solid #ddd;
   border-bottom-right-radius: 15px;
   margin: 0 20px;
-  position: relative; /* for cart drop down */
+  position: relative; /* for cart drop down/for menu button */
 }
 .logo-link {
   display: flex;
@@ -16,7 +16,7 @@
 .logo-div{
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  transition: all 0.2s ease-out;
 }
 .logo-image {
   width: 30px;
@@ -65,5 +65,22 @@
   text-align: center;
 }
 @media only screen and (max-width:700px){
+  .logo-div{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .logo-text{
+    font-size: 20px;
+  }
   
+}
+@media only screen and (max-width:500px){
+  .logo-text{
+    font-size: 16px;
+  }
+  .nav-right{
+    gap: 5px;
+  }
 }

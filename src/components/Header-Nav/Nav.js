@@ -2,16 +2,15 @@ import { Link } from "react-router-dom";
 import "./Nav.css";
 import MenuIcon from "../../Assets/icon-menu.svg";
 import CloseMenuIcon from "../../Assets/close-for-menu.svg";
-import { useState } from "react";
-function Nav({ setSelectedCategory }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
+
+  function toggleMenu(){
+    setIsMenuOpen(!isMenuOpen)
+  }
+  function closeMenu(){
+    setIsMenuOpen(false)
+  }
   return (
     <nav className="navigation">
       {!isMenuOpen ? (

@@ -65,10 +65,12 @@
     text-align: center;
     margin: 0;
   }
-  .menu-btn {
+  .menu-btn,.close-menu-btn {
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
   }
-  .close-menu-btn{
-    display: block;
-  }
+  
 }
