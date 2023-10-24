@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./PaymentPage.css";
 // import PpIcon from "../../Assets/paypal-icon.svg";
+// add icons and styling
 function PaymentPage({ cartItems }) {
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
@@ -56,6 +57,7 @@ function PaymentPage({ cartItems }) {
       </form>
 
       {/* <img src={PpIcon} alt="paypal" /> */}
+    
     </div>
   );
 }

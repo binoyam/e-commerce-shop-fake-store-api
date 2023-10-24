@@ -12,7 +12,6 @@ function OrderSummary({ cartItems }) {
   };
 
   return (
-
     <div className="order-summary-wrapper">
       <div className="order-summary-header">Order Summary</div>
       <div className="order-items">
@@ -35,9 +34,11 @@ function OrderSummary({ cartItems }) {
         <p>Order total:</p>
         <p>${(calculateTotal() * TAX_RATE + calculateTotal()).toFixed(2)}</p>
       </div>
-      <Link className="payment" to="/payment">
-        Proceed to payment
-      </Link>
+      {calculateTotal() > 0 && (
+        <Link className="payment" to="/payment">
+          Proceed to payment
+        </Link>
+      )}
     </div>
   );
 }
