@@ -34,11 +34,10 @@ function OrderSummary({ cartItems }) {
         <p>Order total:</p>
         <p>${(calculateTotal() * TAX_RATE + calculateTotal()).toFixed(2)}</p>
       </div>
-      {calculateTotal() > 0 && (
-        <Link className="payment" to="/payment">
-          Proceed to payment
-        </Link>
-      )}
+
+      <Link className="payment" to="/payment">
+        Proceed to payment
+      </Link>
     </div>
   );
 }
