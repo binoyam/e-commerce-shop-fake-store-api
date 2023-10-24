@@ -38,6 +38,9 @@ function OrderSummary({ cartItems }) {
       <Link className="payment" to="/payment">
         Proceed to payment
       </Link>
+      <Link to="/" className="back-to-shop-btn">
+          Back to Shop
+        </Link>
     </div>
   );
 }

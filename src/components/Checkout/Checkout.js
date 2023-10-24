@@ -2,16 +2,18 @@ import "./Checkout.css";
 import DeleteIcon from "../../Assets/remove-item-icon.svg";
 import "../Header-Cart/Cart.css";
 import OrderSummary from "../Checkout-OrderSummary/OrderSummary";
+import { Link } from "react-router-dom";
 
 function Checkout({ cartItems, removeFromCart }) {
   //   console.log(cartItems);
 
   return (
     <div className="checkout-page">
-      <span className="checkout-header">
+      <span className="checkout-header-text">
         Checkout (
         <span className="checkout-amount">{cartItems.length} Items</span>)
       </span>
+
       <span className="chk-out-list-header">Cart Items</span>
       <ul className="chk-out cart-items-list">
         {cartItems.map(({ id, image, title, price, quantity }) => (

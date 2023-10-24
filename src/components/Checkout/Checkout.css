@@ -8,8 +8,13 @@
   background-color: #ffffff;
 }
 /* CHECKOUT HEADER*/
-.checkout-header {
-  text-align: left;
+.checkout-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.checkout-header-text {
+  text-align: right;
   display: block;
   font-weight: 700;
   font-size: 18px;

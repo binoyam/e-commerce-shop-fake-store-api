@@ -45,13 +45,13 @@
 .tax {
   color: #9e0000;
 }
-/* PAYMENT BUTTON */
-.payment {
+/* PAYMENT BUTTON & BACK BUTTON */
+.payment,
+.back-to-shop-btn {
   position: absolute;
-  top: 70%;
+  width: 35%;
   right: -50%;
   transform: translateY(-50%);
-  background-color: rgb(99, 95, 160);
   padding: 15px;
   text-align: center;
   color: white;
@@ -60,9 +60,22 @@
   border-radius: 10px;
   transition: border-radius 0.5s ease;
 }
+.payment {
+  background-color: rgb(99, 95, 160);
+  top: 75%;
+}
+.back-to-shop-btn {
+  top: 30%;
+  background-color: cadetblue;
+}
 .payment:hover {
-  background-color: rgba(255, 255, 255, 0.493);
+  background-color: #333;
   border: 1px solid #ed9121;
-  color: #333;
+  color: #ffffff;
   border-radius: 5px;
+}
+.back-to-shop-btn:hover {
+  border-radius: 5px;
+  background-color: #ed9121;
+  border: 1px solid #9e0000;
 }
