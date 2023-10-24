@@ -6,3 +6,16 @@
   border-bottom-right-radius: 15px;
   background-color: #ffffff;
 }
+.total-payment{
+  margin: 10px auto;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.total-payment p{
+  font-size: 30px;
+}
+.ttl{
+  font-size: 30px;
+}

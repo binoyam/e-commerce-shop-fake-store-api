@@ -23,6 +23,7 @@
 }
 .user-account-details{
     position: absolute;
+    display: none;
     padding: 20px;
     top: 4rem;
     right: -50%;
@@ -37,6 +38,7 @@
     border:5px solid cadetblue;
 }
 .user-account-details.show{
+  display: block;
     top: 7rem;
     right: 50%;
     transform: translateX(50%);
