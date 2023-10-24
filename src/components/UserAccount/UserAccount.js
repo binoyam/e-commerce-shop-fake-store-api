@@ -15,7 +15,7 @@ function UserAccount() {
 
       <div
         className={
-          isUserOpen ? "user-account-details" : "user-account-details show"
+          isUserOpen ? "user-account-details show" : "user-account-details"
         }
       >
         <h1>You are not logged in</h1>
