@@ -29,7 +29,7 @@ function MainContent({ products, addToCart, cartItems, removeFromCart }) {
             <Checkout cartItems={cartItems} removeFromCart={removeFromCart} />
           }
         />
-        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/payment" element={<PaymentPage cartItems={cartItems} />} />
       </Routes>
     </main>
   );
