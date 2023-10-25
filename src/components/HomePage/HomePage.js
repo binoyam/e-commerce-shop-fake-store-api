@@ -1,13 +1,13 @@
 import "./HomePage.css";
 
 function HomePage({ products }) {
-  console.log(products);
+//   console.log(products);
   return (
     <div className="home-page">
       <h1>Welcome to bt-shop</h1>
       <p>Explore our wide range of products and start shopping today</p>
+<h1>Trending products</h1>
       <div className="product-list">
-
       {products.map((product) => (
           <div key={product.id} className="product-card">
             <span>{product.title.slice(0,10)}</span>
