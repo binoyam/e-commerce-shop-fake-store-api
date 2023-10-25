@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./Nav.css";
 import MenuIcon from "../../Assets/icon-menu.svg";
 import CloseMenuIcon from "../../Assets/close-for-menu.svg";
+import SearchIcon from '../../Assets/magnifying-glass-solid.svg'
 
 function Nav({
   setSelectedCategory,
@@ -32,6 +33,7 @@ function Nav({
       )}
       {isHomePage && (
         <form className="search-bar">
+          <img className="search-icon" src={SearchIcon} alt="search-icon" />
           <label htmlFor="search">
             <input
               id="search"
