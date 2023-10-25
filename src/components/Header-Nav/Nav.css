@@ -20,10 +20,27 @@
 .nav-link:hover {
   color: #333;
 }
+/* SEARCH FORM  */
 .search-bar{
-  width: 40%;
+  width: 400px;
   height: 30px;
 }
+/* SEARCH BAR/ INPUT FIELD */
+#search{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #333;
+  border-radius: 5px;
+}
+
+
+
 /* MOBILE SCREEN EEMENTS , MENU AND CLOSE MENU BTNS */
 .menu-btn,
 .close-menu-btn {
