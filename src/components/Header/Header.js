@@ -12,7 +12,10 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
     setIsCartOpen(!isCartOpen);
   }
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+// a search bar instead of nav links in the home page
+// and a link to all products in home page
+// a 'discount sale' section
+// and make the all products list randomized randomized order
   return (
     <header className="header">
       <Link

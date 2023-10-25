@@ -24,7 +24,7 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 20px;
-    animation: slide 10s linear infinite;
+    /* animation: slide 10s linear infinite; */
     /* margin-top: 5rem; */
   }
   h1:nth-of-type(2){
