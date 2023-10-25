@@ -1,6 +1,10 @@
+/* NAV BAR */
 .navigation {
+  width: auto;
   display: flex;
+  align-items: center;
 }
+/* NAV LINKS/MEN,WOMEN,ELECTRONICS... */
 .nav-links {
   display: flex;
   align-items: center;
@@ -9,13 +13,18 @@
 
 .nav-link {
   margin-right: 20px;
-  color: #333;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .nav-link:hover {
-  color: #000000;
+  color: #333;
 }
+.search-bar{
+  width: 40%;
+  height: 30px;
+}
+/* MOBILE SCREEN EEMENTS , MENU AND CLOSE MENU BTNS */
 .menu-btn,
 .close-menu-btn {
   display: none;

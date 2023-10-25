@@ -1,9 +1,7 @@
 .footer {
   width: calc(100% - 40px);
-  margin: 0 auto;
   position: absolute;
   bottom: 0;
-  left: 20px;
   background-color: #f1f1f1;
   padding: 20px;
   border-top-left-radius: 15px;
@@ -38,7 +36,7 @@
   text-decoration: underline;
 }
 @media only screen and (max-width: 700px) {
-  .footer{
+  .footer {
     padding: 10px;
   }
   .footer-content {

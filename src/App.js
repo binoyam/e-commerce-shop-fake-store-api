@@ -5,8 +5,6 @@ import Header from "./components/Header/Header";
 import MainContent from "./components/Main-Content/MainContent";
 import Footer from "./components/Footer/Footer";
 
-
-
 function App() {
   /* ALL PRODUCTS STATE */
   const [products, setProducts] = useState([]);
@@ -70,15 +68,29 @@ function App() {
         console.log("Error fetching products:", error);
       });
   }
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const handleSearch = (e) => {
+    const term = e.target.value;
+    setSearchTerm(term);
 
+    const results = products.filter((product) =>
+      product.title.toLowerCase().includes(term.toLowerCase())
+    );
+    setSearchResults(results);
+  };
+  console.log(searchResults);
   return (
     <div className="App">
       <Header
+        handleSearch={handleSearch}
+        searchTerm={searchTerm}
+        products={products}
         removeFromCart={removeFromCart}
         cartItems={cartItems}
         setSelectedCategory={setSelectedCategory}
       />
- 
+
       <MainContent
         cartItems={cartItems}
         removeFromCart={removeFromCart}

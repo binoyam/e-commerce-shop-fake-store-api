@@ -5,17 +5,24 @@ import { Link } from "react-router-dom";
 import Nav from "../Header-Nav/Nav";
 import Cart from "../Header-Cart/Cart";
 import UserAccount from "../UserAccount/UserAccount";
-function Header({ setSelectedCategory, cartItems, removeFromCart }) {
+function Header({
+  setSelectedCategory,
+  cartItems,
+  removeFromCart,
+  products,
+  searchTerm,
+  handleSearch,
+}) {
   /* CART STATE/ OPEN OR CLOSE CART */
   const [isCartOpen, setIsCartOpen] = useState(false);
   function toggleCartDropDown() {
     setIsCartOpen(!isCartOpen);
   }
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-// a search bar instead of nav links in the home page
-// and a link to all products in home page
-// a 'discount sale' section
-// and make the all products list randomized randomized order
+  // a search bar instead of nav links in the home page
+  // and a link to all products in home page
+  // a 'discount sale' section
+  // and make the all products list randomized randomized order
   return (
     <header className="header">
       <Link
@@ -29,6 +36,9 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
       </Link>
 
       <Nav
+        searchTerm={searchTerm}
+        handleSearch={handleSearch}
+        products={products}
         setSelectedCategory={setSelectedCategory}
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
