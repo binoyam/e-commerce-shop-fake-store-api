@@ -29,35 +29,46 @@ function PaymentPage({ cartItems }) {
         <p>${(calculateTotal() * TAX_RATE + calculateTotal()).toFixed(2)}</p>
       </div>
       <form onSubmit={handleSubmit}>
-        <label>
-          Card Number:
+        <div className="form-group">
+          <label htmlFor="card-number" className="label">
+            Card Number:
+          </label>
           <input
+            id="card-number"
+            className="input"
             type="text"
             value={cardNumber}
             onChange={(e) => setCardNumber(e.target.value)}
           />
-        </label>
-        <label>
-          Expiry Date:
+        </div>
+        <div className="form-group">
+          <label htmlFor="exp-date" className="label">
+            Expiry Date:
+          </label>
           <input
+            id="exp-date"
+            className="input"
             type="text"
             value={expiryDate}
             onChange={(e) => setExpiryDate(e.target.value)}
           />
-        </label>
-        <label>
-          CVV:
+        </div>
+        <div className="form-group">
+          <label htmlFor="cvc" className="label">
+            CVV:
+          </label>
           <input
+            id="cvc"
+            className="input"
             type="text"
             value={cvv}
             onChange={(e) => setCvv(e.target.value)}
           />
-        </label>
-        <button type="submit">Pay Now</button>
+        </div>
+        <button className="pay-btn" type="submit">
+          Pay Now
+        </button>
       </form>
-
-      {/* <img src={PpIcon} alt="paypal" /> */}
-    
     </div>
   );
 }
