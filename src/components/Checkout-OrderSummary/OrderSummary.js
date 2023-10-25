@@ -35,12 +35,14 @@ function OrderSummary({ cartItems }) {
         <p>${(calculateTotal() * TAX_RATE + calculateTotal()).toFixed(2)}</p>
       </div>
 
-      <Link className="payment" to="/payment">
-        Proceed to payment
-      </Link>
-      <Link to="/" className="back-to-shop-btn">
-          Back to Shop
+      {cartItems.length > 0 && (
+        <Link className="payment" to="/payment">
+          Proceed to payment
         </Link>
+      )}
+      <Link to="/" className="back-to-shop-btn">
+        Back to Shop
+      </Link>
     </div>
   );
 }

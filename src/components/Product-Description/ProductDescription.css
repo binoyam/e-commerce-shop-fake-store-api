@@ -36,6 +36,7 @@
 }
 /* PRODCUT IMAGE / DETAILS WRAPPER */
 .product-info {
+  position: relative;
   width: 900px;
   max-width: 100%;
   min-height: 350px;
@@ -89,7 +90,7 @@
   height: 35px;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
 }
 /* PRODUCT AMOUNT SELECTION DIV */
 .quantity-selector {
@@ -170,4 +171,21 @@
   letter-spacing: 4px;
   margin-top: 30%;
   text-align: center;
+}
+/* CHECKOUT BUTTON */
+.prd-desc-checkout-btn{
+  display: block;
+  width: 30%;
+  height: 100%;
+  padding: 5px;
+  background-color: #ed9121;
+  color: white;
+  border-radius: 3px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prd-desc-checkout-btn:hover{
+  background-color: #333;
 }

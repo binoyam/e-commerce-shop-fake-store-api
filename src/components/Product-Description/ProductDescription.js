@@ -59,6 +59,9 @@ function ProductDescription({ products, addToCart }) {
               Add to Cart
               <img src={CartIcon} alt="Cart" />
             </button>
+            <Link to="/checkout" className="prd-desc-checkout-btn">
+              Checkout
+            </Link>
           </div>
         </div>
       </div>

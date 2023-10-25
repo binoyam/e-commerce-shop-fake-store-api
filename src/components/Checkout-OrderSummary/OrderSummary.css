@@ -57,8 +57,8 @@
   color: white;
   font-size: 16px;
   font-weight: 700;
-  border-radius: 10px;
-  transition: border-radius 0.5s ease;
+  border-radius: 5px;
+  transition: all 0.2s ease;
 }
 .payment {
   background-color: rgb(99, 95, 160);
@@ -71,11 +71,8 @@
 .payment:hover {
   background-color: #333;
   border: 1px solid #ed9121;
-  color: #ffffff;
-  border-radius: 5px;
 }
 .back-to-shop-btn:hover {
-  border-radius: 5px;
-  background-color: #ed9121;
-  border: 1px solid #9e0000;
+  border-radius: 10px;
+  background-color: #9e0000;;
 }

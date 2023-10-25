@@ -2,7 +2,6 @@ import "./Checkout.css";
 import DeleteIcon from "../../Assets/remove-item-icon.svg";
 import "../Header-Cart/Cart.css";
 import OrderSummary from "../Checkout-OrderSummary/OrderSummary";
-import { Link } from "react-router-dom";
 
 function Checkout({ cartItems, removeFromCart }) {
   //   console.log(cartItems);
