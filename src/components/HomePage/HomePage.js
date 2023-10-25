@@ -1,7 +1,7 @@
 import "./HomePage.css";
 
 function HomePage({ products }) {
-  console.log(products);
+  // console.log(products);
   function renderStarRating(rating) {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 !== 0;

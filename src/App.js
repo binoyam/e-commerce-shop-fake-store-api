@@ -1,6 +1,7 @@
 import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./components/Header/Header";
 import MainContent from "./components/Main-Content/MainContent";
 import Footer from "./components/Footer/Footer";
@@ -70,7 +71,9 @@ function App() {
   }
   const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
   const handleSearch = (e) => {
+    e.preventDefault();
     const term = e.target.value;
     setSearchTerm(term);
 
@@ -78,8 +81,11 @@ function App() {
       product.title.toLowerCase().includes(term.toLowerCase())
     );
     setSearchResults(results);
+    if (results) {
+      navigate("/search-result");
+    }
   };
-  console.log(searchResults);
+  // console.log(searchResults);
   return (
     <div className="App">
       <Header
@@ -96,6 +102,8 @@ function App() {
         removeFromCart={removeFromCart}
         addToCart={addToCart}
         products={products}
+        searchResults={searchResults}
+        searchTerm={searchTerm}
       />
 
       <Footer />

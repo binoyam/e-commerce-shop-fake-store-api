@@ -1,0 +1,12 @@
+.search-result-page {
+    padding: 50px;
+    width: 100%;
+    height: calc(100vh - 177px);
+    position: relative; /* for back button*/
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

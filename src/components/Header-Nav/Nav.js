@@ -17,6 +17,7 @@ function Nav({
   function closeMenu() {
     setIsMenuOpen(false);
   }
+  /* TO SHOW THE SEARCH BAR ONLY IN HOMEPAGE */
   const location = useLocation();
   const isHomePage = location.pathname === "/home";
   // console.log(searchResults);
@@ -31,6 +32,7 @@ function Nav({
           <img src={CloseMenuIcon} alt="close menu" />
         </button>
       )}
+      
       {isHomePage && (
         <form className="search-bar">
           <img className="search-icon" src={SearchIcon} alt="search-icon" />
@@ -45,6 +47,7 @@ function Nav({
           </label>
         </form>
       )}
+      
       {!isHomePage && (
         <ul className={isMenuOpen ? "nav-links show" : "nav-links hide"}>
           <li>

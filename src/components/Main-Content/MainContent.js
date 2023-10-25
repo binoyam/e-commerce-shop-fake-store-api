@@ -5,8 +5,9 @@ import ProductDescription from "../Product-Description/ProductDescription";
 import Checkout from "../Checkout/Checkout";
 import PaymentPage from "../Payment/PaymentPage";
 import HomePage from "../HomePage/HomePage";
+import SearchResult from "../Pages/SearchResult";
 
-function MainContent({ products, addToCart, cartItems, removeFromCart }) {
+function MainContent({ products, addToCart, cartItems, removeFromCart, searchResults, searchTerm }) {
   return (
     <main className="main-content">
       <Routes>
@@ -14,6 +15,8 @@ function MainContent({ products, addToCart, cartItems, removeFromCart }) {
         <Route path="/home" element={<HomePage products={products} />} />
 
         <Route path="/" element={<Navigate to="/home" />} />
+
+        <Route path="/search-result" element={<SearchResult searchResults={searchResults} searchTerm={searchTerm} />} />
 
         <Route
           path="/products"
