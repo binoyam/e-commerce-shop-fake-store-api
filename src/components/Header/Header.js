@@ -16,7 +16,7 @@ function Header({ setSelectedCategory, cartItems, removeFromCart }) {
   return (
     <header className="header">
       <Link
-        to="/"
+        to="/home"
         className="logo-link"
         onClick={() => setSelectedCategory("")}
       >

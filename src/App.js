@@ -5,6 +5,8 @@ import Header from "./components/Header/Header";
 import MainContent from "./components/Main-Content/MainContent";
 import Footer from "./components/Footer/Footer";
 
+
+
 function App() {
   /* ALL PRODUCTS STATE */
   const [products, setProducts] = useState([]);
@@ -76,7 +78,7 @@ function App() {
         cartItems={cartItems}
         setSelectedCategory={setSelectedCategory}
       />
-
+ 
       <MainContent
         cartItems={cartItems}
         removeFromCart={removeFromCart}

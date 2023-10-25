@@ -1,15 +1,22 @@
 import "./MainContent.css";
 import ProductList from "../Product-List/ProductList";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import ProductDescription from "../Product-Description/ProductDescription";
 import Checkout from "../Checkout/Checkout";
-import PaymentPage from '../Payment/PaymentPage'
+import PaymentPage from "../Payment/PaymentPage";
+import HomePage from "../HomePage/HomePage";
+
 function MainContent({ products, addToCart, cartItems, removeFromCart }) {
   return (
     <main className="main-content">
       <Routes>
+       
+        <Route path="/home" element={<HomePage products={products} />} />
+
+        <Route path="/" element={<Navigate to="/home" />} />
+
         <Route
-          path="/"
+          path="/products"
           element={<ProductList addToCart={addToCart} products={products} />}
         />
         <Route
@@ -29,7 +36,10 @@ function MainContent({ products, addToCart, cartItems, removeFromCart }) {
             <Checkout cartItems={cartItems} removeFromCart={removeFromCart} />
           }
         />
-        <Route path="/payment" element={<PaymentPage cartItems={cartItems} />} />
+        <Route
+          path="/payment"
+          element={<PaymentPage cartItems={cartItems} />}
+        />
       </Routes>
     </main>
   );
