@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./Nav.css";
 import MenuIcon from "../../Assets/icon-menu.svg";
 import CloseMenuIcon from "../../Assets/close-for-menu.svg";
-import SearchIcon from '../../Assets/magnifying-glass-solid.svg'
+import SearchIcon from "../../Assets/magnifying-glass-solid.svg";
 
 function Nav({
   setSelectedCategory,
@@ -19,7 +19,9 @@ function Nav({
   }
   /* TO SHOW THE SEARCH BAR ONLY IN HOMEPAGE */
   const location = useLocation();
-  const isHomePage = location.pathname === "/home";
+  const homePage = location.pathname === "/home";
+  const searchResultPage = location.pathname === "/search-result";
+  const pagesWithSearchBar = homePage || searchResultPage;
   // console.log(searchResults);
   return (
     <nav className="navigation">
@@ -32,8 +34,8 @@ function Nav({
           <img src={CloseMenuIcon} alt="close menu" />
         </button>
       )}
-      
-      {isHomePage && (
+
+      {pagesWithSearchBar && (
         <form className="search-bar">
           <img className="search-icon" src={SearchIcon} alt="search-icon" />
           <label htmlFor="search">
@@ -47,8 +49,8 @@ function Nav({
           </label>
         </form>
       )}
-      
-      {!isHomePage && (
+
+      {!pagesWithSearchBar && (
         <ul className={isMenuOpen ? "nav-links show" : "nav-links hide"}>
           <li>
             <Link
