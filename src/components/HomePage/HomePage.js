@@ -27,7 +27,7 @@ function renderStarRating(rating) {
           <div key={product.id} className="product-card">
             <span>{product.title.slice(0,10)}</span>
             <div>{renderStarRating(product.rating.rate)}</div>
-            <img src={product.image} alt="" />
+            <img className="img" src={product.image} alt="" />
            
           </div>
         ))}
