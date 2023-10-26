@@ -44,7 +44,7 @@ function Nav({
               type="text"
               value={searchTerm}
               onChange={handleSearch}
-              placeholder="Search for a product"
+              placeholder="Search products..."
             />
           </label>
         </form>
