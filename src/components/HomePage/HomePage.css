@@ -14,14 +14,32 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-
   padding: 40px;
   width: 100%;
-  color: #ffffff;
+  /* height: 130px; */
+  /* color: #00ffc8; */
 }
 .home-header{
   font-size: 40px;
+  font-weight: 400;
   letter-spacing: 5px;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  animation: blinker 2s linear infinite;
+}
+@keyframes blinker {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1;color: #00ff40; }
+}
+.home-sub-header{
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  animation: blinker 3s linear infinite;
+
+
 }
 .product-list {
   /* width: 100%; */

@@ -20,8 +20,8 @@ function HomePage({ products }) {
   return (
     <div className="home-page">
       <div className="home-page-header">
-      <h1 className="home-header">Welcome to bt-shop</h1>
-      <p className="home-sub-header">Explore our wide range of products and start shopping today</p>
+      <h1 className="home-header">Welcome to bt-shop!</h1>
+      <p className="home-sub-header">Explore our wide range of products and start shopping today!</p>
       </div>
       <h1>Trending products</h1>
       <div className="product-list">
