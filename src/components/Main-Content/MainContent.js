@@ -7,16 +7,31 @@ import PaymentPage from "../Payment/PaymentPage";
 import HomePage from "../HomePage/HomePage";
 import SearchResult from "../Pages/SearchResult";
 
-function MainContent({ products, addToCart, cartItems, removeFromCart, searchResults, searchTerm }) {
+function MainContent({
+  products,
+  addToCart,
+  cartItems,
+  removeFromCart,
+  searchResults,
+  searchTerm,
+}) {
   return (
     <main className="main-content">
       <Routes>
-       
         <Route path="/home" element={<HomePage products={products} />} />
 
         <Route path="/" element={<Navigate to="/home" />} />
 
-        <Route path="/search-result" element={<SearchResult searchResults={searchResults} searchTerm={searchTerm} />} />
+        <Route
+          path="/search-result"
+          element={
+            <SearchResult
+              searchResults={searchResults}
+              searchTerm={searchTerm}
+              addToCart={addToCart}
+            />
+          }
+        />
 
         <Route
           path="/products"
