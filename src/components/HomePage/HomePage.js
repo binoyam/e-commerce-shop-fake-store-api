@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 
 function HomePage({ products }) {
@@ -20,17 +21,26 @@ function HomePage({ products }) {
   return (
     <div className="home-page">
       <div className="home-page-header">
-      <h1 className="home-header">Welcome to bt-shop!</h1>
-      <p className="home-sub-header">Explore our wide range of products and start shopping today!</p>
+        <h1 className="home-header">Welcome to bt-shop!</h1>
+        <p className="home-sub-header">
+          Explore our wide range of products and start shopping today!
+        </p>
       </div>
-      <h1>Trending products</h1>
+      <h2 className="trending-txt">Trending products</h2>
       <div className="product-list">
         {products.map((product) => (
-          <div key={product.id} className="product-card">
-            <span>{product.title.slice(0, 10)}</span>
-            <div>{renderStarRating(product.rating.rate)}</div>
+          <Link
+            key={product.id}
+            className="product-card"
+            to={`/product/${product.id}`}
+          >
+            <span className="trending-title">{product.title.slice(0, 12)}</span>
+            <div className="rating">
+              {renderStarRating(product.rating.rate)}
+            </div>
             <img className="img" src={product.image} alt="" />
-          </div>
+            <span className="trending-price">${product.price}</span>
+          </Link>
         ))}
       </div>
     </div>
