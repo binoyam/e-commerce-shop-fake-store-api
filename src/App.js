@@ -70,7 +70,7 @@ function App() {
       });
   }
   const [searchResults, setSearchResults] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const handleSearch = (e) => {
     e.preventDefault();
