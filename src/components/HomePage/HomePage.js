@@ -1,7 +1,25 @@
 import { Link } from "react-router-dom";
 import "./HomePage.css";
+import { useState, useEffect, useRef } from "react";
 
 function HomePage({ products }) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef(null);
+  /* SORT PRODUCTS BY RATING/ FROM HIGHEST RATED TO LOWEST RATED*/
+  const sortedProducts = products.sort((a, b) => b.rating.rate - a.rating.rate);
+  /* TOP 5 HIGHEST RATED PRODUCTS */
+  const topProducts = sortedProducts.slice(0, 5);
+  // console.log(topProducts);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % topProducts.length);
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [topProducts.length]);
+
   // console.log(products);
   // add a price filtering function in this page
   // write an about section
@@ -9,11 +27,7 @@ function HomePage({ products }) {
   // contact us page
   //the star rating function needs to be more clear
   //
-  /* SORT PRODUCTS BY RATING/ FROM HIGHEST RATED TO LOWEST RATED*/
-  const sortedProducts = products.sort((a, b) => b.rating.rate - a.rating.rate);
-  /* TOP 5 HIGHEST RATED PRODUCTS */
-  const topProducts = sortedProducts.slice(0, 5);
-  console.log(topProducts);
+
   function renderStarRating(rating) {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 !== 0;
@@ -37,22 +51,27 @@ function HomePage({ products }) {
           Explore our wide range of products and start shopping today!
         </p>
       </div>
-      <h2 className="trending-txt">Top Rated Products</h2>
-      <div className="product-list">
-        {topProducts.map((product) => (
-          <Link
-            key={product.id}
-            className="product-card"
-            to={`/product/${product.id}`}
-          >
-            <span className="trending-title">{product.title.slice(0, 12)}</span>
-            <div className="rating">
-              {renderStarRating(product.rating.rate)}
-            </div>
-            <img className="img" src={product.image} alt="" />
-            <span className="trending-price">${product.price}</span>
-          </Link>
-        ))}
+      <div className="slider-container">
+        <h2 className="trending-txt">Top Rated Products</h2>
+        <div className="slider" ref={sliderRef}>
+          {topProducts.map((product, index) => (
+            <Link
+              key={product.id}
+              // className="product-card"
+              className={`slide ${index === currentSlide ? "active" : ""}`}
+              to={`/product/${product.id}`}
+            >
+              <span className="trending-title">
+                {product.title.slice(0, 12)}
+              </span>
+              <div className="rating">
+                {renderStarRating(product.rating.rate)}
+              </div>
+              <img className="img" src={product.image} alt="" />
+              <span className="trending-price">${product.price}</span>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
