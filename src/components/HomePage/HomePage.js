@@ -3,6 +3,17 @@ import "./HomePage.css";
 
 function HomePage({ products }) {
   // console.log(products);
+  // add a price filtering function in this page
+  // write an about section
+  // privacy policy page
+  // contact us page
+  //the star rating function needs to be more clear
+  //
+  /* SORT PRODUCTS BY RATING/ FROM HIGHEST RATED TO LOWEST RATED*/
+  const sortedProducts = products.sort((a, b) => b.rating.rate - a.rating.rate);
+  /* TOP 5 HIGHEST RATED PRODUCTS */
+  const topProducts = sortedProducts.slice(0, 5);
+  console.log(topProducts);
   function renderStarRating(rating) {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 !== 0;
@@ -26,9 +37,9 @@ function HomePage({ products }) {
           Explore our wide range of products and start shopping today!
         </p>
       </div>
-      <h2 className="trending-txt">Trending products</h2>
+      <h2 className="trending-txt">Top Rated Products</h2>
       <div className="product-list">
-        {products.map((product) => (
+        {topProducts.map((product) => (
           <Link
             key={product.id}
             className="product-card"
