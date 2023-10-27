@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
 import "./HomePage.css";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 
 function HomePage({ products }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
   /* SORT PRODUCTS BY RATING/ FROM HIGHEST RATED TO LOWEST RATED*/
-  const sortedProducts = products.sort((a, b) => b.rating.rate - a.rating.rate);
+  const sortedProducts = useMemo(() => {
+    return products.sort((a, b) => b.rating.rate - a.rating.rate);
+  }, [products]);
   /* TOP 5 HIGHEST RATED PRODUCTS */
-  const topProducts = sortedProducts.slice(0, 5);
+  const topProducts = useMemo(() => {
+    return sortedProducts.slice(0, 5);
+  }, [sortedProducts]);
   // console.log(topProducts);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -28,21 +32,21 @@ function HomePage({ products }) {
   //the star rating function needs to be more clear
   //
 
-  function renderStarRating(rating) {
-    const fullStars = Math.floor(rating);
-    const halfStar = rating % 1 !== 0;
+  // function renderStarRating(rating) {
+  //   const fullStars = Math.floor(rating);
+  //   const halfStar = rating % 1 !== 0;
 
-    const stars = [];
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(<span key={i}>&#9733;</span>); // Full star
-    }
+  //   const stars = [];
+  //   for (let i = 0; i < fullStars; i++) {
+  //     stars.push(<span key={i}>&#9733;</span>); // Full star
+  //   }
 
-    if (halfStar) {
-      stars.push(<span key={fullStars}>&#9733;&#189;</span>); // Half star
-    }
+  //   if (halfStar) {
+  //     stars.push(<span key={fullStars}>&#9733;&#189;</span>); // Half star
+  //   }
 
-    return stars;
-  }
+  //   return stars;
+  // }
   return (
     <div className="home-page">
       <div className="home-page-header">
@@ -57,16 +61,17 @@ function HomePage({ products }) {
           {topProducts.map((product, index) => (
             <Link
               key={product.id}
-              // className="product-card"
-              className={`slide ${index === currentSlide ? "active" : ""}`}
+              className={
+                index >= currentSlide && index < currentSlide + 5
+                  ? "slide active"
+                  : "slide"
+              }
               to={`/product/${product.id}`}
             >
               <span className="trending-title">
                 {product.title.slice(0, 12)}
               </span>
-              <div className="rating">
-                {renderStarRating(product.rating.rate)}
-              </div>
+              <div className="rating">{product.rating.rate}</div>
               <img className="img" src={product.image} alt="" />
               <span className="trending-price">${product.price}</span>
             </Link>

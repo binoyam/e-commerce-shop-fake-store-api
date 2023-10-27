@@ -73,21 +73,23 @@
   margin: 0 auto;
 }
 .slider {
+  width:100%;
   display: flex;
   overflow: hidden;
+  border: 1px sold black;
 }
 
 .slide {
-  flex: 0 0 100%;
-  transition: transform 1s ease-in-out;
+  width: 400px;
+  transition: transform 0.3s ease-in-out;
   transform: translateX(0);
   opacity: 0;
-  visibility: hidden;
+  display: none;
 }
 
 .slide.active {
   opacity: 1;
-  visibility: visible;
+  display: block;
   transform: translateX(-100%);
 }
 
