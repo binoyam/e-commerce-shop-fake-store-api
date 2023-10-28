@@ -44,20 +44,23 @@ function HomePage({ products }) {
         <h2 className="trending-txt">Top Rated Products</h2>
         <div className="slide-wrapper">
           {topProducts.map((product, index) => (
-            <Link
+            <div
               key={product.id}
               className={`slider-item ${
                 index === currentSlide ? "active" : ""
               }`}
-              to={`/product/${product.id}`}
             >
-              <span className="trending-title">
-                {product.title.slice(0, 12)}
-              </span>
-              <div className="rating">{product.rating.rate}</div>
-              <img className="img" src={product.image} alt="" />
+              <h3 className="trending-title">{product.title.slice(0, 12)}</h3>
+              <div className="rating">
+                Customer rating: {product.rating.rate}
+              </div>
+
+              <img className="img" src={product.image} alt="prodcut" />
               <span className="trending-price">${product.price}</span>
-            </Link>
+              <Link className="link" to={`/product/${product.id}`}>
+                View Product
+              </Link>
+            </div>
           ))}
         </div>
       </div>

@@ -66,69 +66,79 @@
 }
 /* TOPPROUCTS SLIDER CONTAINER */
 .slider-container {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  width: 300px;
+  height: 350px;
+  margin: 20px;
 }
 /* SLIDER HEADER */
 .trending-txt {
-  text-align: left;
+  /* text-align: left; */
   font-size: 20px;
   font-weight: 500;
-  padding: 20px;
+  margin-bottom: 10px;
   letter-spacing: 2px;
 }
 .slide-wrapper {
-  width:100%;
-  position: relative;
-  height: 300px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
   overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: relative;
 }
-
 .slider-item {
   position: absolute;
+  padding: 20px;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
 }
-
 .slider-item.active {
   opacity: 1;
 }
-
-
-.img-card {
-  width: 20%;
-  height: 100px;
-  padding: 10px;
+.trending-title{
+  display: block;
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
 }
-.img {
+.rating{
+  color: #333;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.img{
   width: 100%;
-  height: 100px;
+  height: 200px;
+  padding: 20px;
   object-fit: contain;
+}
+.link{
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: black;
+  outline: #333;
+  padding: 10px;
+  border-radius: 1px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s
 }
 .trending-price{
   display: block;
   background-color: red;
   color: #fff;
-  padding: 5px;
+  padding: 10px;
   font-size: 16px;
   font-weight: 700;
-  width: 50%;
-  text-align: center;
+  width: 40%;
   margin: 0 auto;
   border-radius: 3px;
 }
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(
-      calc(-20% * 20)
-    );
-  }
-}
+
