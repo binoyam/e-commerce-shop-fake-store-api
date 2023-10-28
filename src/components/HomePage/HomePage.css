@@ -2,7 +2,7 @@
   width: 100%;
   min-height: calc(100vh - 57px - 115px);
   padding: 0;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   border-top-left-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #ffffff;
@@ -17,7 +17,6 @@
   background-size: cover;
   padding: 40px;
   width: 100%;
-  margin-bottom: 30px;
 }
 /* HEADER ANIMATION */
 @keyframes blinker {
@@ -68,7 +67,7 @@
 .slider-container {
   width: 300px;
   height: 350px;
-  margin: 20px;
+  margin: 10px 20px;
 }
 /* SLIDER HEADER */
 .trending-txt {
@@ -97,7 +96,7 @@
   height: 100%;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .slider-item.active {
   opacity: 1;
@@ -122,22 +121,25 @@
 .link {
   position: absolute; /* relative to product box */
   right:4px ;
-  bottom: 4px;
+  top: 4px;
   background-color: #ffffff9a;
   border: 1px solid #ddd;
   color: black;
   outline: #333;
-  padding: 5px;
-  border-radius: 1px;
-  font-size: 12px;
-  font-weight: 500;
+  padding: 10px;
+  line-height: 1;
+  font-size: 11px;
+  font-weight: 600;
   transition: all 0.2s ease;
   z-index: 9999;
+  border-radius: 5px;
 }
 .link:hover {
   background-color: #ed9121;
-  color: white;
-  border: none;
+  color: #ffffff;
+  border: 1px solid black;
+  border-radius: 0px;
+
 }
 .trending-price {
   display: block;
