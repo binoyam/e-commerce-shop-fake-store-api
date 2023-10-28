@@ -1,19 +1,27 @@
 import { Link } from "react-router-dom";
 import "./HomePage.css";
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect } from "react";
+
+// add a price filtering function in this page
+// write an about section
+// privacy policy page
+// contact us page
+//the star rating function needs to be more clear
 
 function HomePage({ products }) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const sliderRef = useRef(null);
+  const [topProducts, setTopProducts] = useState([]);
   /* SORT PRODUCTS BY RATING/ FROM HIGHEST RATED TO LOWEST RATED*/
-  const sortedProducts = useMemo(() => {
-    return products.sort((a, b) => b.rating.rate - a.rating.rate);
+  useEffect(() => {
+    const sortedProducts = products.sort(
+      (a, b) => b.rating.rate - a.rating.rate
+    );
+    /* TOP 5 HIGHEST RATED PRODUCTS */
+    const top5Products = sortedProducts.slice(0, 5);
+    setTopProducts(top5Products);
   }, [products]);
-  /* TOP 5 HIGHEST RATED PRODUCTS */
-  const topProducts = useMemo(() => {
-    return sortedProducts.slice(0, 5);
-  }, [sortedProducts]);
-  // console.log(topProducts);
+
+  /* SLIDE TO THE NEXT PRODUCT */
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % topProducts.length);
@@ -24,29 +32,6 @@ function HomePage({ products }) {
     };
   }, [topProducts.length]);
 
-  // console.log(products);
-  // add a price filtering function in this page
-  // write an about section
-  // privacy policy page
-  // contact us page
-  //the star rating function needs to be more clear
-  //
-
-  // function renderStarRating(rating) {
-  //   const fullStars = Math.floor(rating);
-  //   const halfStar = rating % 1 !== 0;
-
-  //   const stars = [];
-  //   for (let i = 0; i < fullStars; i++) {
-  //     stars.push(<span key={i}>&#9733;</span>); // Full star
-  //   }
-
-  //   if (halfStar) {
-  //     stars.push(<span key={fullStars}>&#9733;&#189;</span>); // Half star
-  //   }
-
-  //   return stars;
-  // }
   return (
     <div className="home-page">
       <div className="home-page-header">
@@ -57,15 +42,13 @@ function HomePage({ products }) {
       </div>
       <div className="slider-container">
         <h2 className="trending-txt">Top Rated Products</h2>
-        <div className="slider" ref={sliderRef}>
+        <div className="slide-wrapper">
           {topProducts.map((product, index) => (
             <Link
               key={product.id}
-              className={
-                index >= currentSlide && index < currentSlide + 5
-                  ? "slide active"
-                  : "slide"
-              }
+              className={`slider-item ${
+                index === currentSlide ? "active" : ""
+              }`}
               to={`/product/${product.id}`}
             >
               <span className="trending-title">
