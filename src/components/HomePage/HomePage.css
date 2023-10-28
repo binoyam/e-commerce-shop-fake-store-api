@@ -77,6 +77,7 @@
   margin-bottom: 10px;
   letter-spacing: 2px;
 }
+/* SLIDE BOX */
 .slide-wrapper {
   width: 100%;
   height: 100%;
@@ -87,6 +88,7 @@
   border-radius: 5px;
   position: relative;
 }
+/* SLIDE ITEM */
 .slider-item {
   position: absolute;
   padding: 20px;
@@ -101,23 +103,27 @@
 .slider-item.active {
   opacity: 1;
 }
+/* PRODUCT NAME */
 .trending-title {
   display: block;
   font-size: 20px;
   color: #333;
   font-weight: 600;
 }
+/* PRODUCT RATING */
 .rating {
   color: #333;
   font-weight: 600;
   margin: 10px 0;
 }
+/* PRODUCT IMAGE */
 .img {
   width: 100%;
   height: 200px;
   padding: 20px;
   object-fit: contain;
 }
+/* PRODCUT DETAIL LINK */
 .link {
   position: absolute; /* relative to product box */
   right:4px ;
@@ -141,6 +147,7 @@
   border-radius: 0px;
 
 }
+/* PRODUCT PRICE */
 .trending-price {
   display: block;
   background-color: red;
