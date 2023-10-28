@@ -58,7 +58,8 @@ function HomePage({ products }) {
               <img className="img" src={product.image} alt="prodcut" />
               <span className="trending-price">${product.price}</span>
               <Link className="link" to={`/product/${product.id}`}>
-                View Product
+                View <br />
+                Product
               </Link>
             </div>
           ))}
