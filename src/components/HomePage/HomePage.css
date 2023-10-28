@@ -66,7 +66,7 @@
 /* TOPPROUCTS SLIDER CONTAINER */
 .slider-container {
   width: 300px;
-  height: 350px;
+  height: 400px;
   margin: 10px 20px;
 }
 /* SLIDER HEADER */
@@ -80,87 +80,32 @@
 /* SLIDE BOX */
 .slide-wrapper {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 40px);
   margin: 0 auto;
   overflow: hidden;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
+  cursor: pointer;
   position: relative;
 }
-/* SLIDE ITEM */
-.slider-item {
-  position: absolute;
-  padding: 20px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  /* cursor: pointer; */
-}
-.slider-item.active {
+/* SHOW "VIEW DETAIS LINK ON SILDE-BOX HOVER */
+.slide-wrapper:hover .link {
   opacity: 1;
 }
-/* PRODUCT NAME */
-.trending-title {
-  display: block;
-  font-size: 20px;
-  color: #333;
-  font-weight: 600;
-}
-/* PRODUCT RATING */
-.rating {
-  color: #333;
-  font-weight: 600;
-  margin: 10px 0;
-}
-/* PRODUCT IMAGE */
-.img {
-  width: 100%;
-  height: 200px;
-  padding: 20px;
-  object-fit: contain;
-}
-/* PRODCUT DETAIL LINK */
-.link {
-  position: absolute; /* relative to product box */
-  right:4px ;
-  top: 4px;
-  background-color: #ffffff9a;
-  border: 1px solid #ddd;
-  color: black;
-  outline: #333;
-  padding: 10px;
-  line-height: 1;
-  font-size: 11px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  z-index: 9999;
-  border-radius: 5px;
-}
-.link:hover {
-  background-color: #ed9121;
-  color: #ffffff;
-  border: 1px solid black;
-  border-radius: 0px;
 
-}
-/* PRODUCT PRICE */
-.trending-price {
-  display: block;
-  background-color: red;
-  color: #fff;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: 700;
-  width: 40%;
-  margin: 0 auto;
-  border-radius: 3px;
-}
-@media only screen and (max-width:700px){
-  .home-page-header{
-    background-image: url(../../Assets/bg-header-mobile.svg)
+@media only screen and (max-width: 700px) {
+  .home-page-header {
+    background-image: url(../../Assets/bg-header-mobile.svg);
   }
+
+.home-header {
+  font-size: 20px;
+}
+/* BANNER TEXT */
+.home-sub-header {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
 }

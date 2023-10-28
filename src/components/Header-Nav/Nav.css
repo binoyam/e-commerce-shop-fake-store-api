@@ -23,7 +23,8 @@
 }
 /* SEARCH FORM  */
 .search-bar{
-  width: 400px;
+  /* min-width: 100px; */
+ width: 400px;
   height: 30px;
   position: relative;
 }
