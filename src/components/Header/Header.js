@@ -14,16 +14,13 @@ function Header({
   searchTerm,
   handleSearch,
 }) {
-  /* CART STATE/ OPEN OR CLOSED CART */
+  /* CART/MENU_ OPEN/CLOSED STATE */
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   function toggleCartDropDown() {
     setIsCartOpen(!isCartOpen);
   }
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // a search bar instead of nav links in the home page
-  // and a link to all products in home page
-  // a 'discount sale' section
-  // and make the all products list randomized randomized order
+  
   return (
     <header className="header">
       <Link

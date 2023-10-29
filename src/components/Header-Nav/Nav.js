@@ -1,28 +1,29 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 import MenuIcon from "../../Assets/Images/icon-menu.svg";
 import CloseMenuIcon from "../../Assets/Images/close-for-menu.svg";
-import SearchProducts from "../SearchProducts/SearchProducts";
 
 function Nav({
   setSelectedCategory,
   isMenuOpen,
   setIsMenuOpen,
-  searchTerm,
-  handleSearch,
 }) {
+  /* OPEN MENU BUTTON FUNCTON */
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
   }
+
+  /* CLOSE MENU BUTTON FUNCTON */
   function closeMenu() {
     setIsMenuOpen(false);
   }
-  /* TO SHOW THE SEARCH BAR ONLY IN HOMEPAGE */
-  const location = useLocation();
-  const homePage = location.pathname === "/home";
-  const searchResultPage = location.pathname === "/search-result";
-  const pagesWithSearchBar = homePage || searchResultPage;
-  // console.log(searchResults);
+
+  /* CLOSE MENU AFTER CATEGORY SELECTION */
+  const handleClick = (category) => {
+    setSelectedCategory(category);
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="navigation">
       {!isMenuOpen ? (
@@ -35,48 +36,44 @@ function Nav({
         </button>
       )}
 
-    
-
-      
-        <ul className={isMenuOpen ? "nav-links show" : "nav-links hide"}>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("men%27s%20clothing")}
-              to="/category/mens-clothing"
-              className="nav-link"
-            >
-              Men
-            </Link>
-          </li>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("women%27s%20clothing")}
-              to="/category/womens-clothing"
-              className="nav-link"
-            >
-              Women
-            </Link>
-          </li>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("electronics")}
-              to="/category/electronics"
-              className="nav-link"
-            >
-              Electronics
-            </Link>
-          </li>
-          <li>
-            <Link
-              onClick={() => setSelectedCategory("jewelery")}
-              to="/category/jewelery"
-              className="nav-link"
-            >
-              Jewelery
-            </Link>
-          </li>
-        </ul>
-     
+      <ul className={isMenuOpen ? "nav-links show" : "nav-links hide"}>
+        <li>
+          <Link
+            onClick={() => handleClick("men%27s%20clothing")}
+            to="/category/mens-clothing"
+            className="nav-link"
+          >
+            Men
+          </Link>
+        </li>
+        <li>
+          <Link
+            onClick={() => handleClick("women%27s%20clothing")}
+            to="/category/womens-clothing"
+            className="nav-link"
+          >
+            Women
+          </Link>
+        </li>
+        <li>
+          <Link
+            onClick={() => handleClick("electronics")}
+            to="/category/electronics"
+            className="nav-link"
+          >
+            Electronics
+          </Link>
+        </li>
+        <li>
+          <Link
+            onClick={() => handleClick("jewelery")}
+            to="/category/jewelery"
+            className="nav-link"
+          >
+            Jewelery
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }
