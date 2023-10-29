@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./Nav.css";
 import MenuIcon from "../../Assets/icon-menu.svg";
 import CloseMenuIcon from "../../Assets/close-for-menu.svg";
-import SearchIcon from "../../Assets/magnifying-glass-solid.svg";
+import SearchProducts from "../SearchProducts/SearchProducts";
 
 function Nav({
   setSelectedCategory,
@@ -36,18 +36,7 @@ function Nav({
       )}
 
       {pagesWithSearchBar && (
-        <form className="search-bar">
-          <img className="search-icon" src={SearchIcon} alt="search-icon" />
-          <label htmlFor="search">
-            <input
-              id="search"
-              type="text"
-              value={searchTerm}
-              onChange={handleSearch}
-              placeholder="Search products..."
-            />
-          </label>
-        </form>
+        <SearchProducts className="search-bar" searchTerm={searchTerm} handleSearch={handleSearch} />
       )}
 
       {!pagesWithSearchBar && (

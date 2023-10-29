@@ -53,8 +53,8 @@ function HomePage({ products }) {
           ))}
         </div>
       </section>
-      <section>
-        
+      <section id="about">
+      
       </section>
     </div>
   );

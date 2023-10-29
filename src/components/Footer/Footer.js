@@ -7,13 +7,13 @@ function Footer() {
         <p>&copy; {new Date().getFullYear()} bt-shop </p>
         <ul className="footer-links">
           <li>
-            <a href="#">About Us</a>
+            <a href="#about-us">About Us</a>
           </li>
           <li>
-            <a href="#">Contact Us</a>
+            <a href="#contact0us">Contact Us</a>
           </li>
           <li>
-            <a href="#">Privacy Policy</a>
+            <a href="#privacy-policy">Privacy Policy</a>
           </li>
         </ul>
       </div>

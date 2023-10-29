@@ -1,0 +1,30 @@
+/* SEARCH FORM  */
+.search-bar {
+  /* min-width: 100px; */
+  width: 400px;
+  height: 30px;
+  position: relative;
+}
+/* SEARCH BAR/ INPUT FIELD */
+#search {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ed9121;
+  outline: none;
+  background-color: rgb(245, 248, 248);
+  padding: 0px 10px;
+  padding-left: 35px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #333;
+  border-radius: 5px;
+}
+/* SEARCH ICON */
+.search-icon {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+}
