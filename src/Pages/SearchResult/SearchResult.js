@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import ProductItem from "../../components/Product-Item/ProductItem";
 import "./SearchResult.css";
+
+/* SEARCH RESULT PAGE */
 function SearchResult({ searchResults, searchTerm, addToCart }) {
-  // console.log(searchResults);
+  console.log(searchResults);
   const handleAddToCart = (product) => {
     addToCart(product, 1);
   };

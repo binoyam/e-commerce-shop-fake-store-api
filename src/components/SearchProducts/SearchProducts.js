@@ -1,8 +1,15 @@
+import { useEffect, useRef } from "react";
 import SearchIcon from "../../Assets/Images/magnifying-glass-solid.svg";
 import './SearchProducts.css'
-function SearchProducts({searchTerm, handleSearch, className}) {
+function SearchProducts({searchTerm, handleSearch, className }) {
+
+  const inputRef = useRef(null)
+  useEffect(() => {
+    inputRef.current.focus()
+  }, [])
+
   return (
-    <form className={className}>
+    <form ref={inputRef} className={className}>
           <img className="search-icon" src={SearchIcon} alt="search-icon" />
           <label htmlFor="search">
             <input
@@ -11,6 +18,7 @@ function SearchProducts({searchTerm, handleSearch, className}) {
               value={searchTerm}
               onChange={handleSearch}
               placeholder="Search products..."
+              
             />
           </label>
         </form>

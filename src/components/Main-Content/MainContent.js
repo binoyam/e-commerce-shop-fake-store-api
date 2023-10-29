@@ -7,7 +7,6 @@ import SearchResult from "../../Pages/SearchResult/SearchResult";
 import "./MainContent.css";
 import { Navigate, Route, Routes } from "react-router-dom";
 
-
 function MainContent({
   products,
   addToCart,
@@ -15,11 +14,11 @@ function MainContent({
   removeFromCart,
   searchResults,
   searchTerm,
+  handleSearch
 }) {
   return (
     <main className="main-content">
       <Routes>
-
         {/* Navigate to home */}
         <Route path="/" element={<Navigate to="/home" />} />
 
@@ -41,7 +40,15 @@ function MainContent({
         {/* ALL PRODUCTS LIST PAGE */}
         <Route
           path="/products"
-          element={<ProductList addToCart={addToCart} products={products} />}
+          element={
+            <ProductList
+              handleSearch={handleSearch}
+              searchResults={searchResults}
+              searchTerm={searchTerm}
+              addToCart={addToCart}
+              products={products}
+            />
+          }
         />
 
         {/* SELECTED CATEGORY PAGE */}
@@ -71,7 +78,6 @@ function MainContent({
           path="/payment"
           element={<PaymentPage cartItems={cartItems} />}
         />
-
       </Routes>
     </main>
   );
