@@ -1,7 +1,7 @@
 import "./ProductList.css";
-import ProductItem from "../Product-Item/ProductItem";
+import ProductItem from "../../components/Product-Item/ProductItem";
 import { useEffect, useState } from "react";
-import SearchProducts from "../SearchProducts/SearchProducts";
+import SearchProducts from "../../components/SearchProducts/SearchProducts";
 
 function ProductList({ products, addToCart }) {
   const [shuffledProducts, setShuffledProducts] = useState([]);

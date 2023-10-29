@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ProductItem from "../Product-Item/ProductItem";
+import ProductItem from "../../components/Product-Item/ProductItem";
 import "./SearchResult.css";
 function SearchResult({ searchResults, searchTerm, addToCart }) {
   // console.log(searchResults);
