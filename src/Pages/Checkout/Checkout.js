@@ -1,6 +1,6 @@
 import "./Checkout.css";
-import DeleteIcon from "../../Assets/remove-item-icon.svg";
-import "../Header-Cart/Cart.css";
+import DeleteIcon from "../../Assets/Images/remove-item-icon.svg";
+// import "../Header-Cart/Cart.css";
 import OrderSummary from "../../components/Checkout-OrderSummary/OrderSummary";
 
 function Checkout({ cartItems, removeFromCart }) {

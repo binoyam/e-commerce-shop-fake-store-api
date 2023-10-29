@@ -1,5 +1,5 @@
 import "./UserAccount.css";
-import UserIcon from "../../Assets/avatar.svg";
+import UserIcon from "../../Assets/Images/avatar.svg";
 import { useState } from "react";
 
 function UserAccount() {

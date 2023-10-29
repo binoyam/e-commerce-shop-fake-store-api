@@ -37,25 +37,25 @@ function ProductList({ products, addToCart }) {
     }
   };
 
-  const filterProductsByPrice = () => {
-    let filteredProducts = [];
+  // const filterProductsByPrice = () => {
+  //   let filteredProducts = [];
 
-    if (selectedRanges.includes('low')) {
-      filteredProducts = filteredProducts.concat(products.filter((product) => product.price < 50));
-    }
-    if (selectedRanges.includes('medium')) {
-      filteredProducts = filteredProducts.concat(
-        products.filter((product) => product.price >= 50 && product.price < 100)
-      );
-    }
-    if (selectedRanges.includes('high')) {
-      filteredProducts = filteredProducts.concat(products.filter((product) => product.price >= 100));
-    }
+  //   if (selectedRanges.includes('low')) {
+  //     filteredProducts = filteredProducts.concat(products.filter((product) => product.price < 50));
+  //   }
+  //   if (selectedRanges.includes('medium')) {
+  //     filteredProducts = filteredProducts.concat(
+  //       products.filter((product) => product.price >= 50 && product.price < 100)
+  //     );
+  //   }
+  //   if (selectedRanges.includes('high')) {
+  //     filteredProducts = filteredProducts.concat(products.filter((product) => product.price >= 100));
+  //   }
 
-    return filteredProducts;
-  };
+  //   return filteredProducts;
+  // };
 
-  const filteredProducts = filterProductsByPrice();
+  // const filteredProducts = filterProductsByPrice();
 
   return (
     <>

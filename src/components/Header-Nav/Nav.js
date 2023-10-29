@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Nav.css";
-import MenuIcon from "../../Assets/icon-menu.svg";
-import CloseMenuIcon from "../../Assets/close-for-menu.svg";
+import MenuIcon from "../../Assets/Images/icon-menu.svg";
+import CloseMenuIcon from "../../Assets/Images/close-for-menu.svg";
 import SearchProducts from "../SearchProducts/SearchProducts";
 
 function Nav({

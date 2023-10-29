@@ -1,5 +1,5 @@
 import "./Header.css";
-import CartIcon from "../../Assets/icon-cart.svg";
+import CartIcon from "../../Assets/Images/icon-cart.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Nav from "../Header-Nav/Nav";

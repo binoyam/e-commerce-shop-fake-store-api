@@ -1,4 +1,4 @@
-import SearchIcon from "../../Assets/magnifying-glass-solid.svg";
+import SearchIcon from "../../Assets/Images/magnifying-glass-solid.svg";
 import './SearchProducts.css'
 function SearchProducts({searchTerm, handleSearch, className}) {
   return (

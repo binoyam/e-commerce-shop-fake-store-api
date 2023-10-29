@@ -1,5 +1,5 @@
 import "./Cart.css";
-import RemoveIcon from "../../Assets/icon-remove.svg";
+import RemoveIcon from "../../Assets/Images/icon-remove.svg";
 import { Link } from "react-router-dom";
 
 function Cart({ cartItems, isCartOpen, removeFromCart, closeCart }) {

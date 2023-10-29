@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./ProductItem.css";
-import CartIcon from "../../Assets/icon-cart-btn.svg";
+import CartIcon from "../../Assets/Images/icon-cart-btn.svg";
 
 function ProductItem({ product, addToCart }) {
  

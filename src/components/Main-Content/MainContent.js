@@ -1,11 +1,12 @@
+import Checkout from "../../Pages/Checkout/Checkout";
+import HomePage from "../../Pages/HomePage/HomePage";
+import PaymentPage from "../../Pages/PaymentPage/PaymentPage";
+import ProductDescription from "../../Pages/Product-Description/ProductDescription";
+import ProductList from "../../Pages/Product-List/ProductList";
+import SearchResult from "../../Pages/SearchResult/SearchResult";
 import "./MainContent.css";
-import ProductList from "../Product-List/ProductList";
 import { Navigate, Route, Routes } from "react-router-dom";
-import ProductDescription from "../Product-Description/ProductDescription";
-import Checkout from "../Checkout/Checkout";
-import PaymentPage from "../Payment/PaymentPage";
-import HomePage from "../HomePage/HomePage";
-import SearchResult from "../Pages/SearchResult";
+
 
 function MainContent({
   products,

@@ -1,6 +1,6 @@
+import TopProducts from "../../components/TopProducts/TopProducts";
 import "./HomePage.css";
 import { useState, useEffect } from "react";
-import TopProducts from "../../components/TopProducts/TopProducts";
 
 // add a price filtering function in this page
 // write an about section
