@@ -1,2 +1,2 @@
-## E-commerce store(NOT COMPLETED)
+## E-commerce store
 ### React Project

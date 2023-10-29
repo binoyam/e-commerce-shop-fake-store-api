@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Nav from "../Header-Nav/Nav";
 import Cart from "../Header-Cart/Cart";
 import UserAccount from "../UserAccount/UserAccount";
+
 function Header({
   setSelectedCategory,
   cartItems,
@@ -13,7 +14,7 @@ function Header({
   searchTerm,
   handleSearch,
 }) {
-  /* CART STATE/ OPEN OR CLOSE CART */
+  /* CART STATE/ OPEN OR CLOSED CART */
   const [isCartOpen, setIsCartOpen] = useState(false);
   function toggleCartDropDown() {
     setIsCartOpen(!isCartOpen);

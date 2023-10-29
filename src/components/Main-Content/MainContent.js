@@ -22,10 +22,10 @@ function MainContent({
         {/* Navigate to home */}
         <Route path="/" element={<Navigate to="/home" />} />
 
-        {/* home page */}
+        {/* HOME PAGE */}
         <Route path="/home" element={<HomePage products={products} />} />
 
-        {/* search results page */}
+        {/* SEARCH RESULT PAGE */}
         <Route
           path="/search-result"
           element={
@@ -37,19 +37,19 @@ function MainContent({
           }
         />
 
-        {/* all products list page */}
+        {/* ALL PRODUCTS LIST PAGE */}
         <Route
           path="/products"
           element={<ProductList addToCart={addToCart} products={products} />}
         />
 
-        {/* selected category page */}
+        {/* SELECTED CATEGORY PAGE */}
         <Route
           path="/category/:category"
           element={<ProductList addToCart={addToCart} products={products} />}
         />
 
-        {/* selected product page, product description page */}
+        {/* PRODUCT DESCRIPTION PAGE*/}
         <Route
           path="/product/:id"
           element={
@@ -57,7 +57,7 @@ function MainContent({
           }
         />
 
-        {/* checkout page */}
+        {/* CHECKOUT PAGE */}
         <Route
           path="/checkout"
           element={
@@ -65,7 +65,7 @@ function MainContent({
           }
         />
 
-        {/* payment page */}
+        {/* PAYMENT PAGE */}
         <Route
           path="/payment"
           element={<PaymentPage cartItems={cartItems} />}

@@ -5,7 +5,7 @@ import OrderSummary from "../../components/Checkout-OrderSummary/OrderSummary";
 
 function Checkout({ cartItems, removeFromCart }) {
   //   console.log(cartItems);
-
+//header-cart instead of repeating code in this page, in the cart-items-list
   return (
     <div className="checkout-page">
       <span className="checkout-header-text">

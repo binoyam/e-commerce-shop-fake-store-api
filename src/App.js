@@ -9,8 +9,10 @@ import Footer from "./components/Footer/Footer";
 function App() {
   /* ALL PRODUCTS STATE */
   const [products, setProducts] = useState([]);
+
   /* CATEGORY STATE */
   const [selectedCategory, setSelectedCategory] = useState("");
+
   /* CART ITEMS STATE */
   const [cartItems, setCartItems] = useState([]);
 
@@ -21,7 +23,8 @@ function App() {
       setCartItems(JSON.parse(storedCart));
     }
   }, []);
-  /* FUCTION TO ADD ITEMS TO CART */
+
+  /* FUNCTION TO ADD ITEMS TO CART */
   const addToCart = (product, quantity) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
     // console.log(cartItems);
@@ -49,10 +52,12 @@ function App() {
     setCartItems(updatedCartItems);
     localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
   };
+
   /* FUNCTION TO CHANGE CATEGORY*/
   useEffect(() => {
     fetchProducts(selectedCategory);
   }, [selectedCategory]);
+
   /* FUNCTION TO FETCH PRODUCTS */
   function fetchProducts(category) {
     let url = "https://fakestoreapi.com/products";
@@ -69,9 +74,13 @@ function App() {
         console.log("Error fetching products:", error);
       });
   }
+  /* SEARCH RESULT STATE */
   const [searchResults, setSearchResults] = useState([]);
+  /* SEARCH ITEM STATE */
   const [searchTerm, setSearchTerm] = useState("");
+
   const navigate = useNavigate();
+/* FUNCTION TO FIND SEARCHED ITEM FROM ALL PRODUCTS */
   const handleSearch = (e) => {
     e.preventDefault();
     const term = e.target.value;
@@ -85,6 +94,7 @@ function App() {
       navigate("/search-result");
     }
   };
+
   // console.log(searchResults);
   return (
     <div className="App">
