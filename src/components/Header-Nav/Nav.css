@@ -1,18 +1,20 @@
 /* NAV BAR */
 .navigation {
-  width: auto;
+  width: 30%;
   display: flex;
   align-items: center;
 }
 /* NAV LINKS/MEN,WOMEN,ELECTRONICS... */
 .nav-links {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   list-style: none;
 }
 
 .nav-link {
-  margin-right: 20px;
+  /* margin-right: 20px; */
   color: #333;
   text-decoration: none;
 }

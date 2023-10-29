@@ -35,11 +35,9 @@ function Nav({
         </button>
       )}
 
-      {pagesWithSearchBar && (
-        <SearchProducts className="search-bar" searchTerm={searchTerm} handleSearch={handleSearch} />
-      )}
+    
 
-      {!pagesWithSearchBar && (
+      
         <ul className={isMenuOpen ? "nav-links show" : "nav-links hide"}>
           <li>
             <Link
@@ -78,7 +76,7 @@ function Nav({
             </Link>
           </li>
         </ul>
-      )}
+     
     </nav>
   );
 }

@@ -30,11 +30,7 @@ function ProductList({ products, addToCart, searchTerm, handleSearch }) {
   return (
     <>
       <div className="filter-section">
-        <SearchProducts
-          searchTerm={searchTerm}
-          handleSearch={handleSearch}
-          className="products-page-search"
-        />
+        
       </div>
       <div className="all-products-page">
         {shuffledProducts.map((product) => (

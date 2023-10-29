@@ -11,20 +11,13 @@
   position: relative; /* for cart drop down/for menu button */
 }
 .logo-link {
-  display: flex;
-  align-items: center;
-}
-.logo-div{
-  display: flex;
-  align-items: center;
+  max-width: 20%;
+  min-width: 120px;
   transition: all 0.2s ease-out;
-}
-.logo-image {
-  width: 30px;
-  height: 30px;
 }
 
 .logo-text {
+  display: block;
   font-weight: 700;
   font-size: 25px;
   color: #ed9121;
@@ -32,9 +25,12 @@
   letter-spacing: 3px;
 }
 .nav-right {
+  min-width: 80px;
+  max-width: 8%;
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+  /* gap: 20px; */
 }
 .account{
   display: flex;
@@ -70,7 +66,7 @@
   /* .header{
     background-image: url(../../Assets/bg-header-mobile.svg);
   } */
-  .logo-div{
+  .logo-link{
     position: absolute;
     left: 50%;
     top: 50%;

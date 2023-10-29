@@ -31,9 +31,7 @@ function Header({
         className="logo-link"
         onClick={() => setSelectedCategory("")}
       >
-        <div className="logo-div">
           <span className="logo-text">bt-shop</span>
-        </div>
       </Link>
 
       <Nav
