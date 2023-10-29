@@ -24,12 +24,70 @@ function ProductList({ products, addToCart }) {
     }
     return shuffledArr;
   };
-  console.log(shuffledProducts.length);
+  // console.log(shuffledProducts.length);
+  const [selectedRanges, setSelectedRanges] = useState([]);
+
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+
+    if (checked) {
+      setSelectedRanges([...selectedRanges, value]);
+    } else {
+      setSelectedRanges(selectedRanges.filter((range) => range !== value));
+    }
+  };
+
+  const filterProductsByPrice = () => {
+    let filteredProducts = [];
+
+    if (selectedRanges.includes('low')) {
+      filteredProducts = filteredProducts.concat(products.filter((product) => product.price < 50));
+    }
+    if (selectedRanges.includes('medium')) {
+      filteredProducts = filteredProducts.concat(
+        products.filter((product) => product.price >= 50 && product.price < 100)
+      );
+    }
+    if (selectedRanges.includes('high')) {
+      filteredProducts = filteredProducts.concat(products.filter((product) => product.price >= 100));
+    }
+
+    return filteredProducts;
+  };
+
+  const filteredProducts = filterProductsByPrice();
+
   return (
     <>
     <div className="filter-section">
-        <SearchProducts />
-
+        <SearchProducts className="products-page-search" />
+        <label>
+        <input
+          type="checkbox"
+          value="low"
+          checked={selectedRanges.includes('low')}
+          onChange={handleCheckboxChange}
+        />
+        Low Range (&lt; $50)
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          value="medium"
+          checked={selectedRanges.includes('medium')}
+          onChange={handleCheckboxChange}
+        />
+        Medium Range ($50 - $100)
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          value="high"
+          checked={selectedRanges.includes('high')}
+          onChange={handleCheckboxChange}
+        />
+        High Range (&gt; $100)
+      </label>
     </div>
       <div className="all-products-page">
         {shuffledProducts.map((product) => (
