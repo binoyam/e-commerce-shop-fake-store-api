@@ -20,7 +20,7 @@ function Header({
   function toggleCartDropDown() {
     setIsCartOpen(!isCartOpen);
   }
-  
+
   return (
     <header className="header">
       <Link
@@ -28,7 +28,7 @@ function Header({
         className="logo-link"
         onClick={() => setSelectedCategory("")}
       >
-          <span className="logo-text">bt-shop</span>
+        <span className="logo-text">bt-shop</span>
       </Link>
 
       <Nav

@@ -14,9 +14,7 @@ function MainContent({
   removeFromCart,
   searchResults,
   searchTerm,
-  handleSearch,
-  setSelectedProductId,
-  selectedProductId,
+  handleSearch
 }) {
   return (
     <main className="main-content">
@@ -49,7 +47,6 @@ function MainContent({
               searchTerm={searchTerm}
               addToCart={addToCart}
               products={products}
-              setSelectedProductId={setSelectedProductId}
             />
           }
         />
@@ -59,7 +56,6 @@ function MainContent({
           path="products/categories/:category"
           element={
             <ProductList
-              setSelectedProductId={setSelectedProductId}
               addToCart={addToCart}
               products={products}
             />
@@ -73,7 +69,6 @@ function MainContent({
           element={
             <ProductDescription
               products={products}
-              selectedProductId={selectedProductId}
               addToCart={addToCart}
             />
           }

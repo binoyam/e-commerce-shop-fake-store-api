@@ -4,18 +4,18 @@ import CartIcon from "../../Assets/Images/icon-cart-btn.svg";
 import PlusIcon from "../../Assets/Images/icon-plus.svg";
 import MinusIcon from "../../Assets/Images/icon-minus.svg";
 import Arrow from "../../Assets/Images/arrow-left.svg";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 
-function ProductDescription({ products, addToCart, selectedProductId }) {
+function ProductDescription({ products, addToCart }) {
   /* SELECTED QUANTITY STATE */
   const [quantity, setQuantity] = useState(1);
-  const [selectedProduct, setSelectedProduct] = useState([]);
-  // const { id } = useParams();
-  const product = products.find((product) => product.id === selectedProductId);
-  useEffect(() => {
-    setSelectedProduct(product);
-  }, [selectedProductId]);
+  const { id } = useParams();
+
+  const selectedProduct = products.find(
+    (product) => product.id.toString() === id
+  );
+
+  console.log(selectedProduct);
 
   /* helper Function to set quantity back to 1 and add to cart */
   const handleAddToCart = () => {
@@ -33,7 +33,6 @@ function ProductDescription({ products, addToCart, selectedProductId }) {
       setQuantity(quantity - 1);
     }
   };
-  // console.log(selectedProductId);
   return (
     <div className="product-description-page">
       <Link to="/" className="back-btn">

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./ProductItem.css";
 import CartIcon from "../../Assets/Images/icon-cart-btn.svg";
 
-function ProductItem({ product, addToCart, setSelectedProductId }) {
+function ProductItem({ product, addToCart }) {
   return (
     <article className="product-box">
       <h3 className="product-title">{product.title.slice(0, 20)}</h3>
@@ -16,11 +16,7 @@ function ProductItem({ product, addToCart, setSelectedProductId }) {
         {product.description.slice(0, 70)}...
       </p>
 
-      <Link
-        onClick={() => setSelectedProductId(product.id)}
-        className="view-details-link"
-        to={`/product/${product.id}`}
-      >
+      <Link className="view-details-link" to={`/product/${product.id}`}>
         <button className="view-more-btn">View Details</button>
       </Link>
     </article>

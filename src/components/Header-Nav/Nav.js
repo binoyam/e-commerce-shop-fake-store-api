@@ -3,11 +3,7 @@ import "./Nav.css";
 import MenuIcon from "../../Assets/Images/icon-menu.svg";
 import CloseMenuIcon from "../../Assets/Images/close-for-menu.svg";
 
-function Nav({
-  setSelectedCategory,
-  isMenuOpen,
-  setIsMenuOpen,
-}) {
+function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
   /* OPEN MENU BUTTON FUNCTON */
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);

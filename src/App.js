@@ -12,7 +12,6 @@ function App() {
 
   /* CATEGORY STATE */
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedProductId, setSelectedProductId] = useState([]);
 
   /* CART ITEMS STATE */
   const [cartItems, setCartItems] = useState([]);
@@ -59,24 +58,18 @@ function App() {
   useEffect(() => {
     fetchProducts(selectedCategory);
   }, [selectedCategory]);
-  useEffect(() => {  
-      fetchProducts(selectedProductId);
-  }, [selectedProductId]);
 
-  function fetchProducts(category, productId) {
+  function fetchProducts(category) {
     let url = "https://fakestoreapi.com/products";
 
     if (category) {
       url += `/category/${category}`;
     }
-    if (productId) {
-      url += `/${productId}`;
-    }
+
     axios
       .get(url)
       .then((response) => {
         setProducts(response.data);
-        setSelectedProductId(response.data);
       })
       .catch((error) => {
         console.log("Error fetching products:", error);
@@ -131,9 +124,6 @@ function App() {
         products={products}
         searchResults={searchResults}
         searchTerm={searchTerm}
-        setSelectedProductId={setSelectedProductId}
-        selectedProductId={selectedProductId}
-
       />
 
       <Footer />

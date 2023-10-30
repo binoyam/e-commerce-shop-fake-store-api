@@ -2,7 +2,7 @@ import "./ProductList.css";
 import ProductItem from "../../components/Product-Item/ProductItem";
 import { useEffect, useState } from "react";
 
-function ProductList({ products, addToCart, setSelectedProductId }) {
+function ProductList({ products, addToCart }) {
   /* SHUFFLED PRODUCTS STATE */
   const [shuffledProducts, setShuffledProducts] = useState([]);
   /* FUNCTION TO ADD PRODUCT TO CART */
@@ -35,7 +35,6 @@ function ProductList({ products, addToCart, setSelectedProductId }) {
             key={product.id}
             product={product}
             addToCart={handleAddToCart}
-            setSelectedProductId={setSelectedProductId}
           />
         ))}
       </div>

@@ -14,14 +14,14 @@ function HomePage({ products }) {
   const [topProducts, setTopProducts] = useState([]);
   /* SORT PRODUCTS BY RATING/ FROM HIGHEST RATED TO LOWEST RATED*/
   useEffect(() => {
-    const sortedProducts = products.sort(
+    const sortedProducts = [...products].sort(
       (a, b) => b.rating.rate - a.rating.rate
     );
     /* TOP 5 HIGHEST RATED PRODUCTS */
     const top5Products = sortedProducts.slice(0, 5);
     setTopProducts(top5Products);
   }, [products]);
-
+  
   /* SLIDE TO THE NEXT PRODUCT */
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,11 +55,11 @@ function HomePage({ products }) {
         </div>
       </section>
       <section id="about">
-            <Link to='/products'>All products</Link>
-            <Link to='/products/categories/mens-clothing'>Men's Clothing</Link>
-            <Link to='/products/categories/womens-clothing'>Women's Clothing</Link>
-            <Link to='/products/categories/electronics'>Electronincs</Link>
-            <Link to='/products/categories/jewelery'>Jewelery</Link>
+        <Link to="/products">All products</Link>
+        <Link to="/products/categories/mens-clothing">Men's Clothing</Link>
+        <Link to="/products/categories/womens-clothing">Women's Clothing</Link>
+        <Link to="/products/categories/electronics">Electronincs</Link>
+        <Link to="/products/categories/jewelery">Jewelery</Link>
       </section>
     </div>
   );
