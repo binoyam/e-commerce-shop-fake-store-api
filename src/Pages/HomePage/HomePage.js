@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import TopProducts from "../../components/TopProducts/TopProducts";
 import "./HomePage.css";
 import { useState, useEffect } from "react";
@@ -54,7 +55,11 @@ function HomePage({ products }) {
         </div>
       </section>
       <section id="about">
-      
+            <Link to='/products'>All products</Link>
+            <Link to='/products/categories/mens-clothing'>Men's Clothing</Link>
+            <Link to='/products/categories/womens-clothing'>Women's Clothing</Link>
+            <Link to='/products/categories/electronics'>Electronincs</Link>
+            <Link to='/products/categories/jewelery'>Jewelery</Link>
       </section>
     </div>
   );

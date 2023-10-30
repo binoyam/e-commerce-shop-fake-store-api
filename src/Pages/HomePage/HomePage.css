@@ -1,6 +1,6 @@
 .home-page {
   width: 100%;
-  min-height: calc(100vh - 57px - 115px);
+  /* min-height: calc(100vh - 57px - 80px); */
   padding: 0;
   padding-bottom: 40px;
   border-top-left-radius: 15px;
@@ -54,7 +54,7 @@
   color: #fff;
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
     0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
-  animation: blinker 0.5s linear infinite;
+  /* animation: blinker 0.5s linear infinite; */
 }
 /* BANNER TEXT */
 .home-sub-header {

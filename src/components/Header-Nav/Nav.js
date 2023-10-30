@@ -40,7 +40,7 @@ function Nav({
         <li>
           <Link
             onClick={() => handleClick("men%27s%20clothing")}
-            to="/category/mens-clothing"
+            to="/products/categories/mens-clothing"
             className="nav-link"
           >
             Men
@@ -49,7 +49,7 @@ function Nav({
         <li>
           <Link
             onClick={() => handleClick("women%27s%20clothing")}
-            to="/category/womens-clothing"
+            to="/products/categories/womens-clothing"
             className="nav-link"
           >
             Women
@@ -58,7 +58,7 @@ function Nav({
         <li>
           <Link
             onClick={() => handleClick("electronics")}
-            to="/category/electronics"
+            to="/products/categories/electronics"
             className="nav-link"
           >
             Electronics
@@ -67,7 +67,7 @@ function Nav({
         <li>
           <Link
             onClick={() => handleClick("jewelery")}
-            to="/category/jewelery"
+            to="/products/categories/jewelery"
             className="nav-link"
           >
             Jewelery

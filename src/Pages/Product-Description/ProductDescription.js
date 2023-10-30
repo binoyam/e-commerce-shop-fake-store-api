@@ -13,6 +13,7 @@ function ProductDescription({ products, addToCart }) {
   const selectedProduct = products.find(
     (product) => product.id.toString() === id
   );
+  console.log(selectedProduct);
   /* helper Function to set quantity back to 1 and add to cart */
   const handleAddToCart = () => {
     addToCart(selectedProduct, quantity);

@@ -53,15 +53,15 @@ function MainContent({
 
         {/* SELECTED CATEGORY PAGE */}
         <Route
-          path="/category/:category"
+          path="products/categories/:category"
           element={<ProductList addToCart={addToCart} products={products} />}
         />
 
         {/* PRODUCT DESCRIPTION PAGE*/}
         <Route
-          path="/product/:id"
+          path="/products/:id"
           element={
-            <ProductDescription products={products} addToCart={addToCart} />
+            <ProductDescription addToCart={addToCart} />
           }
         />
 

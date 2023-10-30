@@ -16,7 +16,7 @@ function ProductItem({ product, addToCart }) {
         {product.description.slice(0, 70)}...
       </p>
 
-      <Link className="view-details-link" to={`/product/${product.id}`}>
+      <Link className="view-details-link" to={`/products/${product.id}`}>
         <button className="view-more-btn">View Details</button>
       </Link>
     </article>
