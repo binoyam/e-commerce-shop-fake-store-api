@@ -16,11 +16,11 @@ function SearchResult({ searchResults, searchTerm, addToCart }) {
           result for : " {searchTerm} "
         </h1>
         <Link className="all-products-link" to="/products">
-          View all products
+          Back to all products
         </Link>
       </div>
       <div className="searched-products">
-        {searchTerm &&
+        {searchTerm !== '' &&
           searchResults.map((product) => (
             <ProductItem
               key={product.id}

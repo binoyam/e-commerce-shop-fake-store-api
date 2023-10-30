@@ -21,7 +21,7 @@ function HomePage({ products }) {
     const top5Products = sortedProducts.slice(0, 5);
     setTopProducts(top5Products);
   }, [products]);
-  
+
   /* SLIDE TO THE NEXT PRODUCT */
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,12 +54,14 @@ function HomePage({ products }) {
           ))}
         </div>
       </section>
-      <section id="about">
-        <Link to="/products">All products</Link>
-        <Link to="/products/categories/mens-clothing">Men's Clothing</Link>
-        <Link to="/products/categories/womens-clothing">Women's Clothing</Link>
-        <Link to="/products/categories/electronics">Electronincs</Link>
-        <Link to="/products/categories/jewelery">Jewelery</Link>
+      <section>
+        <h2>Categories</h2>
+        <ul>
+          <li>Men's Clothing</li>
+          <li>Women's Clothing</li>
+          <li>Electronics</li>
+          <li>Jewelery</li>
+        </ul>
       </section>
     </div>
   );

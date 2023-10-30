@@ -82,24 +82,16 @@ function App() {
 
   const navigate = useNavigate();
   /* FUNCTION TO FIND SEARCHED ITEM FROM ALL PRODUCTS */
-  const handleSearch = (e) => {
-    e.preventDefault();
-    const term = e.target.value;
-    setSearchTerm(term);
-    const titleResult = products.filter((product) =>
-      product.title.toLowerCase().includes(term.toLowerCase())
+  const handleSearch = () => {
+    // const term = e.target.value;
+    if(searchTerm.trim() === ''){
+      return;
+    }
+    const searchResult = products.filter((product) =>
+      product.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    const categoryResult = products.filter((product) =>
-      product.category.toLowerCase().includes(term.toLowerCase())
-    );
-    const descriptionResult = products.filter((product) =>
-      product.description.toLowerCase().includes(term.toLowerCase())
-    );
-    const allResults = [
-      ...new Set([...titleResult, ...categoryResult, ...descriptionResult]),
-    ];
-    setSearchResults(allResults);
-    if (allResults.length > 0) {
+    setSearchResults(searchResult);
+    if (searchResult.length > 0) {
       navigate("/search-result");
     }
   };
@@ -110,6 +102,7 @@ function App() {
       <Header
         handleSearch={handleSearch}
         searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
         products={products}
         removeFromCart={removeFromCart}
         cartItems={cartItems}

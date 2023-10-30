@@ -15,7 +15,7 @@ function ProductDescription({ products, addToCart }) {
     (product) => product.id.toString() === id
   );
 
-  console.log(selectedProduct);
+  // console.log(selectedProduct);
 
   /* helper Function to set quantity back to 1 and add to cart */
   const handleAddToCart = () => {

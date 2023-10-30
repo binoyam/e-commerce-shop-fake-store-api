@@ -1,10 +1,11 @@
 import "./Header.css";
 import CartIcon from "../../Assets/Images/icon-cart.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Nav from "../Header-Nav/Nav";
 import Cart from "../Header-Cart/Cart";
 import UserAccount from "../UserAccount/UserAccount";
+import SearchProducts from "../SearchProducts/SearchProducts";
 
 function Header({
   setSelectedCategory,
@@ -13,6 +14,7 @@ function Header({
   products,
   searchTerm,
   handleSearch,
+  setSearchTerm
 }) {
   /* CART/MENU_ OPEN/CLOSED STATE */
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -20,7 +22,10 @@ function Header({
   function toggleCartDropDown() {
     setIsCartOpen(!isCartOpen);
   }
-
+const location = useLocation()
+const isHomePage = location.pathname === '/home'
+const isSearchResultPage = location.pathname === '/search-result'
+const isSearchBarRoute = isHomePage || isSearchResultPage
   return (
     <header className="header">
       <Link
@@ -31,14 +36,16 @@ function Header({
         <span className="logo-text">bt-shop</span>
       </Link>
 
-      <Nav
+      {isSearchBarRoute && <SearchProducts searchTerm={searchTerm} handleSearch={handleSearch} setSearchTerm={setSearchTerm} />}
+
+      {!isSearchBarRoute && <Nav
         searchTerm={searchTerm}
         handleSearch={handleSearch}
         products={products}
         setSelectedCategory={setSelectedCategory}
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
-      />
+      />}
 
       <div className="nav-right">
         <div onClick={toggleCartDropDown} className="cart-nav">
