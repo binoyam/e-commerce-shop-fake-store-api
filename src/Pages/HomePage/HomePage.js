@@ -41,27 +41,47 @@ function HomePage({ products }) {
           Explore our wide range of products and start shopping today!
         </p>
       </section>
-      <section className="slider-container">
-        <h2 className="trending-txt">Top Rated Products</h2>
-        <div className="slide-wrapper">
-          {topProducts.map((product, index) => (
-            <TopProducts
-              key={product.id}
-              index={index}
-              product={product}
-              currentSlide={currentSlide}
-            />
-          ))}
+      <section className="home-one">
+        <div className="slider-container">
+          <h2 className="trending-txt">Top Rated Products</h2>
+          <div className="slide-wrapper">
+            {topProducts.map((product, index) => (
+              <TopProducts
+                key={product.id}
+                index={index}
+                product={product}
+                currentSlide={currentSlide}
+              />
+            ))}
+          </div>
         </div>
-      </section>
-      <section>
-        <h2>Categories</h2>
-        <ul>
-          <li><Link>Men's Clothing</Link></li>
-          <li><Link>Women's Clothing</Link></li>
-          <li><Link>Electronics</Link></li>
-          <li><Link>Jewelery</Link></li>
-        </ul>
+        <div className="home-two">
+          <h2>Categories</h2>
+          <ul>
+            <li>
+              <Link>Men's Clothing</Link>
+            </li>
+            <li>
+              <Link>Women's Clothing</Link>
+            </li>
+            <li>
+              <Link>Electronics</Link>
+            </li>
+            <li>
+              <Link>Jewelery</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="home-two">
+          <h1>sale</h1>
+          <ul>
+            <li>sale items</li>
+            <li>sale items</li>
+            <li>sale items</li>
+            <li>sale items</li>
+            <li>sale items</li>
+          </ul>
+        </div>
       </section>
     </div>
   );
