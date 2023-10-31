@@ -28,8 +28,6 @@
   0% {
     opacity: 1;
     color: rgb(255, 255, 255);
-    text-shadow: none;
-
   }
   25% {
     opacity: 1;
@@ -37,12 +35,14 @@
     letter-spacing: 5px;
   }
   50% {
-    opacity: 0;
+    opacity: 0.5;
     color: rgba(247, 252, 252, 0.678);
     letter-spacing: 8px;
     padding-bottom: 5px;
-    text-shadow: none;
     font-size: 50px;
+    font-weight: 700;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
   }
 
   75% {
@@ -52,8 +52,10 @@
   }
   100% {
     opacity: 1;
-    color: #ffffff;
+    color: #ffffff73;
     letter-spacing: 5px;
+    font-size: 30px;
+    text-shadow: none;
   }
 }
 /* BANNER HEADER */
@@ -62,9 +64,7 @@
   font-weight: 400;
   letter-spacing: 2px;
   color: #fff;
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
-    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
-  animation: blinker 0.5s linear infinite;
+  /* animation: blinker 0.5s linear infinite; */
 }
 /* BANNER TEXT */
 .home-sub-header {
@@ -75,14 +75,12 @@
 }
 /* TOPPROUCTS SLIDER CONTAINER */
 .slider-container {
-  /* float: right; */
   width: 300px;
   height: 400px;
   margin: 10px 20px;
 }
 /* SLIDER HEADER */
 .trending-txt {
-  /* text-align: left; */
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 10px;
