@@ -1,16 +1,17 @@
 import "./Checkout.css";
 import DeleteIcon from "../../Assets/Images/remove-item-icon.svg";
-// import "../Header-Cart/Cart.css";
 import OrderSummary from "../../components/Checkout-OrderSummary/OrderSummary";
 
 function Checkout({ cartItems, removeFromCart }) {
-  //   console.log(cartItems);
-//header-cart instead of repeating code in this page, in the cart-items-list
+
   return (
     <div className="checkout-page">
       <span className="checkout-header-text">
         Checkout (
-        <span className="checkout-amount">{cartItems.length} Items</span>)
+        <span className="checkout-amount">
+          {cartItems.length}{cartItems.length > 1 ? " Items " : " Item"}
+        </span>
+        )
       </span>
 
       <span className="chk-out-list-header">Cart Items</span>
