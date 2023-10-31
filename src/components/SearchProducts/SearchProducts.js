@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import SearchIcon from "../../Assets/Images/magnifying-glass-solid.svg";
 import "./SearchProducts.css";
-function SearchProducts({ searchTerm, handleSearch, setSearchTerm }) {
+import SearchResult from "../../Pages/SearchResult/SearchResult";
+function SearchProducts({ searchTerm, handleSearch }) {
   const inputRef = useRef(null);
   useEffect(() => {
     inputRef.current.focus();
@@ -15,7 +16,7 @@ function SearchProducts({ searchTerm, handleSearch, setSearchTerm }) {
           id="search"
           type="text"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={handleSearch}
           placeholder="Search products..."
         />
       </label>

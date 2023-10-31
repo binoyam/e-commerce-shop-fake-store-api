@@ -14,7 +14,7 @@ function MainContent({
   removeFromCart,
   searchResults,
   searchTerm,
-  handleSearch
+  handleSearch,
 }) {
   return (
     <main className="main-content">
@@ -54,12 +54,7 @@ function MainContent({
         {/* SELECTED CATEGORY PAGE */}
         <Route
           path="products/categories/:category"
-          element={
-            <ProductList
-              addToCart={addToCart}
-              products={products}
-            />
-          }
+          element={<ProductList addToCart={addToCart} products={products} />}
         />
 
         {/* PRODUCT DESCRIPTION PAGE*/}
@@ -67,10 +62,7 @@ function MainContent({
           exact
           path="/product/:id"
           element={
-            <ProductDescription
-              products={products}
-              addToCart={addToCart}
-            />
+            <ProductDescription products={products} addToCart={addToCart} />
           }
         />
 

@@ -14,7 +14,7 @@ function Header({
   products,
   searchTerm,
   handleSearch,
-  setSearchTerm
+  
 }) {
   /* CART/MENU_ OPEN/CLOSED STATE */
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -36,7 +36,7 @@ const isSearchBarRoute = isHomePage || isSearchResultPage
         <span className="logo-text">bt-shop</span>
       </Link>
 
-      {isSearchBarRoute && <SearchProducts searchTerm={searchTerm} handleSearch={handleSearch} setSearchTerm={setSearchTerm} />}
+      {isSearchBarRoute && <SearchProducts searchTerm={searchTerm} handleSearch={handleSearch}/>}
 
       {!isSearchBarRoute && <Nav
         searchTerm={searchTerm}

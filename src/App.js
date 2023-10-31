@@ -79,30 +79,36 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   /* SEARCH ITEM STATE */
   const [searchTerm, setSearchTerm] = useState("");
-
   const navigate = useNavigate();
-  /* FUNCTION TO FIND SEARCHED ITEM FROM ALL PRODUCTS */
-  const handleSearch = () => {
-    // const term = e.target.value;
-    if(searchTerm.trim() === ''){
-      return;
-    }
-    const searchResult = products.filter((product) =>
-      product.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setSearchResults(searchResult);
-    if (searchResult.length > 0) {
+  useEffect(() => {
+    if (searchResults.length > 0) {
       navigate("/search-result");
+    } else {
+      // navigate("/home");
+    }
+  }, [searchResults, navigate]);
+
+  /* FUNCTION TO FIND SEARCHED ITEM FROM ALL PRODUCTS */
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const term = e.target.value;
+    setSearchTerm(term);
+    if (term.trim() === "") {
+      setSearchResults([]);
+    } else {
+      const searchResult = products.filter((product) =>
+        product.title.toLowerCase().includes(term.toLowerCase())
+      );
+      setSearchResults(searchResult);
     }
   };
 
-  // console.log(searchResults);
+  console.log(searchResults);
   return (
     <div className="App">
       <Header
         handleSearch={handleSearch}
         searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
         products={products}
         removeFromCart={removeFromCart}
         cartItems={cartItems}
