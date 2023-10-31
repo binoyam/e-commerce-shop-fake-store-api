@@ -103,7 +103,7 @@ function App() {
     }
   };
 
-  console.log(searchResults);
+  // console.log(searchResults);
   return (
     <div className="App">
       <Header

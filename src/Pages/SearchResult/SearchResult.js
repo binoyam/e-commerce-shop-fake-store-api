@@ -12,22 +12,26 @@ function SearchResult({ searchResults, searchTerm, addToCart }) {
     <div className="search-result-page">
       <div className="search-result-header">
         <h1 className="search-page-header">
-          (<span className="result-amount">{searchResults.length}</span>) Search result
-          for : " {searchTerm} "
+          (<span className="result-amount">{searchResults.length}</span>) Search
+          result for : " {searchTerm} "
         </h1>
         <Link className="all-products-link" to="/products">
           Back to all products
         </Link>
       </div>
-      <div className="searched-products">
-        {searchResults && searchResults.map((product) => (
-          <ProductItem
-            key={product.id}
-            product={product}
-            addToCart={handleAddToCart}
-          />
-        ))}
-      </div>
+      {searchResults.lenght > 0 ? (
+        <div className="searched-products">
+          {searchResults.map((product) => (
+            <ProductItem
+              key={product.id}
+              product={product}
+              addToCart={handleAddToCart}
+            />
+          ))}
+        </div>
+      ) : (
+        <div>No items found</div>
+      )}
     </div>
   );
 }
