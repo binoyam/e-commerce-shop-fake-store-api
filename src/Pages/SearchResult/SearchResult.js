@@ -19,7 +19,7 @@ function SearchResult({ searchResults, searchTerm, addToCart }) {
           Back to all products
         </Link>
       </div>
-      {searchResults.lenght > 0 ? (
+      {searchResults.length > 0 ? (
         <div className="searched-products">
           {searchResults.map((product) => (
             <ProductItem
@@ -30,7 +30,9 @@ function SearchResult({ searchResults, searchTerm, addToCart }) {
           ))}
         </div>
       ) : (
-        <div>No items found</div>
+        <div className="no-result">
+          <h1>No matches found</h1>
+        </div>
       )}
     </div>
   );

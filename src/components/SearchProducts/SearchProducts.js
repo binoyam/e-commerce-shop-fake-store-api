@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import SearchIcon from "../../Assets/Images/magnifying-glass-solid.svg";
 import "./SearchProducts.css";
-import SearchResult from "../../Pages/SearchResult/SearchResult";
+
 function SearchProducts({ searchTerm, handleSearch }) {
   const inputRef = useRef(null);
   useEffect(() => {
@@ -9,7 +9,7 @@ function SearchProducts({ searchTerm, handleSearch }) {
   }, []);
 
   return (
-    <form ref={inputRef} className='search-bar' onSubmit={handleSearch}>
+    <form ref={inputRef} className="search-bar">
       <img className="search-icon" src={SearchIcon} alt="search-icon" />
       <label htmlFor="search">
         <input

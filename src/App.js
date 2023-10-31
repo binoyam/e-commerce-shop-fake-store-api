@@ -89,19 +89,21 @@ function App() {
   }, [searchResults, navigate]);
 
   /* FUNCTION TO FIND SEARCHED ITEM FROM ALL PRODUCTS */
-  const handleSearch = (e) => {
-    e.preventDefault();
-    const term = e.target.value;
-    setSearchTerm(term);
-    if (term.trim() === "") {
-      setSearchResults([]);
-    } else {
-      const searchResult = products.filter((product) =>
-        product.title.toLowerCase().includes(term.toLowerCase())
-      );
-      setSearchResults(searchResult);
-    }
-  };
+ 
+    const handleSearch = (e) => {
+      e.preventDefault();
+      const term = e.target.value;
+      setSearchTerm(term);
+      if (term.trim() === "") {
+        setSearchResults([]);
+      } else {
+        const searchResult = products.filter((product) =>
+          product.title.toLowerCase().includes(term.toLowerCase())
+        );
+        setSearchResults(searchResult);
+      }
+    };
+
 
   // console.log(searchResults);
   return (

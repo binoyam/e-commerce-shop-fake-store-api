@@ -57,10 +57,10 @@ function HomePage({ products }) {
       <section>
         <h2>Categories</h2>
         <ul>
-          <li>Men's Clothing</li>
-          <li>Women's Clothing</li>
-          <li>Electronics</li>
-          <li>Jewelery</li>
+          <li><Link>Men's Clothing</Link></li>
+          <li><Link>Women's Clothing</Link></li>
+          <li><Link>Electronics</Link></li>
+          <li><Link>Jewelery</Link></li>
         </ul>
       </section>
     </div>
