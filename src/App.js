@@ -80,13 +80,6 @@ function App() {
   /* SEARCH ITEM STATE */
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
-  useEffect(() => {
-    if (searchResults.length > 0) {
-      navigate("/search-result");
-    } else {
-      // navigate("/home");
-    }
-  }, [searchResults, navigate]);
 
   /* FUNCTION TO FIND SEARCHED ITEM FROM ALL PRODUCTS */
  
@@ -102,6 +95,9 @@ function App() {
         );
         setSearchResults(searchResult);
       }
+      if (searchResults.length > 0) {
+        navigate("/search-result");
+      } 
     };
 
 

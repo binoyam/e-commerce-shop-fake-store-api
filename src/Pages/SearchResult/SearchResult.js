@@ -4,6 +4,7 @@ import "./SearchResult.css";
 
 /* SEARCH RESULT PAGE */
 function SearchResult({ searchResults, searchTerm, addToCart }) {
+
   console.log(searchResults);
   const handleAddToCart = (product) => {
     addToCart(product, 1);
