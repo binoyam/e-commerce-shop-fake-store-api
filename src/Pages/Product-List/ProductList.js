@@ -25,10 +25,12 @@ function ProductList({ products, addToCart }) {
     }
     return shuffledArr;
   };
-
+console.log(products);
   return (
     <>
-      <div className="filter-section"></div>
+      <div className="filter-section">
+        Filter products by price
+      </div>
       <div className="all-products-page">
         {shuffledProducts.map((product) => (
           <ProductItem
