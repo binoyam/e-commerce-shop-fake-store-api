@@ -25,7 +25,7 @@ function ProductList({ products, addToCart }) {
     }
     return shuffledArr;
   };
-console.log(products);
+// console.log(products);
   return (
     <>
       <div className="filter-section">

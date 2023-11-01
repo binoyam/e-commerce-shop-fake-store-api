@@ -42,7 +42,7 @@
     font-size: 50px;
     font-weight: 700;
     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
-    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+      0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
   }
 
   75% {
@@ -73,6 +73,11 @@
   font-weight: 600;
   letter-spacing: 5px;
 }
+
+/* HOME PAGE FIRST SECTION */
+.home-one {
+  display: flex;
+}
 /* TOPPROUCTS SLIDER CONTAINER */
 .slider-container {
   width: 300px;
@@ -80,7 +85,9 @@
   margin: 10px 20px;
 }
 /* SLIDER HEADER */
-.trending-txt {
+.slide-header,
+.category-header,
+.sale-header {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 10px;
@@ -102,17 +109,13 @@
 .slide-wrapper:hover .link {
   opacity: 1;
 }
-.home-one{
-  display: flex;
-  /* align-items: center; */
-  /* justify-content: space-between; */
+/* HOME PAGE CATEGORY SELECTION SECTION */
+.home-two {
+  height: 300px;
+  height: 400px;
+  margin: 10px 20px;
 }
-.home-two{
-  height: 50vh;
-  padding: 20px;
-  text-align: left;
-}
-.home-two ul{
+.home-page-category-list {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -124,13 +127,13 @@
     background-image: url(../../Assets/Images/bg-header-mobile.svg);
   }
 
-.home-header {
-  font-size: 20px;
-}
-/* BANNER TEXT */
-.home-sub-header {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 3px;
-}
+  .home-header {
+    font-size: 20px;
+  }
+  /* BANNER TEXT */
+  .home-sub-header {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+  }
 }

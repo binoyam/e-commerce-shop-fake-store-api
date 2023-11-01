@@ -15,6 +15,7 @@ function MainContent({
   searchResults,
   searchTerm,
   handleSearch,
+  setSelectedCategory,
 }) {
   return (
     <main className="main-content">
@@ -23,7 +24,15 @@ function MainContent({
         <Route path="/" element={<Navigate to="/home" />} />
 
         {/* HOME PAGE */}
-        <Route path="/home" element={<HomePage products={products} />} />
+        <Route
+          path="/home"
+          element={
+            <HomePage
+              products={products}
+              setSelectedCategory={setSelectedCategory}
+            />
+          }
+        />
 
         {/* SEARCH RESULT PAGE */}
         <Route

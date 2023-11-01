@@ -120,6 +120,7 @@ function App() {
         products={products}
         searchResults={searchResults}
         searchTerm={searchTerm}
+        setSelectedCategory={setSelectedCategory}
       />
 
       <Footer />

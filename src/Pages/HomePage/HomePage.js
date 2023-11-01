@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import TopProducts from "../../components/TopProducts/TopProducts";
 import "./HomePage.css";
 import { useState, useEffect } from "react";
+import ProductList from "../Product-List/ProductList";
+import Nav from "../../components/Header-Nav/Nav";
 
 // add a price filtering function in this page
 // write an about section
@@ -9,7 +11,7 @@ import { useState, useEffect } from "react";
 // contact us page
 //the star rating function needs to be more clear
 
-function HomePage({ products }) {
+function HomePage({ products, setSelectedCategory }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [topProducts, setTopProducts] = useState([]);
   /* SORT PRODUCTS BY RATING/ FROM HIGHEST RATED TO LOWEST RATED*/
@@ -43,7 +45,7 @@ function HomePage({ products }) {
       </section>
       <section className="home-one">
         <div className="slider-container">
-          <h2 className="trending-txt">Top Rated Products</h2>
+          <h2 className="slide-header">Recommended Products</h2>
           <div className="slide-wrapper">
             {topProducts.map((product, index) => (
               <TopProducts
@@ -56,24 +58,45 @@ function HomePage({ products }) {
           </div>
         </div>
         <div className="home-two">
-          <h2>Categories</h2>
-          <ul>
+          <h2 className="category-header">Categories</h2>
+          <ul className="home-page-category-list">
             <li>
-              <Link>Men's Clothing</Link>
+              <Link
+                onClick={() => setSelectedCategory("men%27s%20clothing")}
+                to="/products/categories/mens-clothing"
+              >
+                Men
+              </Link>
             </li>
             <li>
-              <Link>Women's Clothing</Link>
+              <Link
+                onClick={() => setSelectedCategory("women%27s%20clothing")}
+                to="/products/categories/womens-clothing"
+              >
+                Women
+              </Link>
             </li>
             <li>
-              <Link>Electronics</Link>
+              <Link
+                onClick={() => setSelectedCategory("electronics")}
+                to="/products/categories/electronics"
+              >
+                Electronics
+              </Link>
             </li>
             <li>
-              <Link>Jewelery</Link>
+              <Link
+                onClick={() => setSelectedCategory("jewelery")}
+                to="/products/categories/jewelery"
+           
+              >
+                Jewelery
+              </Link>
             </li>
           </ul>
         </div>
         <div className="home-two">
-          <h1>sale</h1>
+          <h2 className="sale-header">sale</h2>
           <ul>
             <li>sale items</li>
             <li>sale items</li>
