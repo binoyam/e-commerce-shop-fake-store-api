@@ -77,6 +77,9 @@
 /* HOME PAGE FIRST SECTION */
 .home-one {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 /* TOPPROUCTS SLIDER CONTAINER */
 .slider-container {
@@ -111,36 +114,56 @@
 }
 /* HOME PAGE CATEGORY SELECTION SECTION */
 .home-two {
-  width: 300px;
-  height: 400px;
+  width: 100%;
+  height: calc(100% - 40px);
   margin: 10px 20px;
-  text-align: left;
+  padding: 30px;
+  text-align: center;
 }
 .home-page-category-list {
   width: 100%;
-  height: calc(100% - 40px);
+  height: auto;
   margin-top: 20px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  gap: 20px;
 }
-.category-link{
+.home-page-category-list li{
+  width: 100%;
+}
+.category-header{
+  font-size: 50px;
+  color: #333;
+  letter-spacing: 5px;
+}
+.category-link {
+  width: 100%;
   font-size: 30px;
+  /* margin: 0 auto; */
   font-weight: 700;
   letter-spacing: 3px;
   display: block;
   color: #ed9121;
   padding: 20px 10px;
+  border: 2px solid #33333311;
+  border-radius: 4px;
   transition: all 0.4s ease;
 }
-.category-link:hover{
+.category-link:hover {
+  width: 60%;
   background-color: cadetblue;
   color: #fff;
   padding-left: 20px;
   border-radius: 5px 10px 15px 0px;
   letter-spacing: 5px;
   margin-left: 15px;
+  border: 2px solid transparent;
 }
+
+
+
 @media only screen and (max-width: 700px) {
   .home-page-header {
     background-image: url(../../Assets/Images/bg-header-mobile.svg);

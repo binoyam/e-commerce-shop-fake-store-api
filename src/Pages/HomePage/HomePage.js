@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import TopProducts from "../../components/TopProducts/TopProducts";
 import "./HomePage.css";
 import { useState, useEffect } from "react";
-import ProductList from "../Product-List/ProductList";
-import Nav from "../../components/Header-Nav/Nav";
 
 // add a price filtering function in this page
 // write an about section
