@@ -111,17 +111,36 @@
 }
 /* HOME PAGE CATEGORY SELECTION SECTION */
 .home-two {
-  height: 300px;
+  width: 300px;
   height: 400px;
   margin: 10px 20px;
+  text-align: left;
 }
 .home-page-category-list {
+  width: 100%;
+  height: calc(100% - 40px);
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
 }
-
+.category-link{
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  display: block;
+  color: #ed9121;
+  padding: 20px 10px;
+  transition: all 0.4s ease;
+}
+.category-link:hover{
+  background-color: cadetblue;
+  color: #fff;
+  padding-left: 20px;
+  border-radius: 5px 10px 15px 0px;
+  letter-spacing: 5px;
+  margin-left: 15px;
+}
 @media only screen and (max-width: 700px) {
   .home-page-header {
     background-image: url(../../Assets/Images/bg-header-mobile.svg);

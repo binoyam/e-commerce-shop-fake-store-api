@@ -44,6 +44,47 @@ function HomePage({ products, setSelectedCategory }) {
         </p>
       </section>
       <section className="home-one">
+        <div className="home-two">
+          <h2 className="category-header">Categories</h2>
+          <ul className="home-page-category-list">
+            <li>
+              <Link
+                className="category-link"
+                onClick={() => setSelectedCategory("men%27s%20clothing")}
+                to="/products/categories/mens-clothing"
+              >
+                Men's
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="category-link"
+                onClick={() => setSelectedCategory("women%27s%20clothing")}
+                to="/products/categories/womens-clothing"
+              >
+                Women's
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="category-link"
+                onClick={() => setSelectedCategory("electronics")}
+                to="/products/categories/electronics"
+              >
+                Electronics
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="category-link"
+                onClick={() => setSelectedCategory("jewelery")}
+                to="/products/categories/jewelery"
+              >
+                Jewelery
+              </Link>
+            </li>
+          </ul>
+        </div>
         <div className="slider-container">
           <h2 className="slide-header">Recommended Products</h2>
           <div className="slide-wrapper">
@@ -57,44 +98,7 @@ function HomePage({ products, setSelectedCategory }) {
             ))}
           </div>
         </div>
-        <div className="home-two">
-          <h2 className="category-header">Categories</h2>
-          <ul className="home-page-category-list">
-            <li>
-              <Link
-                onClick={() => setSelectedCategory("men%27s%20clothing")}
-                to="/products/categories/mens-clothing"
-              >
-                Men
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={() => setSelectedCategory("women%27s%20clothing")}
-                to="/products/categories/womens-clothing"
-              >
-                Women
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={() => setSelectedCategory("electronics")}
-                to="/products/categories/electronics"
-              >
-                Electronics
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={() => setSelectedCategory("jewelery")}
-                to="/products/categories/jewelery"
-           
-              >
-                Jewelery
-              </Link>
-            </li>
-          </ul>
-        </div>
+
         <div className="home-two">
           <h2 className="sale-header">sale</h2>
           <ul>
