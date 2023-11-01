@@ -48,6 +48,15 @@ function HomePage({ products, setSelectedCategory }) {
             <li>
               <Link
                 className="category-link"
+                onClick={() => setSelectedCategory("")}
+                to="/products"
+              >
+                All Products
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="category-link"
                 onClick={() => setSelectedCategory("men%27s%20clothing")}
                 to="/products/categories/mens-clothing"
               >

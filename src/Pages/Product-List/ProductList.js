@@ -1,6 +1,7 @@
 import "./ProductList.css";
 import ProductItem from "../../components/Product-Item/ProductItem";
 import { useEffect, useState } from "react";
+import Nav from "../../components/Header-Nav/Nav";
 
 function ProductList({ products, addToCart }) {
   /* SHUFFLED PRODUCTS STATE */
@@ -25,21 +26,72 @@ function ProductList({ products, addToCart }) {
     }
     return shuffledArr;
   };
-// console.log(products);
+  // console.log(products);
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  const handleCheckboxChange = (category) => {
+    if (selectedCategories.includes(category)) {
+      setSelectedCategories(selectedCategories.filter((c) => c !== category));
+    } else {
+      setSelectedCategories([...selectedCategories, category]);
+    }
+  };
+
+  const handleFilter = () => {
+    const filtered = products.filter((product) =>
+      selectedCategories.includes(product.category)
+    );
+    setFilteredProducts(filtered);
+  };
+
+  const handleReset = () => {
+    setSelectedCategories([]);
+    setFilteredProducts([]);
+  };
+
+  const availableCategories = [
+    ...new Set(products.map((product) => product.category)),
+  ];
   return (
     <>
-      <div className="filter-section">
-        Filter products by price
-      </div>
-      <div className="all-products-page">
-        {shuffledProducts.map((product) => (
-          <ProductItem
-            key={product.id}
-            product={product}
-            addToCart={handleAddToCart}
-          />
+      <div className="filter-products">
+        {availableCategories.map((category) => (
+          <div key={category}>
+            <label>
+              <input
+                type="checkbox"
+                checked={selectedCategories.includes(category)}
+                onChange={() => handleCheckboxChange(category)}
+              />
+              {category}
+            </label>
+          </div>
         ))}
+        <button onClick={handleFilter}>Filter</button>
+        <button onClick={handleReset}>Reset</button>
       </div>
+      {filteredProducts.length > 0 ? (
+        <div className="all-products-page">
+          {filteredProducts.map((product) => (
+            <ProductItem
+              key={product.id}
+              product={product}
+              addToCart={handleAddToCart}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="all-products-page">
+          {shuffledProducts.map((product) => (
+            <ProductItem
+              key={product.id}
+              product={product}
+              addToCart={handleAddToCart}
+            />
+          ))}
+        </div>
+      )}
     </>
   );
 }
