@@ -1,7 +1,6 @@
 import "./App.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import MainContent from "./components/Main-Content/MainContent";
 import Footer from "./components/Footer/Footer";
@@ -66,13 +65,18 @@ function App() {
       url += `/category/${category}`;
     }
 
-    axios
-      .get(url)
+    fetch(url)
       .then((response) => {
-        setProducts(response.data);
+        if (!response.ok) {
+          throw new Error("Error fetching products");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setProducts(data);
       })
       .catch((error) => {
-        console.log("Error fetching products:", error);
+        console.log("Error fetching products: ", error);
       });
   }
   /* SEARCH RESULT STATE */

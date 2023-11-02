@@ -1,7 +1,6 @@
 import "./ProductList.css";
 import ProductItem from "../../components/Product-Item/ProductItem";
 import { useEffect, useState } from "react";
-import Nav from "../../components/Header-Nav/Nav";
 
 function ProductList({ products, addToCart }) {
   /* SHUFFLED PRODUCTS STATE */
