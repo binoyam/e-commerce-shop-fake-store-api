@@ -14,7 +14,6 @@ function Header({
   products,
   searchTerm,
   handleSearch,
-  
 }) {
   /* CART/MENU_ OPEN/CLOSED STATE */
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -22,11 +21,13 @@ function Header({
   function toggleCartDropDown() {
     setIsCartOpen(!isCartOpen);
   }
-const location = useLocation()
-const isHomePage = location.pathname === '/home'
-const isSearchResultPage = location.pathname === '/search-result'
-const isProductsListingPage = location.pathname === '/products'
-const isSearchBarRoute = isHomePage || isSearchResultPage || isProductsListingPage
+  const location = useLocation();
+  const isHomePage = location.pathname === "/home";
+  const isSearchResultPage = location.pathname === "/search-result";
+  const isProductsListingPage =
+    location.pathname === "/products" || "products/categories/:category";
+  const isSearchBarRoute =
+    isHomePage || isSearchResultPage || isProductsListingPage;
   return (
     <header className="header">
       <Link
@@ -37,16 +38,20 @@ const isSearchBarRoute = isHomePage || isSearchResultPage || isProductsListingPa
         <span className="logo-text">bt-shop</span>
       </Link>
 
-      {isSearchBarRoute && <SearchProducts searchTerm={searchTerm} handleSearch={handleSearch}/>}
+      {isSearchBarRoute && (
+        <SearchProducts searchTerm={searchTerm} handleSearch={handleSearch} />
+      )}
 
-      {!isSearchBarRoute && <Nav
-        searchTerm={searchTerm}
-        handleSearch={handleSearch}
-        products={products}
-        setSelectedCategory={setSelectedCategory}
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-      />}
+      {!isSearchBarRoute && (
+        <Nav
+          searchTerm={searchTerm}
+          handleSearch={handleSearch}
+          products={products}
+          setSelectedCategory={setSelectedCategory}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
+      )}
 
       <div className="nav-right">
         <div onClick={toggleCartDropDown} className="cart-nav">

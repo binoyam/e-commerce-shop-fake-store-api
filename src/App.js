@@ -161,6 +161,7 @@ function App() {
                 searchTerm={searchTerm}
                 addToCart={addToCart}
                 products={products}
+                setSelectedCategory={setSelectedCategory}
               />
             }
           >
