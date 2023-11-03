@@ -14,10 +14,12 @@
 }
 
 .filter-products {
-  width: 100%;
+  width: calc(100% - 40px);
+  margin: 0 auto;
   background-color: white;
   padding: 20px;
   display: flex;
   align-items: flex-start;
   position: absolute;
+
 }
