@@ -1,25 +1,13 @@
-.product-list-page{
+.product-list-page {
   width: 100%;
-  height: calc(100vh - 135px);
-
+  min-height: calc(100vh - 135px);
 }
-.all-products-page {
+.products-list {
   width: 100%;
-
+  min-height: calc(100vh - 135px);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding-top: 30px;
+  /* padding-top: 30px; */
   position: relative;
-}
-
-.filter-products {
-  width: calc(100% - 40px);
-  margin: 0 auto;
-  background-color: white;
-  padding: 20px;
-  display: flex;
-  align-items: flex-start;
-  position: absolute;
-
 }

@@ -123,6 +123,7 @@ function App() {
       />
 
       <main className="main-content">
+
         <Routes>
           {/* Navigate to home */}
           <Route path="/" element={<Navigate to="/home" />} />
@@ -193,6 +194,7 @@ function App() {
             element={<PaymentPage cartItems={cartItems} />}
           />
         </Routes>
+        
       </main>
 
       <Footer />

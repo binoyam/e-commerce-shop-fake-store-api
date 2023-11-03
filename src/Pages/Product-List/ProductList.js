@@ -25,72 +25,18 @@ function ProductList({ products, addToCart }) {
     }
     return shuffledArr;
   };
-  // console.log(products);
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
 
-  const handleCheckboxChange = (category) => {
-    if (selectedCategories.includes(category)) {
-      setSelectedCategories(selectedCategories.filter((c) => c !== category));
-    } else {
-      setSelectedCategories([...selectedCategories, category]);
-    }
-  };
-
-  const handleFilter = () => {
-    const filtered = products.filter((product) =>
-      selectedCategories.includes(product.category)
-    );
-    setFilteredProducts(filtered);
-  };
-
-  const handleReset = () => {
-    setSelectedCategories([]);
-    setFilteredProducts([]);
-  };
-
-  const availableCategories = [
-    ...new Set(products.map((product) => product.category)),
-  ];
   return (
     <div className="product-list-page">
-      <div className="filter-products">
-        {availableCategories.map((category) => (
-          <div key={category}>
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedCategories.includes(category)}
-                onChange={() => handleCheckboxChange(category)}
-              />
-              {category}
-            </label>
-          </div>
+      <div className="products-list">
+        {shuffledProducts.map((product) => (
+          <ProductItem
+            key={product.id}
+            product={product}
+            addToCart={handleAddToCart}
+          />
         ))}
-        <button onClick={handleFilter}>Filter</button>
-        <button onClick={handleReset}>Reset</button>
       </div>
-      {filteredProducts.length > 0 ? (
-        <div className="all-products-page">
-          {filteredProducts.map((product) => (
-            <ProductItem
-              key={product.id}
-              product={product}
-              addToCart={handleAddToCart}
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="all-products-page">
-          {shuffledProducts.map((product) => (
-            <ProductItem
-              key={product.id}
-              product={product}
-              addToCart={handleAddToCart}
-            />
-          ))}
-        </div>
-      )}
     </div>
   );
 }

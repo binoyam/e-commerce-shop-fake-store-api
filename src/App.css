@@ -7,13 +7,9 @@
   scroll-behavior: smooth;
   padding: 0 20px 40px;
   position: relative; /* for footer */
-  /* padding-bottom: 60px; */
 }
 .main-content {
   width: 100%;
-  max-width: 1200px;
-  height: auto;
   min-height: calc(100vh - 135px );
-  padding: 20px 0px;
-
+  margin: 20px 0px;
 }
