@@ -4,13 +4,15 @@
   min-height: 100vh;
   margin: 0 auto;
   scroll-behavior: smooth;
-  padding-bottom: 40px;
+  padding: 0 20px 40px;
   position: relative; /* for footer */
   /* padding-bottom: 60px; */
 }
 .main-content {
   width: 100%;
   max-width: 1200px;
+  height: calc(100vh - 135px );
   scroll-behavior: smooth;
   margin: 20px 0px;
+
 }

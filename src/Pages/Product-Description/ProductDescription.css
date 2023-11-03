@@ -1,7 +1,8 @@
 .product-description-page {
   padding: 50px;
   width: 100%;
-  height: calc(100vh - 57px - 120px);
+  height: calc(100vh - 135px );
+  height: 100%;
   position: relative; /* for back button*/
   background-color: white;
   border-top-left-radius: 15px;

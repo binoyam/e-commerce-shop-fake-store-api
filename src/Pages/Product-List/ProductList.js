@@ -53,7 +53,7 @@ function ProductList({ products, addToCart }) {
     ...new Set(products.map((product) => product.category)),
   ];
   return (
-    <>
+    <div className="product-list-page">
       <div className="filter-products">
         {availableCategories.map((category) => (
           <div key={category}>
@@ -91,8 +91,8 @@ function ProductList({ products, addToCart }) {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }
-
+// wrapper with a class name product list page
 export default ProductList;
