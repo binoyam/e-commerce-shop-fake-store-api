@@ -163,7 +163,8 @@ function App() {
                 products={products}
               />
             }
-          />
+          >
+          </Route>
 
           {/* SELECTED CATEGORY PAGE */}
           <Route
@@ -194,7 +195,7 @@ function App() {
             element={<PaymentPage cartItems={cartItems} />}
           />
         </Routes>
-        
+
       </main>
 
       <Footer />

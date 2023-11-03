@@ -25,7 +25,8 @@ function Header({
 const location = useLocation()
 const isHomePage = location.pathname === '/home'
 const isSearchResultPage = location.pathname === '/search-result'
-const isSearchBarRoute = isHomePage || isSearchResultPage
+const isProductsListingPage = location.pathname === '/products'
+const isSearchBarRoute = isHomePage || isSearchResultPage || isProductsListingPage
   return (
     <header className="header">
       <Link

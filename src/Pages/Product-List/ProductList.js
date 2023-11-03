@@ -1,6 +1,7 @@
 import "./ProductList.css";
 import ProductItem from "../../components/Product-Item/ProductItem";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function ProductList({ products, addToCart }) {
   /* SHUFFLED PRODUCTS STATE */
@@ -27,7 +28,17 @@ function ProductList({ products, addToCart }) {
   };
 
   return (
-    <div className="product-list-page">
+    <div className="product-listing-page">
+        <div className="categories-header">
+          <h2 className="categories-title">Categories</h2>
+          <ul className="category-links">
+            <li><Link className="prd-category-link" to='/products'> All</Link></li>
+            <li><Link className="prd-category-link" to='/products'> Men</Link></li>
+            <li><Link className="prd-category-link" to='/products'> Women</Link></li>
+            <li><Link className="prd-category-link" to='/products'> Electronics</Link></li>
+            <li><Link className="prd-category-link" to='/products'> Jewelery</Link></li>
+          </ul>
+        </div>
       <div className="products-list">
         {shuffledProducts.map((product) => (
           <ProductItem
@@ -40,5 +51,5 @@ function ProductList({ products, addToCart }) {
     </div>
   );
 }
-// wrapper with a class name product list page
+
 export default ProductList;
