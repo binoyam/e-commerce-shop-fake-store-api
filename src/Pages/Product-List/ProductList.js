@@ -27,9 +27,10 @@ function ProductList({ products, addToCart, setSelectedCategory }) {
     }
     return shuffledArr;
   };
+
   const handleClick = (name, category) => {
     setCategoryName(name);
-    setSelectedCategory(category);
+    setSelectedCategory(category)
   };
   return (
     <div className="product-listing-page">
@@ -48,7 +49,7 @@ function ProductList({ products, addToCart, setSelectedCategory }) {
           <li>
             <Link
               className="prd-category-link"
-              to="/products/categories/:category"
+              to="/products/categories/mens-clothing"
               onClick={() => handleClick("Men", "men%27s%20clothing")}
             >
               Men
@@ -57,7 +58,7 @@ function ProductList({ products, addToCart, setSelectedCategory }) {
           <li>
             <Link
               className="prd-category-link"
-              to="/products/categories/:category"
+              to="/products/categories/womens-clothing"
               onClick={() => handleClick("Women", "women%27s%20clothing")}
             >
               Women
@@ -66,7 +67,7 @@ function ProductList({ products, addToCart, setSelectedCategory }) {
           <li>
             <Link
               className="prd-category-link"
-              to="/products/categories/:category"
+              to="/products/categories/electronics"
               onClick={() => handleClick("Electronics", "electronics")}
             >
               Electronics
@@ -75,7 +76,7 @@ function ProductList({ products, addToCart, setSelectedCategory }) {
           <li>
             <Link
               className="prd-category-link"
-              to="/products/categories/:category"
+              to="/products/categories/jewelery"
               onClick={() => handleClick("Jewelery", "jewelery")}
             >
               Jewelery

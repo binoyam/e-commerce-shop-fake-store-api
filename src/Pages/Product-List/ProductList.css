@@ -1,6 +1,6 @@
 .product-listing-page {
   width: 100%;
-  min-height: calc(100vh - 135px);
+  min-height: calc(100vh - 335px);
   margin-top: 200px;
   position: relative;
 }

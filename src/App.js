@@ -170,7 +170,7 @@ function App() {
           {/* SELECTED CATEGORY PAGE */}
           <Route
             path="products/categories/:category"
-            element={<ProductList addToCart={addToCart} products={products} />}
+            element={<ProductList setSelectedCategory={setSelectedCategory} addToCart={addToCart} products={products} />}
           />
 
           {/* PRODUCT DESCRIPTION PAGE*/}
