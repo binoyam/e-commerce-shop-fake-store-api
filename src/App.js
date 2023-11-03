@@ -122,78 +122,78 @@ function App() {
         setSelectedCategory={setSelectedCategory}
       />
 
-<main className="main-content">
-      <Routes>
-        {/* Navigate to home */}
-        <Route path="/" element={<Navigate to="/home" />} />
+      <main className="main-content">
+        <Routes>
+          {/* Navigate to home */}
+          <Route path="/" element={<Navigate to="/home" />} />
 
-        {/* HOME PAGE */}
-        <Route
-          path="/home"
-          element={
-            <HomePage
-              products={products}
-              setSelectedCategory={setSelectedCategory}
-            />
-          }
-        />
+          {/* HOME PAGE */}
+          <Route
+            path="/home"
+            element={
+              <HomePage
+                products={products}
+                setSelectedCategory={setSelectedCategory}
+              />
+            }
+          />
 
-        {/* SEARCH RESULT PAGE */}
-        <Route
-          path="/search-result"
-          element={
-            <SearchResult
-              searchResults={searchResults}
-              searchTerm={searchTerm}
-              addToCart={addToCart}
-            />
-          }
-        />
+          {/* SEARCH RESULT PAGE */}
+          <Route
+            path="/search-result"
+            element={
+              <SearchResult
+                searchResults={searchResults}
+                searchTerm={searchTerm}
+                addToCart={addToCart}
+              />
+            }
+          />
 
-        {/* ALL PRODUCTS LIST PAGE */}
-        <Route
-          path="/products"
-          element={
-            <ProductList
-              handleSearch={handleSearch}
-              searchResults={searchResults}
-              searchTerm={searchTerm}
-              addToCart={addToCart}
-              products={products}
-            />
-          }
-        />
+          {/* ALL PRODUCTS LIST PAGE */}
+          <Route
+            path="/products"
+            element={
+              <ProductList
+                handleSearch={handleSearch}
+                searchResults={searchResults}
+                searchTerm={searchTerm}
+                addToCart={addToCart}
+                products={products}
+              />
+            }
+          />
 
-        {/* SELECTED CATEGORY PAGE */}
-        <Route
-          path="products/categories/:category"
-          element={<ProductList addToCart={addToCart} products={products} />}
-        />
+          {/* SELECTED CATEGORY PAGE */}
+          <Route
+            path="products/categories/:category"
+            element={<ProductList addToCart={addToCart} products={products} />}
+          />
 
-        {/* PRODUCT DESCRIPTION PAGE*/}
-        <Route
-          exact
-          path="/product/:id"
-          element={
-            <ProductDescription products={products} addToCart={addToCart} />
-          }
-        />
+          {/* PRODUCT DESCRIPTION PAGE*/}
+          <Route
+            exact
+            path="/product/:id"
+            element={
+              <ProductDescription products={products} addToCart={addToCart} />
+            }
+          />
 
-        {/* CHECKOUT PAGE */}
-        <Route
-          path="/checkout"
-          element={
-            <Checkout cartItems={cartItems} removeFromCart={removeFromCart} />
-          }
-        />
+          {/* CHECKOUT PAGE */}
+          <Route
+            path="/checkout"
+            element={
+              <Checkout cartItems={cartItems} removeFromCart={removeFromCart} />
+            }
+          />
 
-        {/* PAYMENT PAGE */}
-        <Route
-          path="/payment"
-          element={<PaymentPage cartItems={cartItems} />}
-        />
-      </Routes>
-    </main>
+          {/* PAYMENT PAGE */}
+          <Route
+            path="/payment"
+            element={<PaymentPage cartItems={cartItems} />}
+          />
+        </Routes>
+      </main>
 
       <Footer />
     </div>
