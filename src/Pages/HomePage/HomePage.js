@@ -42,7 +42,7 @@ function HomePage({ products, setSelectedCategory }) {
         </p>
       </section>
       <section className="home-one">
-        <div className="home-two">
+        <div className="home-category-section">
           <h2 className="category-header">Categories</h2>
           <ul className="home-page-category-list">
             <li>
@@ -51,7 +51,7 @@ function HomePage({ products, setSelectedCategory }) {
                 onClick={() => setSelectedCategory("")}
                 to="/products"
               >
-                All Products
+                All Products 
               </Link>
             </li>
             <li>
