@@ -13,6 +13,8 @@
   min-height: calc(100vh - 135px);
   margin: 20px 0px;
 }
+
+/* CUSTOM SCROLL BAR */
 ::-webkit-scrollbar {
   width: 10px;
 }
