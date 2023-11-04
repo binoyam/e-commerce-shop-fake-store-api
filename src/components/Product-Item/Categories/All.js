@@ -2,7 +2,8 @@ import React from "react";
 import ProductList from "../../../Pages/ProductsPage/ProductList/ProductList";
 
 function All({ products, addToCart }) {
-  return <ProductList products={products} addToCart={addToCart} />;
+  const filteredProducts = products.filter((product) => product.id < 21);
+  return <ProductList products={filteredProducts} addToCart={addToCart} />;
 }
 
 export default All;
