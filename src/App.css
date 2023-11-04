@@ -10,6 +10,24 @@
 }
 .main-content {
   width: 100%;
-  min-height: calc(100vh - 135px );
+  min-height: calc(100vh - 135px);
   margin: 20px 0px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #adb904;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
 }

@@ -156,7 +156,17 @@ function App() {
               />
             }
           />
-
+          {/* Back to shop */}
+          <Route
+            path="/products"
+            element={
+              <ProductList
+                setSelectedCategory={setSelectedCategory}
+                addToCart={addToCart}
+                products={products}
+              />
+            }
+          />
           {/* ALL PRODUCTS LIST PAGE */}
           <Route
             path="categories"
@@ -181,48 +191,47 @@ function App() {
                 />
               }
             />
-              <Route
-                path="mens-clothing"
-                element={
-                  <Mens
-                    // setSelectedCategory={setSelectedCategory}
-                    addToCart={addToCart}
-                    products={products}
-                  />
-                }
-              />
-              <Route
-                path="womens-clothing"
-                element={
-                  <Womens
-                    // setSelectedCategory={setSelectedCategory}
-                    addToCart={addToCart}
-                    products={products}
-                  />
-                }
-              />
-              <Route
-                path="electronics"
-                element={
-                  <Electronics
-                    // setSelectedCategory={setSelectedCategory}
-                    addToCart={addToCart}
-                    products={products}
-                  />
-                }
-              />
-              <Route
-                path="jewelery"
-                element={
-                  <Jewelery
-                    // setSelectedCategory={setSelectedCategory}
-                    addToCart={addToCart}
-                    products={products}
-                  />
-                }
-              />
-        </Route>
-         
+            <Route
+              path="mens-clothing"
+              element={
+                <Mens
+                  // setSelectedCategory={setSelectedCategory}
+                  addToCart={addToCart}
+                  products={products}
+                />
+              }
+            />
+            <Route
+              path="womens-clothing"
+              element={
+                <Womens
+                  // setSelectedCategory={setSelectedCategory}
+                  addToCart={addToCart}
+                  products={products}
+                />
+              }
+            />
+            <Route
+              path="electronics"
+              element={
+                <Electronics
+                  // setSelectedCategory={setSelectedCategory}
+                  addToCart={addToCart}
+                  products={products}
+                />
+              }
+            />
+            <Route
+              path="jewelery"
+              element={
+                <Jewelery
+                  // setSelectedCategory={setSelectedCategory}
+                  addToCart={addToCart}
+                  products={products}
+                />
+              }
+            />
+          </Route>
 
           {/* PRODUCT DESCRIPTION PAGE*/}
           <Route
