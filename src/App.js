@@ -7,7 +7,7 @@ import Footer from "./components/Footer/Footer";
 import Checkout from "./Pages/Checkout/Checkout";
 import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
-import ProductDescription from "./Pages/ProductsPage/Product-Description/ProductDescription";
+import ProductDescription from "./Pages/Product-Description/ProductDescription";
 import SearchResult from "./Pages/SearchResult/SearchResult";
 import ProductList from "./Pages/ProductsPage/ProductList/ProductList";
 import Mens from "./components/Product-Item/Categories/Mens";
