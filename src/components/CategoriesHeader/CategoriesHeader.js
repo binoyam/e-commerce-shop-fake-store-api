@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom';
-import './CategoriesHeader.css'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./CategoriesHeader.css";
 
 function CategoriesHeader() {
-    const [categoryName, setCategoryName] = useState("All");
+  const [categoryName, setCategoryName] = useState("All");
   const handleClick = (name) => {
     setCategoryName(name);
-  }
+  };
   return (
     <div className="categories">
       <h2 className="categories-title">{categoryName}</h2>
@@ -14,7 +14,7 @@ function CategoriesHeader() {
         <li>
           <Link
             className="prd-category-link"
-            to="/products"
+            to="/categories/all"
             onClick={() => handleClick("All", "")}
           >
             All
@@ -24,7 +24,7 @@ function CategoriesHeader() {
           <Link
             className="prd-category-link"
             to="/categories/mens-clothing"
-            onClick={() => handleClick("Men", "men%27s%20clothing")}
+            onClick={() => handleClick("Men")}
           >
             Men
           </Link>
@@ -33,7 +33,7 @@ function CategoriesHeader() {
           <Link
             className="prd-category-link"
             to="/categories/womens-clothing"
-            onClick={() => handleClick("Women", "women%27s%20clothing")}
+            onClick={() => handleClick("Women")}
           >
             Women
           </Link>
@@ -42,7 +42,7 @@ function CategoriesHeader() {
           <Link
             className="prd-category-link"
             to="/categories/electronics"
-            onClick={() => handleClick("Electronics", "electronics")}
+            onClick={() => handleClick("Electronics")}
           >
             Electronics
           </Link>
@@ -51,14 +51,14 @@ function CategoriesHeader() {
           <Link
             className="prd-category-link"
             to="/categories/jewelery"
-            onClick={() => handleClick("Jewelery", "jewelery")}
+            onClick={() => handleClick("Jewelery")}
           >
             Jewelery
           </Link>
         </li>
       </ul>
     </div>
-  )
+  );
 }
 
-export default CategoriesHeader
+export default CategoriesHeader;

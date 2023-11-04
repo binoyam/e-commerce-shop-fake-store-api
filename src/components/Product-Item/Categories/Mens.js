@@ -3,7 +3,7 @@ import ProductList from "../../../Pages/ProductsPage/ProductList/ProductList";
 
 function Mens({ products, addToCart }) {
   const filteredProducts = products.filter(
-    (product) => product.category === "'Mens's clothing"
+    (product) => product.category.toString() === "'Mens's clothing"
   );
   return (
     <>

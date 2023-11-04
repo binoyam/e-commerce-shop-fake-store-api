@@ -16,6 +16,7 @@ import Womens from "./components/Product-Item/Categories/Womens";
 import Electronics from "./components/Product-Item/Categories/Electronics";
 import Jewelery from "./components/Product-Item/Categories/Jewelery";
 import Categories from "./components/Product-Item/Categories/Categories";
+import All from "./components/Product-Item/Categories/All";
 
 function App() {
   /* ALL PRODUCTS STATE */
@@ -70,9 +71,9 @@ function App() {
     fetchProducts(selectedCategory);
   }, [selectedCategory]);
 
+  console.log(products);
   function fetchProducts(category) {
     let url = "https://fakestoreapi.com/products";
-
     if (category) {
       url += `/category/${category}`;
     }
@@ -158,9 +159,9 @@ function App() {
 
           {/* ALL PRODUCTS LIST PAGE */}
           <Route
-            path="/products"
+            path="categories"
             element={
-              <ProductsPage
+              <Categories
                 handleSearch={handleSearch}
                 searchResults={searchResults}
                 searchTerm={searchTerm}
@@ -171,57 +172,57 @@ function App() {
             }
           >
             <Route
-              path="categories/all"
+              path="all"
               element={
-                <Categories
+                <All
                   setSelectedCategory={setSelectedCategory}
                   addToCart={addToCart}
                   products={products}
                 />
               }
-            >
+            />
               <Route
-                path="categories/mens-clothing"
+                path="mens-clothing"
                 element={
                   <Mens
-                    setSelectedCategory={setSelectedCategory}
+                    // setSelectedCategory={setSelectedCategory}
                     addToCart={addToCart}
                     products={products}
                   />
                 }
               />
               <Route
-                path="categories/womens-clothing"
+                path="womens-clothing"
                 element={
                   <Womens
-                    setSelectedCategory={setSelectedCategory}
+                    // setSelectedCategory={setSelectedCategory}
                     addToCart={addToCart}
                     products={products}
                   />
                 }
               />
               <Route
-                path="categories/electronics"
+                path="electronics"
                 element={
                   <Electronics
-                    setSelectedCategory={setSelectedCategory}
+                    // setSelectedCategory={setSelectedCategory}
                     addToCart={addToCart}
                     products={products}
                   />
                 }
               />
               <Route
-                path="categories/jewelery"
+                path="jewelery"
                 element={
                   <Jewelery
-                    setSelectedCategory={setSelectedCategory}
+                    // setSelectedCategory={setSelectedCategory}
                     addToCart={addToCart}
                     products={products}
                   />
                 }
               />
-            </Route>
-          </Route>
+        </Route>
+         
 
           {/* PRODUCT DESCRIPTION PAGE*/}
           <Route

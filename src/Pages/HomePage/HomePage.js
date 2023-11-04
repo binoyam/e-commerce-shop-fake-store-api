@@ -49,7 +49,7 @@ function HomePage({ products, setSelectedCategory }) {
               <Link
                 className="category-link"
                 onClick={() => setSelectedCategory("")}
-                to="/products"
+                to="/categories/all"
               >
                 All Products 
               </Link>
@@ -58,7 +58,7 @@ function HomePage({ products, setSelectedCategory }) {
               <Link
                 className="category-link"
                 onClick={() => setSelectedCategory("men%27s%20clothing")}
-                to="/products/categories/mens-clothing"
+                to="/categories/mens-clothing"
               >
                 Men's
               </Link>
@@ -67,7 +67,7 @@ function HomePage({ products, setSelectedCategory }) {
               <Link
                 className="category-link"
                 onClick={() => setSelectedCategory("women%27s%20clothing")}
-                to="/products/categories/womens-clothing"
+                to="/categories/womens-clothing"
               >
                 Women's
               </Link>
@@ -76,7 +76,7 @@ function HomePage({ products, setSelectedCategory }) {
               <Link
                 className="category-link"
                 onClick={() => setSelectedCategory("electronics")}
-                to="/products/categories/electronics"
+                to="/categories/electronics"
               >
                 Electronics
               </Link>
@@ -85,7 +85,7 @@ function HomePage({ products, setSelectedCategory }) {
               <Link
                 className="category-link"
                 onClick={() => setSelectedCategory("jewelery")}
-                to="/products/categories/jewelery"
+                to="/categories/jewelery"
               >
                 Jewelery
               </Link>
