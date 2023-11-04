@@ -1,5 +1,5 @@
 import React from "react";
-import ProductList from "../../../Pages/ProductsPage/ProductList/ProductList";
+import ProductList from "../ProductList/ProductList";
 
 function Electronics({ products, addToCart }) {
   const filteredProducts = products.filter(

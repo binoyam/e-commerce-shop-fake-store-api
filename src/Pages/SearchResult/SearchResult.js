@@ -4,7 +4,7 @@ import "./SearchResult.css";
 
 /* SEARCH RESULT PAGE */
 function SearchResult({ searchResults, searchTerm, addToCart }) {
-  console.log(searchResults);
+  // console.log(searchResults);
   const handleAddToCart = (product) => {
     addToCart(product, 1);
   };
@@ -12,15 +12,13 @@ function SearchResult({ searchResults, searchTerm, addToCart }) {
     <div className="search-result-page">
       <div className="search-result-header">
         <h1 className="search-page-header">
-          <span className="result-amount">*{searchResults.length}</span>
-          {searchResults.length > 0 ? (
-            <span> Results </span>
-          ) : (
-            <span> Result </span>
-          )}
-          found for : " {searchTerm} "
+          <span className="result-amount">
+            *{searchResults.length}
+            {searchResults.length > 0 ? " Results " : " Result "}
+            found for : " {searchTerm} "
+          </span>
         </h1>
-        <Link className="all-products-link" to="/products">
+        <Link className="all-products-link" to="/categories/all">
           Back to all products
         </Link>
       </div>

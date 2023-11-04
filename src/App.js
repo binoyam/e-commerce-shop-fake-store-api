@@ -4,18 +4,18 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Checkout from "./Pages/Checkout/Checkout";
+import Categories from "./components/Categories/Categories";
+import All from "./components/Categories/All";
+import Mens from "./components/Categories/Mens";
+import Womens from "./components/Categories/Womens";
+import Electronics from "./components/Categories/Electronics";
+import Jewelery from "./components/Categories/Jewelery";
 import HomePage from "./Pages/HomePage/HomePage";
+import ProductList from "./components/ProductList/ProductList";
+import Checkout from "./Pages/Checkout/Checkout";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import ProductDescription from "./Pages/Product-Description/ProductDescription";
 import SearchResult from "./Pages/SearchResult/SearchResult";
-import ProductList from "./Pages/ProductsPage/ProductList/ProductList";
-import Mens from "./components/Product-Item/Categories/Mens";
-import Womens from "./components/Product-Item/Categories/Womens";
-import Electronics from "./components/Product-Item/Categories/Electronics";
-import Jewelery from "./components/Product-Item/Categories/Jewelery";
-import Categories from "./components/Product-Item/Categories/Categories";
-import All from "./components/Product-Item/Categories/All";
 
 function App() {
   /* ALL PRODUCTS STATE */
@@ -130,10 +130,10 @@ function App() {
               />
             }
           />
-          <Route
+          {/* <Route
             path="/products"
             element={<ProductList addToCart={addToCart} products={products} />}
-          />
+          /> */}
           <Route
             path="/categories"
             element={

@@ -1,6 +1,6 @@
 import "./Header.css";
 import CartIcon from "../../Assets/Images/icon-cart.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Nav from "../Header-Nav/Nav";
 import Cart from "../Header-Cart/Cart";
@@ -21,9 +21,10 @@ function Header({
     setIsCartOpen(!isCartOpen);
   }
   const location = useLocation();
+
   const isHomePage = location.pathname === "/home";
   const isSearchResultPage = location.pathname === "/search-result";
-  const isProductsListingPage = location.pathname.startsWith("/categories");
+  const isProductsListingPage = location.pathname.startsWith("categories/");
   const isSearchBarRoute =
     isHomePage || isSearchResultPage || isProductsListingPage;
   return (

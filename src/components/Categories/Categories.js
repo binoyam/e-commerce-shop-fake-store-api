@@ -1,5 +1,5 @@
+import CategoriesHeader from "../CategoriesHeader/CategoriesHeader";
 import "./Categories.css";
-import CategoriesHeader from "../../../components/CategoriesHeader/CategoriesHeader";
 import { Outlet } from "react-router-dom";
 
 function Categories() {
