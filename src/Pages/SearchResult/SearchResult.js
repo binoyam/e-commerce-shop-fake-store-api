@@ -10,14 +10,15 @@ function SearchResult({ searchResults, searchTerm, addToCart }) {
   };
   return (
     <div className="search-result-page">
-      <div className="search-result-header">
-        <h1 className="search-page-header">
-          <span className="result-amount">
-            *{searchResults.length}
-            {searchResults.length > 0 ? " Results " : " Result "}
-            found for : " {searchTerm} "
+      <div className="search-page-header">
+        <div className="search-page-result">
+          <span className="search-result-count">*{searchResults.length}</span>
+          <span>
+            {searchResults.length > 1 ? " Results " : " Result "}
           </span>
-        </h1>
+          <span>for :</span>
+          <span className="term">" {searchTerm} "</span>
+        </div>
         <Link className="all-products-link" to="/categories/all">
           Back to all products
         </Link>
@@ -35,6 +36,10 @@ function SearchResult({ searchResults, searchTerm, addToCart }) {
       ) : (
         <div className="no-result">
           <h1>No matches found</h1>
+          <p>
+            Please search for a valid product or Use the button above to look at
+            our products
+          </p>
         </div>
       )}
     </div>
