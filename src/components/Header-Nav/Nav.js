@@ -3,7 +3,7 @@ import "./Nav.css";
 import MenuIcon from "../../Assets/Images/icon-menu.svg";
 import CloseMenuIcon from "../../Assets/Images/close-for-menu.svg";
 
-function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
+function Nav({ isMenuOpen, setIsMenuOpen }) {
   /* OPEN MENU BUTTON FUNCTON */
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
@@ -15,8 +15,7 @@ function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
   }
 
   /* CLOSE MENU AFTER CATEGORY SELECTION */
-  const handleClick = (category) => {
-    setSelectedCategory(category);
+  const handleClick = () => {
     setIsMenuOpen(false);
   };
 
@@ -35,8 +34,8 @@ function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
       <ul className={isMenuOpen ? "nav-links show" : "nav-links hide"}>
         <li>
           <Link
-            onClick={() => handleClick("men%27s%20clothing")}
-            to="/products/categories/mens-clothing"
+            onClick={() => handleClick()}
+            to="/categories/mens-clothing"
             className="nav-link"
           >
             Men
@@ -44,8 +43,8 @@ function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
         </li>
         <li>
           <Link
-            onClick={() => handleClick("women%27s%20clothing")}
-            to="/products/categories/womens-clothing"
+            onClick={() => handleClick()}
+            to="/categories/womens-clothing"
             className="nav-link"
           >
             Women
@@ -53,8 +52,8 @@ function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
         </li>
         <li>
           <Link
-            onClick={() => handleClick("electronics")}
-            to="/products/categories/electronics"
+            onClick={() => handleClick()}
+            to="/categories/electronics"
             className="nav-link"
           >
             Electronics
@@ -62,8 +61,8 @@ function Nav({ setSelectedCategory, isMenuOpen, setIsMenuOpen }) {
         </li>
         <li>
           <Link
-            onClick={() => handleClick("jewelery")}
-            to="/products/categories/jewelery"
+            onClick={() => handleClick()}
+            to="/categories/jewelery"
             className="nav-link"
           >
             Jewelery

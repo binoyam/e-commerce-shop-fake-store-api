@@ -22,9 +22,6 @@ function App() {
   /* ALL PRODUCTS STATE */
   const [products, setProducts] = useState([]);
 
-  /* CATEGORY STATE */
-  const [selectedCategory, setSelectedCategory] = useState("");
-
   /* CART ITEMS STATE */
   const [cartItems, setCartItems] = useState([]);
 
@@ -68,16 +65,12 @@ function App() {
   /* FUNCTION TO CHANGE CATEGORY*/
   /* FUNCTION TO FETCH PRODUCTS */
   useEffect(() => {
-    fetchProducts(selectedCategory);
-  }, [selectedCategory]);
+    fetchProducts();
+  }, []);
 
-  console.log(products);
-  function fetchProducts(category) {
+  // console.log(products);
+  function fetchProducts() {
     let url = "https://fakestoreapi.com/products";
-    if (category) {
-      url += `/category/${category}`;
-    }
-
     fetch(url)
       .then((response) => {
         if (!response.ok) {
@@ -126,7 +119,6 @@ function App() {
         products={products}
         removeFromCart={removeFromCart}
         cartItems={cartItems}
-        setSelectedCategory={setSelectedCategory}
       />
 
       <main className="main-content">
@@ -140,7 +132,6 @@ function App() {
             element={
               <HomePage
                 products={products}
-                setSelectedCategory={setSelectedCategory}
               />
             }
           />
@@ -161,7 +152,6 @@ function App() {
             path="/products"
             element={
               <ProductList
-                setSelectedCategory={setSelectedCategory}
                 addToCart={addToCart}
                 products={products}
               />
@@ -177,7 +167,6 @@ function App() {
                 searchTerm={searchTerm}
                 addToCart={addToCart}
                 products={products}
-                setSelectedCategory={setSelectedCategory}
               />
             }
           >
@@ -185,7 +174,6 @@ function App() {
               path="all"
               element={
                 <All
-                  setSelectedCategory={setSelectedCategory}
                   addToCart={addToCart}
                   products={products}
                 />
@@ -195,7 +183,6 @@ function App() {
               path="mens-clothing"
               element={
                 <Mens
-                  // setSelectedCategory={setSelectedCategory}
                   addToCart={addToCart}
                   products={products}
                 />
@@ -205,7 +192,6 @@ function App() {
               path="womens-clothing"
               element={
                 <Womens
-                  // setSelectedCategory={setSelectedCategory}
                   addToCart={addToCart}
                   products={products}
                 />
@@ -215,7 +201,6 @@ function App() {
               path="electronics"
               element={
                 <Electronics
-                  // setSelectedCategory={setSelectedCategory}
                   addToCart={addToCart}
                   products={products}
                 />
@@ -225,7 +210,6 @@ function App() {
               path="jewelery"
               element={
                 <Jewelery
-                  // setSelectedCategory={setSelectedCategory}
                   addToCart={addToCart}
                   products={products}
                 />

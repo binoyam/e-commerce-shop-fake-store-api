@@ -32,7 +32,8 @@
     font-weight: 600;
     letter-spacing: 3px;
   }
-  .prd-category-link:hover {
+  .prd-category-link:hover,
+  .prd-category-link.selected{
     color: #fff;
     background-color: cadetblue;
     border: 1px solid transparent;

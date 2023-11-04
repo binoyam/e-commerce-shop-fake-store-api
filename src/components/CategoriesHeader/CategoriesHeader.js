@@ -1,12 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./CategoriesHeader.css";
 
 function CategoriesHeader() {
   const [categoryName, setCategoryName] = useState("All");
-  const handleClick = (name) => {
-    setCategoryName(name);
-  };
+ 
   return (
     <div className="categories">
       <h2 className="categories-title">{categoryName}</h2>
@@ -15,7 +13,7 @@ function CategoriesHeader() {
           <Link
             className="prd-category-link"
             to="/categories/all"
-            onClick={() => handleClick("All", "")}
+            onClick={() => setCategoryName("All")}
           >
             All
           </Link>
@@ -24,7 +22,7 @@ function CategoriesHeader() {
           <Link
             className="prd-category-link"
             to="/categories/mens-clothing"
-            onClick={() => handleClick("Men")}
+            onClick={() => setCategoryName("Men")}
           >
             Men
           </Link>
@@ -33,7 +31,7 @@ function CategoriesHeader() {
           <Link
             className="prd-category-link"
             to="/categories/womens-clothing"
-            onClick={() => handleClick("Women")}
+            onClick={() => setCategoryName("Women")}
           >
             Women
           </Link>
@@ -42,7 +40,7 @@ function CategoriesHeader() {
           <Link
             className="prd-category-link"
             to="/categories/electronics"
-            onClick={() => handleClick("Electronics")}
+            onClick={() => setCategoryName("Electronics")}
           >
             Electronics
           </Link>
@@ -51,7 +49,7 @@ function CategoriesHeader() {
           <Link
             className="prd-category-link"
             to="/categories/jewelery"
-            onClick={() => handleClick("Jewelery")}
+            onClick={() => setCategoryName("Jewelery")}
           >
             Jewelery
           </Link>

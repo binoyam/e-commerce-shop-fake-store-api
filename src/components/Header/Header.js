@@ -8,7 +8,6 @@ import UserAccount from "../UserAccount/UserAccount";
 import SearchProducts from "../SearchProducts/SearchProducts";
 
 function Header({
-  setSelectedCategory,
   cartItems,
   removeFromCart,
   products,
@@ -25,7 +24,7 @@ function Header({
   const isHomePage = location.pathname === "/home";
   const isSearchResultPage = location.pathname === "/search-result";
   const isProductsListingPage =
-    location.pathname === "/products" || "products/categories/:category";
+    location.pathname ===  "/categories";
   const isSearchBarRoute =
     isHomePage || isSearchResultPage || isProductsListingPage;
   return (
@@ -33,7 +32,6 @@ function Header({
       <Link
         to="/home"
         className="logo-link"
-        onClick={() => setSelectedCategory("")}
       >
         <span className="logo-text">bt-shop</span>
       </Link>
@@ -47,7 +45,6 @@ function Header({
           searchTerm={searchTerm}
           handleSearch={handleSearch}
           products={products}
-          setSelectedCategory={setSelectedCategory}
           isMenuOpen={isMenuOpen}
           setIsMenuOpen={setIsMenuOpen}
         />

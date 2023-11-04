@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 // contact us page
 //the star rating function needs to be more clear
 
-function HomePage({ products, setSelectedCategory }) {
+function HomePage({ products }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [topProducts, setTopProducts] = useState([]);
   /* SORT PRODUCTS BY RATING/ FROM HIGHEST RATED TO LOWEST RATED*/
@@ -46,47 +46,27 @@ function HomePage({ products, setSelectedCategory }) {
           <h2 className="category-header">Categories</h2>
           <ul className="home-page-category-list">
             <li>
-              <Link
-                className="category-link"
-                onClick={() => setSelectedCategory("")}
-                to="/categories/all"
-              >
-                All Products 
+              <Link className="category-link" to="/categories/all">
+                All Products
               </Link>
             </li>
             <li>
-              <Link
-                className="category-link"
-                onClick={() => setSelectedCategory("men%27s%20clothing")}
-                to="/categories/mens-clothing"
-              >
+              <Link className="category-link" to="/categories/mens-clothing">
                 Men's
               </Link>
             </li>
             <li>
-              <Link
-                className="category-link"
-                onClick={() => setSelectedCategory("women%27s%20clothing")}
-                to="/categories/womens-clothing"
-              >
+              <Link className="category-link" to="/categories/womens-clothing">
                 Women's
               </Link>
             </li>
             <li>
-              <Link
-                className="category-link"
-                onClick={() => setSelectedCategory("electronics")}
-                to="/categories/electronics"
-              >
+              <Link className="category-link" to="/categories/electronics">
                 Electronics
               </Link>
             </li>
             <li>
-              <Link
-                className="category-link"
-                onClick={() => setSelectedCategory("jewelery")}
-                to="/categories/jewelery"
-              >
+              <Link className="category-link" to="/categories/jewelery">
                 Jewelery
               </Link>
             </li>
