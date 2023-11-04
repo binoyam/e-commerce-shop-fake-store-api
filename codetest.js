@@ -1,4 +1,4 @@
-  // console.log(products);
+ /* checkbox to filter products */
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -25,3 +25,21 @@
   const availableCategories = [
     ...new Set(products.map((product) => product.category)),
   ];
+
+  /* SHUFFLING PRODUCTS */
+  const [shuffledProducts, setShuffledProducts] = useState([]);
+  /* SHUFFLE THE PRODUCTS */
+  useEffect(() => {
+    const shuffledData = shuffleProducts(products);
+    setShuffledProducts(shuffledData);
+  }, [products]);
+  
+  // FUNCTION TO SHUFFLE THE PRODUCTS
+  const shuffleProducts = (arr) => {
+    const shuffledArr = [...arr];
+    for (let i = shuffledArr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArr[i], shuffledArr[j]] = [shuffledArr[j], shuffledArr[i]];
+    }
+    return shuffledArr;
+  };

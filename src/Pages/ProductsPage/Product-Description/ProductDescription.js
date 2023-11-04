@@ -1,9 +1,9 @@
 import "./ProductDescription.css";
 import { Link, useParams } from "react-router-dom";
-import CartIcon from "../../Assets/Images/icon-cart-btn.svg";
-import PlusIcon from "../../Assets/Images/icon-plus.svg";
-import MinusIcon from "../../Assets/Images/icon-minus.svg";
-import Arrow from "../../Assets/Images/arrow-left.svg";
+import CartIcon from "../../../Assets/Images/icon-cart-btn.svg";
+import PlusIcon from "../../../Assets/Images/icon-plus.svg";
+import MinusIcon from "../../../Assets/Images/icon-minus.svg";
+import Arrow from "../../../Assets/Images/arrow-left.svg";
 import { useState } from "react";
 
 function ProductDescription({ products, addToCart }) {

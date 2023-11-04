@@ -7,9 +7,15 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Checkout from "./Pages/Checkout/Checkout";
 import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
-import ProductDescription from "./Pages/Product-Description/ProductDescription";
-import ProductList from "./Pages/Product-List/ProductList";
+import ProductDescription from "./Pages/ProductsPage/Product-Description/ProductDescription";
 import SearchResult from "./Pages/SearchResult/SearchResult";
+import ProductsPage from "./Pages/ProductsPage/ProductsPage";
+import ProductList from "./Pages/ProductsPage/ProductList/ProductList";
+import Mens from "./components/Product-Item/Categories/Mens";
+import Womens from "./components/Product-Item/Categories/Womens";
+import Electronics from "./components/Product-Item/Categories/Electronics";
+import Jewelery from "./components/Product-Item/Categories/Jewelery";
+import Categories from "./components/Product-Item/Categories/Categories";
 
 function App() {
   /* ALL PRODUCTS STATE */
@@ -123,7 +129,6 @@ function App() {
       />
 
       <main className="main-content">
-
         <Routes>
           {/* Navigate to home */}
           <Route path="/" element={<Navigate to="/home" />} />
@@ -155,7 +160,7 @@ function App() {
           <Route
             path="/products"
             element={
-              <ProductList
+              <ProductsPage
                 handleSearch={handleSearch}
                 searchResults={searchResults}
                 searchTerm={searchTerm}
@@ -165,13 +170,58 @@ function App() {
               />
             }
           >
+            <Route
+              path="categories/all"
+              element={
+                <Categories
+                  setSelectedCategory={setSelectedCategory}
+                  addToCart={addToCart}
+                  products={products}
+                />
+              }
+            >
+              <Route
+                path="categories/mens-clothing"
+                element={
+                  <Mens
+                    setSelectedCategory={setSelectedCategory}
+                    addToCart={addToCart}
+                    products={products}
+                  />
+                }
+              />
+              <Route
+                path="categories/womens-clothing"
+                element={
+                  <Womens
+                    setSelectedCategory={setSelectedCategory}
+                    addToCart={addToCart}
+                    products={products}
+                  />
+                }
+              />
+              <Route
+                path="categories/electronics"
+                element={
+                  <Electronics
+                    setSelectedCategory={setSelectedCategory}
+                    addToCart={addToCart}
+                    products={products}
+                  />
+                }
+              />
+              <Route
+                path="categories/jewelery"
+                element={
+                  <Jewelery
+                    setSelectedCategory={setSelectedCategory}
+                    addToCart={addToCart}
+                    products={products}
+                  />
+                }
+              />
+            </Route>
           </Route>
-
-          {/* SELECTED CATEGORY PAGE */}
-          <Route
-            path="products/categories/:category"
-            element={<ProductList setSelectedCategory={setSelectedCategory} addToCart={addToCart} products={products} />}
-          />
 
           {/* PRODUCT DESCRIPTION PAGE*/}
           <Route
@@ -196,7 +246,6 @@ function App() {
             element={<PaymentPage cartItems={cartItems} />}
           />
         </Routes>
-
       </main>
 
       <Footer />
