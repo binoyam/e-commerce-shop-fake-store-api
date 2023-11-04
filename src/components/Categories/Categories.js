@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 function Categories() {
   return (
-    <div className="products-page">
+    <div className="categories-page">
       <CategoriesHeader />
       <Outlet />
     </div>

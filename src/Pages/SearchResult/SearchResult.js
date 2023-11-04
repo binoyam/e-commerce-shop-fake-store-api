@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ProductItem from "../../components/Product-Item/ProductItem";
 import "./SearchResult.css";
-
+import BackArrow from '../../Assets/Images/arrow-left-icon.svg'
 /* SEARCH RESULT PAGE */
 function SearchResult({ searchResults, searchTerm, addToCart }) {
   // console.log(searchResults);
@@ -20,6 +20,7 @@ function SearchResult({ searchResults, searchTerm, addToCart }) {
           <span className="term">" {searchTerm} "</span>
         </div>
         <Link className="all-products-link" to="/categories/all">
+          <img className="back-arrow" src={BackArrow} alt="back-arrow" />
           Back to all products
         </Link>
       </div>
