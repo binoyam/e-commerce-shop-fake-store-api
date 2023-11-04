@@ -23,24 +23,18 @@ function Header({
   const location = useLocation();
   const isHomePage = location.pathname === "/home";
   const isSearchResultPage = location.pathname === "/search-result";
-  const isProductsListingPage =
-    location.pathname ===  "/categories";
+  const isProductsListingPage = location.pathname.startsWith("/categories");
   const isSearchBarRoute =
     isHomePage || isSearchResultPage || isProductsListingPage;
   return (
     <header className="header">
-      <Link
-        to="/home"
-        className="logo-link"
-      >
+      <Link to="/home" className="logo-link">
         <span className="logo-text">bt-shop</span>
       </Link>
 
-      {isSearchBarRoute && (
+      {isSearchBarRoute ? (
         <SearchProducts searchTerm={searchTerm} handleSearch={handleSearch} />
-      )}
-
-      {!isSearchBarRoute && (
+      ) : (
         <Nav
           searchTerm={searchTerm}
           handleSearch={handleSearch}

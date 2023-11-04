@@ -18,7 +18,6 @@ function CategoriesHeader() {
     setCategoryName(category || "All");
   }, [location]);
 
-  console.log(categoryName);
   return (
     <div className="categories">
       <h2 className="categories-title">{categoryName}</h2>
@@ -29,7 +28,7 @@ function CategoriesHeader() {
               className={`prd-category-link ${
                 categoryName === key ? "selected" : ""
               }`}
-              to="/categories/all"
+              to={paths[key]}
               onClick={() => setCategoryName(key)}
             >
               {key}

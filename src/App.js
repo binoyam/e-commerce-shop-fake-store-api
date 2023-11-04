@@ -1,15 +1,14 @@
 import "./App.css";
 import { useNavigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { Navigate, Route, Routes } from "react-router-dom";
 import Checkout from "./Pages/Checkout/Checkout";
 import HomePage from "./Pages/HomePage/HomePage";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import ProductDescription from "./Pages/ProductsPage/Product-Description/ProductDescription";
 import SearchResult from "./Pages/SearchResult/SearchResult";
-import ProductsPage from "./Pages/ProductsPage/ProductsPage";
 import ProductList from "./Pages/ProductsPage/ProductList/ProductList";
 import Mens from "./components/Product-Item/Categories/Mens";
 import Womens from "./components/Product-Item/Categories/Womens";
@@ -21,22 +20,39 @@ import All from "./components/Product-Item/Categories/All";
 function App() {
   /* ALL PRODUCTS STATE */
   const [products, setProducts] = useState([]);
-
   /* CART ITEMS STATE */
   const [cartItems, setCartItems] = useState([]);
+  /* SEARCH RESULT STATE */
+  const [searchResults, setSearchResults] = useState([]);
+  /* SEARCH ITEM STATE */
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
-  /* STORE CART DATA ON LOCAL STORAGE */
+  /* FUNCTION TO FETCH PRODUCTS */
   useEffect(() => {
-    const storedCart = localStorage.getItem("cartItems");
-    if (storedCart) {
-      setCartItems(JSON.parse(storedCart));
-    }
+    fetchProducts();
   }, []);
+
+  function fetchProducts() {
+    let url = "https://fakestoreapi.com/products";
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error fetching products");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch((error) => {
+        console.log("Error fetching products: ", error);
+      });
+  }
 
   /* FUNCTION TO ADD ITEMS TO CART */
   const addToCart = (product, quantity) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
-    // console.log(cartItems);
     if (existingItem) {
       const updatedCartItems = cartItems.map((item) =>
         item.id === product.id
@@ -61,35 +77,13 @@ function App() {
     setCartItems(updatedCartItems);
     localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
   };
-
-  /* FUNCTION TO CHANGE CATEGORY*/
-  /* FUNCTION TO FETCH PRODUCTS */
+  /* STORE CART DATA ON LOCAL STORAGE */
   useEffect(() => {
-    fetchProducts();
+    const storedCart = localStorage.getItem("cartItems");
+    if (storedCart) {
+      setCartItems(JSON.parse(storedCart));
+    }
   }, []);
-
-  // console.log(products);
-  function fetchProducts() {
-    let url = "https://fakestoreapi.com/products";
-    fetch(url)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error fetching products");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setProducts(data);
-      })
-      .catch((error) => {
-        console.log("Error fetching products: ", error);
-      });
-  }
-  /* SEARCH RESULT STATE */
-  const [searchResults, setSearchResults] = useState([]);
-  /* SEARCH ITEM STATE */
-  const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate();
 
   /* FUNCTION TO FIND SEARCHED ITEM FROM ALL PRODUCTS */
 
@@ -110,7 +104,6 @@ function App() {
     }
   };
 
-  // console.log(searchResults);
   return (
     <div className="App">
       <Header
@@ -123,20 +116,10 @@ function App() {
 
       <main className="main-content">
         <Routes>
-          {/* Navigate to home */}
           <Route path="/" element={<Navigate to="/home" />} />
 
-          {/* HOME PAGE */}
-          <Route
-            path="/home"
-            element={
-              <HomePage
-                products={products}
-              />
-            }
-          />
+          <Route path="/home" element={<HomePage products={products} />} />
 
-          {/* SEARCH RESULT PAGE */}
           <Route
             path="/search-result"
             element={
@@ -147,19 +130,12 @@ function App() {
               />
             }
           />
-          {/* Back to shop */}
           <Route
             path="/products"
-            element={
-              <ProductList
-                addToCart={addToCart}
-                products={products}
-              />
-            }
+            element={<ProductList addToCart={addToCart} products={products} />}
           />
-          {/* ALL PRODUCTS LIST PAGE */}
           <Route
-            path="categories"
+            path="/categories"
             element={
               <Categories
                 handleSearch={handleSearch}
@@ -172,52 +148,28 @@ function App() {
           >
             <Route
               path="all"
-              element={
-                <All
-                  addToCart={addToCart}
-                  products={products}
-                />
-              }
+              element={<All addToCart={addToCart} products={products} />}
             />
             <Route
               path="mens-clothing"
-              element={
-                <Mens
-                  addToCart={addToCart}
-                  products={products}
-                />
-              }
+              element={<Mens addToCart={addToCart} products={products} />}
             />
             <Route
               path="womens-clothing"
-              element={
-                <Womens
-                  addToCart={addToCart}
-                  products={products}
-                />
-              }
+              element={<Womens addToCart={addToCart} products={products} />}
             />
             <Route
               path="electronics"
               element={
-                <Electronics
-                  addToCart={addToCart}
-                  products={products}
-                />
+                <Electronics addToCart={addToCart} products={products} />
               }
             />
             <Route
               path="jewelery"
-              element={
-                <Jewelery
-                  addToCart={addToCart}
-                  products={products}
-                />
-              }
+              element={<Jewelery addToCart={addToCart} products={products} />}
             />
           </Route>
 
-          {/* PRODUCT DESCRIPTION PAGE*/}
           <Route
             exact
             path="/product/:id"
@@ -226,7 +178,6 @@ function App() {
             }
           />
 
-          {/* CHECKOUT PAGE */}
           <Route
             path="/checkout"
             element={
@@ -234,7 +185,6 @@ function App() {
             }
           />
 
-          {/* PAYMENT PAGE */}
           <Route
             path="/payment"
             element={<PaymentPage cartItems={cartItems} />}
