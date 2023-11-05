@@ -21,7 +21,7 @@ function CategoriesHeader({ searchTerm, handleSearch }) {
 
   return (
     <div className="categories">
-       <SearchProducts searchTerm={searchTerm} handleSearch={handleSearch} />
+       <SearchProducts className="cat" searchTerm={searchTerm} handleSearch={handleSearch} />
       <h2 className="categories-title">{categoryName}</h2>
       <ul className="category-links">
         {Object.keys(paths).map((key) => (

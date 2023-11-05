@@ -1,5 +1,6 @@
 /* SEARCH FORM  */
 .search-bar {
+  margin: 0 auto;
   width: 35%;
   height: 25px;
   position: relative;

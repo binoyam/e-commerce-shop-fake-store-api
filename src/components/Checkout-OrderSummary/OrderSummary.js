@@ -40,7 +40,7 @@ function OrderSummary({ cartItems }) {
           Proceed to payment
         </Link>
       )}
-      <Link to="/products" className="back-to-shop-btn">
+      <Link to="/categories/all" className="back-to-shop-btn">
         Back to Shop
       </Link>
     </div>

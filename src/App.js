@@ -109,7 +109,6 @@ function App() {
       <Header
         handleSearch={handleSearch}
         searchTerm={searchTerm}
-        products={products}
         removeFromCart={removeFromCart}
         cartItems={cartItems}
       />
