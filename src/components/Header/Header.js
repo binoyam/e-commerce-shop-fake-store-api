@@ -24,26 +24,26 @@ function Header({
 
   const isHomePage = location.pathname === "/home";
   const isSearchResultPage = location.pathname === "/search-result";
-  const isProductsListingPage = location.pathname.startsWith("categories/");
+  // const isProductsListingPage = location.pathname.startsWith("categories/");
   const isSearchBarRoute =
-    isHomePage || isSearchResultPage || isProductsListingPage;
+    isHomePage || isSearchResultPage;
   return (
     <header className="header">
       <Link to="/home" className="logo-link">
         <span className="logo-text">bt-shop</span>
       </Link>
 
-      {isSearchBarRoute ? (
+      {isSearchBarRoute && (
         <SearchProducts searchTerm={searchTerm} handleSearch={handleSearch} />
-      ) : (
-        <Nav
-          searchTerm={searchTerm}
-          handleSearch={handleSearch}
-          products={products}
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-        />
       )}
+
+      <Nav
+        searchTerm={searchTerm}
+        handleSearch={handleSearch}
+        products={products}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
 
       <div className="nav-right">
         <div onClick={toggleCartDropDown} className="cart-nav">

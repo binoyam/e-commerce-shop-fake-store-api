@@ -1,7 +1,7 @@
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 10px 20px;
   background-color: #ffffff;
   border: 1px solid #ddd;
@@ -18,10 +18,10 @@
 
 .logo-text {
   display: block;
-  font-weight: 700;
-  font-size: 25px;
-  color: #ed9121;
-  /* color: #333; */
+  font-weight: 600;
+  font-size: 22px;
+  /* color: #ed9121; */
+  color: #333;
   letter-spacing: 3px;
 }
 .nav-right {

@@ -138,9 +138,9 @@ function App() {
             path="/categories"
             element={
               <Categories
+              searchTerm={searchTerm}
                 handleSearch={handleSearch}
                 searchResults={searchResults}
-                searchTerm={searchTerm}
                 addToCart={addToCart}
                 products={products}
               />

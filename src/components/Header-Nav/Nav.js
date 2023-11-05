@@ -33,39 +33,31 @@ function Nav({ isMenuOpen, setIsMenuOpen }) {
 
       <ul className={isMenuOpen ? "nav-links show" : "nav-links hide"}>
         <li>
-          <Link
-            onClick={() => handleClick()}
-            to="/categories/mens-clothing"
-            className="nav-link"
-          >
-            Men
+          <Link onClick={() => handleClick()} to="/home" className="nav-link">
+            Home
           </Link>
         </li>
         <li>
           <Link
             onClick={() => handleClick()}
-            to="/categories/womens-clothing"
+            to="/categories/all"
             className="nav-link"
           >
-            Women
+            Products
+          </Link>
+        </li>
+        <li>
+          <Link onClick={() => handleClick()} to="/about" className="nav-link">
+            About
           </Link>
         </li>
         <li>
           <Link
             onClick={() => handleClick()}
-            to="/categories/electronics"
+            to="/contact"
             className="nav-link"
           >
-            Electronics
-          </Link>
-        </li>
-        <li>
-          <Link
-            onClick={() => handleClick()}
-            to="/categories/jewelery"
-            className="nav-link"
-          >
-            Jewelery
+            Contact
           </Link>
         </li>
       </ul>

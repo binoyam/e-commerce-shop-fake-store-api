@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./CategoriesHeader.css";
+import SearchProducts from "../SearchProducts/SearchProducts";
 
-function CategoriesHeader() {
+function CategoriesHeader({ searchTerm, handleSearch }) {
   const [categoryName, setCategoryName] = useState("All");
   const location = useLocation();
   const paths = {
@@ -20,6 +21,7 @@ function CategoriesHeader() {
 
   return (
     <div className="categories">
+       <SearchProducts searchTerm={searchTerm} handleSearch={handleSearch} />
       <h2 className="categories-title">{categoryName}</h2>
       <ul className="category-links">
         {Object.keys(paths).map((key) => (
