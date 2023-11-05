@@ -3,25 +3,31 @@ import { Link, useLocation } from "react-router-dom";
 import "./CategoriesHeader.css";
 import SearchProducts from "../SearchProducts/SearchProducts";
 
+const paths = {
+  All: "/categories/all",
+  Men: "/categories/mens-clothing",
+  Women: "/categories/womens-clothing",
+  Electronics: "/categories/electronics",
+  Jewelery: "/categories/jewelery",
+};
 function CategoriesHeader({ searchTerm, handleSearch }) {
   const [categoryName, setCategoryName] = useState("All");
   const location = useLocation();
-  const paths = {
-    All: "/categories/all",
-    Men: "/categories/mens-clothing",
-    Women: "/categories/womens-clothing",
-    Electronics: "/categories/electronics",
-    Jewelery: "/categories/jewelery",
-  };
+
   useEffect(() => {
+
     const pagePath = location.pathname;
     const category = Object.keys(paths).find((key) => paths[key] === pagePath);
-    setCategoryName(category || "All");
+    setCategoryName(category);
   }, [location]);
 
   return (
     <div className="categories">
-       <SearchProducts className="cat" searchTerm={searchTerm} handleSearch={handleSearch} />
+      <SearchProducts
+        className="cat"
+        searchTerm={searchTerm}
+        handleSearch={handleSearch}
+      />
       <h2 className="categories-title">{categoryName}</h2>
       <ul className="category-links">
         {Object.keys(paths).map((key) => (
