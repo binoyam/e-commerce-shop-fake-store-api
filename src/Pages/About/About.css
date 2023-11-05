@@ -24,7 +24,8 @@
   height: 100%;
 }
 
-.top {
+.top,
+.bottom {
   width: 100%;
   height: 50%;
   background-image: url(../../Assets/Images/about-page-bg-2.jpg);
@@ -37,41 +38,48 @@
   justify-content: center;
   position: relative;
 }
-.top-text {
+.top-text,
+.bottom-text {
   width: 65%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   position: relative;
   z-index: 3;
 }
-.top-text h2 {
+.top-text{
+    margin-left: 250px;
+}
+.bottom-text{
+    margin-right: 250px;
+}
+.top-text h2,
+.bottom-text h2 {
   text-align: left;
   color: rgb(255, 255, 255);
   width: fit-content;
   padding: 10px 15px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 5px;
-  background-color: #00000085;
+  background-color: rgba(131, 240, 131, 0.4);
   margin-bottom: 10px;
   border-radius: 10px 5px 15px 0px;
 }
-.top-text p {
+.top-text p,
+.bottom-text p {
   text-align: left;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.3;
   padding: 15px;
   letter-spacing: 3px;
-  background-color: #00000085;
+  background-color: rgba(109, 209, 255, 0.4);
   border-radius: 10px 10px 0px 25px;
 }
 .bottom {
-  width: 100%;
-  height: 50%;
   background-image: url(../../Assets/Images/about-page-bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
 }
 .filter {
   position: absolute;
@@ -81,6 +89,6 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: #00000011;
+  background-color: #00000042;
   z-index: 1;
 }
