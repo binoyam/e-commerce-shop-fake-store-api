@@ -16,6 +16,8 @@ import Checkout from "./Pages/Checkout/Checkout";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import ProductDescription from "./Pages/Product-Description/ProductDescription";
 import SearchResult from "./Pages/SearchResult/SearchResult";
+import Contact from "./Pages/Contact/Contact";
+import About from "./Pages/About/About";
 
 function App() {
   /* ALL PRODUCTS STATE */
@@ -137,7 +139,7 @@ function App() {
             path="/categories"
             element={
               <Categories
-              searchTerm={searchTerm}
+                searchTerm={searchTerm}
                 handleSearch={handleSearch}
                 searchResults={searchResults}
                 addToCart={addToCart}
@@ -188,6 +190,9 @@ function App() {
             path="/payment"
             element={<PaymentPage cartItems={cartItems} />}
           />
+          <Route path="/about" element={<About />} />
+
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
 

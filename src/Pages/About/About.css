@@ -1,0 +1,6 @@
+.about-page{
+    width: 100%;
+    height: calc(100vh - 135px);
+    background-color: #fff;
+    padding: 20px;
+}
