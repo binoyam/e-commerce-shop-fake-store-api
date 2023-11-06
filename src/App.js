@@ -15,9 +15,8 @@ import Checkout from "./Pages/Checkout/Checkout";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import ProductDescription from "./Pages/Product-Description/ProductDescription";
 import SearchResult from "./Pages/SearchResult/SearchResult";
-import Contact from "./Pages/Contact/Contact";
 import About from "./Pages/About/About";
-import PriceFilter from "./components/PriceFilter/PriceFilter";
+import Contact from "./Pages/Contact/Contact";
 
 function App() {
   /* ALL PRODUCTS STATE */
@@ -74,7 +73,7 @@ function App() {
     }
   };
 
-  /* FUNCTION TO REMoVOE ITEMS FROM CART */
+  /* FUNCTION TO REMOVE ITEMS FROM CART */
   const removeFromCart = (itemId) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updatedCartItems);
@@ -190,7 +189,7 @@ function App() {
           />
           <Route path="/about" element={<About />} />
 
-          <Route path="/contact" element={<PriceFilter products={products} />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
 
