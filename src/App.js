@@ -17,6 +17,7 @@ import ProductDescription from "./Pages/Product-Description/ProductDescription";
 import SearchResult from "./Pages/SearchResult/SearchResult";
 import Contact from "./Pages/Contact/Contact";
 import About from "./Pages/About/About";
+import PriceFilter from "./components/PriceFilter/PriceFilter";
 
 function App() {
   /* ALL PRODUCTS STATE */
@@ -51,7 +52,7 @@ function App() {
         alert("Error fetching products: ");
       });
   }
-
+ 
   /* FUNCTION TO ADD ITEMS TO CART */
   const addToCart = (product, quantity) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
@@ -189,7 +190,7 @@ function App() {
           />
           <Route path="/about" element={<About />} />
 
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<PriceFilter products={products} />} />
         </Routes>
       </main>
 

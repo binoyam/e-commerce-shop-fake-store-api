@@ -3,8 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 import "./CategoriesHeader.css";
 import SearchProducts from "../SearchProducts/SearchProducts";
 import paths from "../../Paths";
+import PriceFilter from "../PriceFilter/PriceFilter";
 
-function CategoriesHeader({ searchTerm, handleSearch }) {
+function CategoriesHeader({ searchTerm, handleSearch, products }) {
   const [categoryName, setCategoryName] = useState("All");
   const location = useLocation();
   useEffect(() => {
@@ -19,6 +20,7 @@ function CategoriesHeader({ searchTerm, handleSearch }) {
         searchTerm={searchTerm}
         handleSearch={handleSearch}
       />
+      <PriceFilter products={products} />
       <h2 className="categories-title">{categoryName}</h2>
       <ul className="category-links">
         {Object.keys(paths).map((key) => (

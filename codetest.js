@@ -43,3 +43,30 @@
     }
     return shuffledArr;
   };
+
+   // products.forEach((product) => {
+  //   const price = product.price
+  //   if(price < 20){
+  //     console.log("< 20", product.id);
+  //   }
+  //   if(price <= 50 && price >= 20){
+  //     console.log("20-50", product.id);
+
+  //   }
+  //   if(price >= 50 && price <= 100){
+  //     console.log("50 - 100", product.id);
+
+  //   }
+  //   if(price >= 100 && price <= 200){
+  //     console.log("100 - 200", product.id);
+
+  //   }
+  //   if(price >= 200 && price <= 500){
+  //     console.log("200 - 500", product.id);
+
+  //   }
+  //   if(price > 500){
+  //     console.log("> 500", product.id);
+
+  //   }
+  // });

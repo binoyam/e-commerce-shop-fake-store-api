@@ -1,7 +1,7 @@
 import "./About.css";
 
 function About() {
-//change the bg image inside about page to a lowersized pciture
+//change the bg image inside about page to a lowersized pciture unsplash.com
 
   return (
     <div className="about-page">
