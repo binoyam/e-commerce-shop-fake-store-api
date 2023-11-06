@@ -23,5 +23,4 @@ function SearchProducts({ searchTerm, handleSearch }) {
     </form>
   );
 }
-
 export default SearchProducts;

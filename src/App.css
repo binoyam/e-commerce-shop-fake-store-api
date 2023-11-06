@@ -16,20 +16,21 @@
 
 /* CUSTOM SCROLL BAR */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #adb904;
+  background: #ed9121;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #ff0000;
+  background: #ffffff;
+  border-radius: 8px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555555;
+  background: #000000;
 }

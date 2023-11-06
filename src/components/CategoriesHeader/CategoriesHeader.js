@@ -2,20 +2,12 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./CategoriesHeader.css";
 import SearchProducts from "../SearchProducts/SearchProducts";
+import paths from "../../Paths";
 
-const paths = {
-  All: "/categories/all",
-  Men: "/categories/mens-clothing",
-  Women: "/categories/womens-clothing",
-  Electronics: "/categories/electronics",
-  Jewelery: "/categories/jewelery",
-};
 function CategoriesHeader({ searchTerm, handleSearch }) {
   const [categoryName, setCategoryName] = useState("All");
   const location = useLocation();
-
   useEffect(() => {
-
     const pagePath = location.pathname;
     const category = Object.keys(paths).find((key) => paths[key] === pagePath);
     setCategoryName(category);
@@ -24,7 +16,6 @@ function CategoriesHeader({ searchTerm, handleSearch }) {
   return (
     <div className="categories">
       <SearchProducts
-        className="cat"
         searchTerm={searchTerm}
         handleSearch={handleSearch}
       />

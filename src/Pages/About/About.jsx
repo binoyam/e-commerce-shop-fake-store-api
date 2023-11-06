@@ -1,6 +1,8 @@
 import "./About.css";
 
 function About() {
+//change the bg image inside about page to a lowersized pciture
+
   return (
     <div className="about-page">
       <h1>About Us</h1>

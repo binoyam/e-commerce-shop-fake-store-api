@@ -48,6 +48,7 @@ function App() {
       })
       .catch((error) => {
         console.log("Error fetching products: ", error);
+        alert("Error fetching products: ");
       });
   }
 
