@@ -52,12 +52,11 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in;
-  animation-duration: 1s;
-  animation-delay: 0.1s;
-  animation-name: fadeInUp;
+  border: 1px solid #fff;
 }
 .over-lay:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ed9121;
 }
 /* .over-lay:hover .grid-title{
     top: 30%;
