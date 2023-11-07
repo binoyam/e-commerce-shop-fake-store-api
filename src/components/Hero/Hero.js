@@ -8,28 +8,28 @@ import JeweleryImg from '../../Assets/Images/jewelery.jpg'
 function Hero() {
   return (
     <section className="grid-images-container">
-      <div className="grid-one">
-        <Link to="/categories/mens">
+      <div className="grid grid-one">
+        <Link to="/categories/mens-clothing">
           <div className="over-lay"></div>
           <img src={MensImg} alt="Mens-clothing" />
           <p className="grid-title">Men's Clothing</p>
         </Link>
       </div>
-      <div className="grid-two">
-        <Link to="/categories/womens">
+      <div className="grid grid-two">
+        <Link to="/categories/womens-clothing">
           <div className="over-lay"></div>
           <img src={WomensImg} alt="Womens-clothing" />
           <p className="grid-title">Women's Clothing</p>
         </Link>
       </div>
-      <div className="grid-three">
+      <div className="grid grid-three">
         <Link to="/categories/electronics">
           <div className="over-lay"></div>
           <img src={ElectronicsImg} alt="Electronics" />
           <p className="grid-title">Electronics</p>
         </Link>
       </div>
-      <div className="grid-four">
+      <div className="grid grid-four">
         <Link to="/categories/jewelery">
           <div className="over-lay"></div>
           <img src={JeweleryImg} alt="Jewelery" />
