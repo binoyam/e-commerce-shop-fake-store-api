@@ -12,7 +12,7 @@ import Electronics from "./components/Categories/Electronics";
 import Jewelery from "./components/Categories/Jewelery";
 import HomePage from "./Pages/HomePage/HomePage";
 import Checkout from "./Pages/Checkout/Checkout";
-import PaymentPage from "./Pages/PaymentPage/PaymentPage";
+import PaymentPage from "./Pages/Product-Description/PaymentPage/PaymentPage";
 import ProductDescription from "./Pages/Product-Description/ProductDescription";
 import SearchResult from "./Pages/SearchResult/SearchResult";
 import About from "./Pages/About/About";
