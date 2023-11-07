@@ -1,0 +1,31 @@
+/* TOPPROUCTS SLIDER CONTAINER */
+.slider-container {
+    width: 300px;
+    height: 400px;
+    margin: 10px 20px;
+  }
+  /* SLIDER HEADER */
+  .slide-header,
+  .category-header,
+  .sale-header {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  /* SLIDE BOX */
+  .slide-wrapper {
+    width: 100%;
+    height: calc(100% - 40px);
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+  }
+  /* SHOW "VIEW DETAIS LINK ON SILDE-BOX HOVER */
+  .slide-wrapper:hover .link {
+    opacity: 1;
+  }
