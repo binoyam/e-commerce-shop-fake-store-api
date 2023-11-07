@@ -2,11 +2,7 @@ import { Link } from "react-router-dom";
 import "./HomePage.css";
 import Hero from "../../components/Hero/Hero";
 import TrendingProducts from "../../components/TrendingProducts/TrendingProducts";
-// add a price filtering function in this page
-// write an about section
-// privacy policy page
-// contact us page
-//the star rating function needs to be more clear
+
 
 function HomePage({ products }) {
 
