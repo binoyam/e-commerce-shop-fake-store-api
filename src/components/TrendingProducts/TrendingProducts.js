@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import "./TrendingProducts.css";
-import TopProducts from "../TopProducts/TopProducts";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function TrendingProducts({ products }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -27,15 +27,26 @@ function TrendingProducts({ products }) {
   }, [topProducts.length]);
   return (
     <section className="slider-container">
-      <h2 className="slide-header">Recommended Products</h2>
+      <h2 className="slide-header">TRENDING PRODUCTS</h2>
       <div className="slide-wrapper">
         {topProducts.map((product, index) => (
-          <TopProducts
+          <div
             key={product.id}
-            index={index}
-            product={product}
-            currentSlide={currentSlide}
-          />
+            className={`slider-item ${index === currentSlide ? "active" : ""}`}
+          >
+            <h3 className="trending-title">{product.title.slice(0, 20)}</h3>
+            <div className="rating">
+              Customer rating:{" "}
+              <span className="rating-value">{product.rating.rate}</span> / 5
+            </div>
+            <div className="img-div">
+              <img src={product.image} alt="product" />
+            </div>
+            <span className="trending-price">${product.price}</span>
+            <Link className="link" to={`/product/${product.id}`}>
+              View Product
+            </Link>
+          </div>
         ))}
       </div>
     </section>

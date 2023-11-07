@@ -1,12 +1,12 @@
 .home-page {
   width: 100%;
-  /* min-height: calc(100vh - 57px - 80px); */
+  min-height: 100vh;
   padding: 0;
-  padding-bottom: 40px;
-  border-top-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  /* padding-bottom: 40px; */
+  /* border-top-left-radius: 15px; */
+  /* border-bottom-right-radius: 15px; */
   /* background-color: #ffffff; */
-  text-align: center;
+  /* text-align: center; */
 }
 
 
