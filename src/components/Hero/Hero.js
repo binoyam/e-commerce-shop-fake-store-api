@@ -10,14 +10,14 @@ function Hero() {
     <section className="grid-images-container">
       <div className="grid men-grid">
         <Link to="/categories/mens-clothing">
-          <div className="over-lay one"></div>
+          <div className="over-lay"></div>
           <img className="men-grid-img" src={MensImg} alt="Mens-clothing" />
           <p className="grid-title">Men's Clothing</p>
         </Link>
       </div>
       <div className="grid women-grid">
         <Link to="/categories/womens-clothing">
-          <div className="over-lay two"></div>
+          <div className="over-lay"></div>
           <img
             className="women-grid-img"
             src={WomensImg}
@@ -28,7 +28,7 @@ function Hero() {
       </div>
       <div className="grid etrn-grid">
         <Link to="/categories/electronics">
-          <div className="over-lay three"></div>
+          <div className="over-lay"></div>
           <img
             className="electronics-grid-img"
             src={ElectronicsImg}
@@ -39,7 +39,7 @@ function Hero() {
       </div>
       <div className="grid jwl-grid">
         <Link to="/categories/jewelery">
-          <div className="over-lay four"></div>
+          <div className="over-lay"></div>
           <img className="jewelery-grid-img" src={JeweleryImg} alt="Jewelery" />
           <p className="grid-title">Jewelery</p>
         </Link>
