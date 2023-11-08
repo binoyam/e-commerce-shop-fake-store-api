@@ -169,7 +169,6 @@ function App() {
             element={<ProductList products={products} addToCart={addToCart} />}
           />
           <Route
-            
             path="/products/:id"
             element={
               <ProductDescription products={products} addToCart={addToCart} />
