@@ -9,18 +9,19 @@ function HomePage({ products }) {
 
   return (
     <div className="home-page">
-      <Hero />
-      <TrendingProducts products={products} />
-
       <section className="home-page-header">
         <h1 className="home-header">Welcome to bt-shop!</h1>
         <p className="home-sub-header">
           Explore our wide range of products and start shopping today!
         </p>
       </section>
-      <section className="home-one">
+
+      <Hero />
+
+      <TrendingProducts products={products} />
+
         <div className="home-category-section">
-          <h2 className="category-header">Categories</h2>
+          <h2 className="category-header">Our Product Categories</h2>
           <ul className="home-page-category-list">
             <li>
               <Link className="category-link" to="/categories/all">
@@ -49,18 +50,6 @@ function HomePage({ products }) {
             </li>
           </ul>
         </div>
-        
-        <div className="home-two">
-          <h2 className="sale-header">sale</h2>
-          <ul>
-            <li>sale items</li>
-            <li>sale items</li>
-            <li>sale items</li>
-            <li>sale items</li>
-            <li>sale items</li>
-          </ul>
-        </div>
-      </section>
     </div>
   );
 }

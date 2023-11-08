@@ -10,12 +10,12 @@ import Womens from "./components/Categories/Womens";
 import Electronics from "./components/Categories/Electronics";
 import Jewelery from "./components/Categories/Jewelery";
 import HomePage from "./Pages/HomePage/HomePage";
-import Checkout from "./Pages/Checkout/Checkout";
+import Checkout from "./Pages/CheckoutPage/Checkout";
 import PaymentPage from "./Pages/PaymentPage/PaymentPage";
-import ProductDescription from "./Pages/Product-Description/ProductDescription";
-import SearchResult from "./Pages/SearchResult/SearchResult";
-import About from "./Pages/About/About";
-import Contact from "./Pages/Contact/Contact";
+import ProductDescription from "./Pages/Product-DescriptionPage/ProductDescription";
+import SearchResult from "./Pages/SearchResultPage/SearchResult";
+import About from "./Pages/AboutPage/About";
+import Contact from "./Pages/ContactPage/Contact";
 import ProductList from "./components/ProductList/ProductList";
 
 function App() {
@@ -93,6 +93,7 @@ function App() {
     e.preventDefault();
     const term = e.target.value;
     setSearchTerm(term);
+
     if (term.trim() === "") {
       setSearchResults([]);
     } else {
@@ -101,10 +102,12 @@ function App() {
       );
       setSearchResults(searchResult);
     }
+  };
+  useEffect(() => {
     if (searchResults.length > 0) {
       navigate("/search-result");
     }
-  };
+  }, [searchResults]);
 
   return (
     <div className="App">
@@ -161,12 +164,12 @@ function App() {
           </Route>
 
           <Route
-            exact
+            
             path="/products"
             element={<ProductList products={products} addToCart={addToCart} />}
           />
           <Route
-            exact
+            
             path="/products/:id"
             element={
               <ProductDescription products={products} addToCart={addToCart} />

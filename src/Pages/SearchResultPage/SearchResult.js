@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import ProductItem from "../../components/Product-Item/ProductItem";
 import "./SearchResult.css";
-import BackArrow from '../../Assets/Images/arrow-left-icon.svg'
-/* SEARCH RESULT PAGE */
+import BackArrow from "../../Assets/Images/arrow-left-icon.svg";
+
+
 function SearchResult({ searchResults, searchTerm, addToCart }) {
   // console.log(searchResults);
   const handleAddToCart = (product) => {
@@ -13,9 +14,7 @@ function SearchResult({ searchResults, searchTerm, addToCart }) {
       <div className="search-page-header">
         <div className="search-page-result">
           <span className="search-result-count">*{searchResults.length}</span>
-          <span>
-            {searchResults.length > 1 ? " Results " : " Result "}
-          </span>
+          <span>{searchResults.length > 1 ? " Results " : " Result "}</span>
           <span>for :</span>
           <span className="term">" {searchTerm} "</span>
         </div>
@@ -39,7 +38,7 @@ function SearchResult({ searchResults, searchTerm, addToCart }) {
           <h1>No matches found</h1>
           <p>
             Please search for a valid product or Use the button above to look at
-            our products
+            our list of products
           </p>
         </div>
       )}

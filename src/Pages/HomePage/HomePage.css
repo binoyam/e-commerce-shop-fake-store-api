@@ -1,15 +1,7 @@
 .home-page {
   width: 100%;
   min-height: 100vh;
-  padding: 0;
-  /* padding-bottom: 40px; */
-  /* border-top-left-radius: 15px; */
-  /* border-bottom-right-radius: 15px; */
-  /* background-color: #ffffff; */
-  /* text-align: center; */
 }
-
-
 /* HEADER BANNER */
 .home-page-header {
   background-color: #ed9121;
@@ -24,6 +16,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 /* HEADER ANIMATION */
 @keyframes blinker {
@@ -66,7 +59,7 @@
   font-weight: 400;
   letter-spacing: 2px;
   color: #fff;
-  /* animation: blinker 0.5s linear infinite; */
+  animation: blinker 1s linear infinite;
 }
 /* BANNER TEXT */
 .home-sub-header {
@@ -76,23 +69,17 @@
   letter-spacing: 5px;
 }
 
-/* HOME PAGE FIRST SECTION */
-.home-one {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-/* HOME PAGE CATEGORY SELECTION SECTION */
+/* HOME PAGE CATEGORY SELECTION */
 .home-category-section {
   padding: 30px;
   width: 100%;
+  text-align: center;
+  background-color: #333;
 }
 /* CATEGORY SECTION HEADER */
 .category-header {
-  font-size: 50px;
-  color: #333;
+  font-size: 30px;
+  color: #ffffff;
   letter-spacing: 10px;
   margin: 20px 0;
 }
@@ -116,13 +103,11 @@
   transition: all 0.4s ease;
 }
 .category-link:hover {
-  /* width: 60%; */
   background-color: cadetblue;
   color: #fff;
   padding-left: 20px;
-  border-radius: 5px 10px 15px 0px;
+  border-radius: 5px ;
   letter-spacing: 5px;
-  margin: 0 30%;
   border: 2px solid transparent;
 }
 

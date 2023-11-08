@@ -22,7 +22,6 @@ function ProductDescription({ products, addToCart }) {
     const product = getProduct();
     setSelectedProduct(product);
   }, [id]);
-  const { image, title, price, description } = selectedProduct;
   /* helper Function to set quantity back to 1 and add to cart */
   const handleAddToCart = () => {
     addToCart(selectedProduct, quantity);
@@ -48,7 +47,7 @@ function ProductDescription({ products, addToCart }) {
 
       <div className="product-info">
         <div className="product-image-div">
-          {/* <img src={image} alt="product" /> */}
+          <img src={image} alt="product" />
         </div>
 
         <div className="product-details">

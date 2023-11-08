@@ -26,7 +26,7 @@ function TrendingProducts({ products }) {
     };
   }, [topProducts.length]);
   return (
-    <section className="slider-container">
+    <section className="trending-products-section">
       <h2 className="slide-header">TRENDING PRODUCTS</h2>
       <div className="slide-wrapper">
         {topProducts.map((product, index) => (
