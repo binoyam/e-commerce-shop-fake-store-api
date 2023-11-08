@@ -4,7 +4,7 @@ import CartIcon from "../../Assets/Images/icon-cart-btn.svg";
 
 function ProductItem({ product, addToCart }) {
   return (
-    <article className="product-box">
+    <article className="product-box" key={product.id}>
       <h3 className="product-title">{product.title.slice(0, 20)}</h3>
       <img className="product-image" src={product.image} alt={product.title} />
       <span className="product-price">${product.price}</span>
@@ -16,11 +16,11 @@ function ProductItem({ product, addToCart }) {
         {product.description.slice(0, 70)}...
       </p>
 
-      <Link className="view-details-link" to={`/product/${product.id}`}>
+      <Link className="view-details-link" to={`/products/${product.id}`}>
         <button className="view-more-btn">View Details</button>
       </Link>
     </article>
   );
 }
-
+//product id 15 needs attention
 export default ProductItem;

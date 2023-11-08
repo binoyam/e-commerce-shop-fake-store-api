@@ -1,7 +1,6 @@
-import React from "react";
 import ProductList from "../ProductList/ProductList";
 
-function Womens({ products, addToCart }) {
+function Womens({ addToCart, products }) {
   const filteredProducts = products.filter(
     (product) => product.category === "women's clothing"
   );

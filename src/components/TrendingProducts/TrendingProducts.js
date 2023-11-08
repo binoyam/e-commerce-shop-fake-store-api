@@ -43,7 +43,7 @@ function TrendingProducts({ products }) {
               <img src={product.image} alt="product" />
             </div>
             <span className="trending-price">${product.price}</span>
-            <Link className="link" to={`/product/${product.id}`}>
+            <Link className="link" to={`/products/${product.id}`}>
               View Product
             </Link>
           </div>

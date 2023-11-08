@@ -1,7 +1,6 @@
-import React from "react";
 import ProductList from "../ProductList/ProductList";
 
-function Electronics({ products, addToCart }) {
+function Electronics({ addToCart, products }) {
   const filteredProducts = products.filter(
     (product) => product.category === "electronics"
   );

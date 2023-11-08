@@ -1,6 +1,5 @@
 import "./App.css";
-import { useNavigate } from "react-router-dom";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -12,11 +11,12 @@ import Electronics from "./components/Categories/Electronics";
 import Jewelery from "./components/Categories/Jewelery";
 import HomePage from "./Pages/HomePage/HomePage";
 import Checkout from "./Pages/Checkout/Checkout";
-import PaymentPage from "./Pages/Product-Description/PaymentPage/PaymentPage";
+import PaymentPage from "./Pages/PaymentPage/PaymentPage";
 import ProductDescription from "./Pages/Product-Description/ProductDescription";
 import SearchResult from "./Pages/SearchResult/SearchResult";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
+import ProductList from "./components/ProductList/ProductList";
 
 function App() {
   /* ALL PRODUCTS STATE */
@@ -51,7 +51,7 @@ function App() {
         alert("Error fetching products: ");
       });
   }
- 
+
   /* FUNCTION TO ADD ITEMS TO CART */
   const addToCart = (product, quantity) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
@@ -134,15 +134,7 @@ function App() {
 
           <Route
             path="/categories"
-            element={
-              <Categories
-                searchTerm={searchTerm}
-                handleSearch={handleSearch}
-                searchResults={searchResults}
-                addToCart={addToCart}
-                products={products}
-              />
-            }
+            element={<Categories addToCart={addToCart} products={products} />}
           >
             <Route
               path="all"
@@ -170,7 +162,12 @@ function App() {
 
           <Route
             exact
-            path="/product/:id"
+            path="/products"
+            element={<ProductList products={products} addToCart={addToCart} />}
+          />
+          <Route
+            exact
+            path="/products/:id"
             element={
               <ProductDescription products={products} addToCart={addToCart} />
             }
@@ -182,7 +179,6 @@ function App() {
               <Checkout cartItems={cartItems} removeFromCart={removeFromCart} />
             }
           />
-
           <Route
             path="/payment"
             element={<PaymentPage cartItems={cartItems} />}

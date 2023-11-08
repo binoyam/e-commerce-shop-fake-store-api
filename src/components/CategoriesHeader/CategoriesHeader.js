@@ -1,6 +1,6 @@
+import "./CategoriesHeader.css";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./CategoriesHeader.css";
 import paths from "../../Paths";
 
 function CategoriesHeader() {
@@ -9,7 +9,7 @@ function CategoriesHeader() {
   useEffect(() => {
     const pagePath = location.pathname;
     const category = Object.keys(paths).find((key) => paths[key] === pagePath);
-    setCategoryName(category);
+    setCategoryName(category || "All");
   }, [location]);
 
   return (
@@ -30,7 +30,6 @@ function CategoriesHeader() {
           </li>
         ))}
       </ul>
-
     </div>
   );
 }
