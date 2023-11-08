@@ -164,7 +164,6 @@ function App() {
           </Route>
 
           <Route
-            
             path="/products"
             element={<ProductList products={products} addToCart={addToCart} />}
           />
@@ -185,9 +184,11 @@ function App() {
             path="/payment"
             element={<PaymentPage cartItems={cartItems} />}
           />
+
           <Route path="/about" element={<About />} />
 
           <Route path="/contact" element={<Contact />} />
+          
         </Routes>
       </main>
 

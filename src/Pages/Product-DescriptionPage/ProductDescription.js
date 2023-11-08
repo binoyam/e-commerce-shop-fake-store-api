@@ -10,38 +10,33 @@ function ProductDescription({ products, addToCart }) {
   const { id } = useParams();
   // /* SELECTED PRODUCT STATE */
   const [selectedProduct, setSelectedProduct] = useState([]);
-  // console.log(selectedProduct);
   /* SELECTED QUANTITY STATE */
   const [quantity, setQuantity] = useState(1);
   const productId = parseInt(id);
-  // console.log(products);
-  // console.log(typeof(productId));
   const foundProduct = products.find((product) => product.id === productId);
-  // console.log(foundProduct);
   useEffect(() => {
     if (foundProduct) {
       setSelectedProduct(foundProduct);
     }
   }, [foundProduct]);
-  console.log(selectedProduct.price);
 
   /* helper Function to set quantity back to 1 and add to cart */
   const handleAddToCart = () => {
     addToCart(selectedProduct, quantity);
     setQuantity(1);
   };
-  /* FUNCTION FOR PLUS BUTTON*/
+  /* FUNCTION FOR PLUS BUTTON / increase quantity*/
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
   };
 
-  /* FUNCTION FOR MINUS BUTTON*/
+  /* FUNCTION FOR MINUS BUTTON / decrease quantity*/
   const decreaseQuantity = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
   };
-
+  const { image, title, price, description } = selectedProduct;
   return (
     <div className="product-description-page">
       <Link to="/categories/all" className="back-btn">
@@ -51,13 +46,13 @@ function ProductDescription({ products, addToCart }) {
 
       <div className="product-info">
         <div className="product-image-div">
-          <img src={selectedProduct.image} alt="product" />
+          <img src={image} alt="product" />
         </div>
 
         <div className="product-details">
-          <h1 className="prd-name">{selectedProduct.title}</h1>
-          <p className="prd-price">$ {selectedProduct.price}</p>
-          <p className="prd-description">{selectedProduct.description}</p>
+          <h1 className="prd-name">{title}</h1>
+          <p className="prd-price">$ {price}</p>
+          <p className="prd-description">{description}</p>
           <div className="product-amount-cart">
             <div className="quantity-selector">
               <button className="minus-btn" onClick={decreaseQuantity}>
