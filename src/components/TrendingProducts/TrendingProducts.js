@@ -1,8 +1,9 @@
 import "./TrendingProducts.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ProductList from "../ProductList/ProductList";
 
-function TrendingProducts({ products }) {
+function TrendingProducts({ products, addToCart }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [topProducts, setTopProducts] = useState([]);
   /* SORT PRODUCTS BY RATING/ FROM HIGHEST RATED TO LOWEST RATED*/
@@ -27,7 +28,6 @@ function TrendingProducts({ products }) {
   }, [topProducts.length]);
   return (
     <section className="trending-products-section">
-      <h2 className="slide-header">TRENDING PRODUCTS</h2>
       <div className="slide-wrapper">
         {topProducts.map((product, index) => (
           <div
@@ -49,6 +49,7 @@ function TrendingProducts({ products }) {
           </div>
         ))}
       </div>
+          <ProductList products={topProducts} addToCart={addToCart} />
     </section>
   );
 }

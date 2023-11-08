@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import "./HomePage.css";
 import Hero from "../../components/Hero/Hero";
 import TrendingProducts from "../../components/TrendingProducts/TrendingProducts";
+import About from "../AboutPage/About";
 
-
-function HomePage({ products }) {
-
-
+function HomePage({ products, addToCart }) {
   return (
     <div className="home-page">
       <section className="home-page-header">
@@ -18,38 +16,39 @@ function HomePage({ products }) {
 
       <Hero />
 
-      <TrendingProducts products={products} />
+      <TrendingProducts products={products} addToCart={addToCart} />
 
-        <div className="home-category-section">
-          <h2 className="category-header">Our Product Categories</h2>
-          <ul className="home-page-category-list">
-            <li>
-              <Link className="category-link" to="/categories/all">
-                All Products
-              </Link>
-            </li>
-            <li>
-              <Link className="category-link" to="/categories/mens-clothing">
-                Men's
-              </Link>
-            </li>
-            <li>
-              <Link className="category-link" to="/categories/womens-clothing">
-                Women's
-              </Link>
-            </li>
-            <li>
-              <Link className="category-link" to="/categories/electronics">
-                Electronics
-              </Link>
-            </li>
-            <li>
-              <Link className="category-link" to="/categories/jewelery">
-                Jewelery
-              </Link>
-            </li>
-          </ul>
-        </div>
+      <div className="home-category-section">
+        <h2 className="category-header">Our Product Categories</h2>
+        <ul className="home-page-category-list">
+          <li>
+            <Link className="category-link" to="/categories/all">
+              All Products
+            </Link>
+          </li>
+          <li>
+            <Link className="category-link" to="/categories/mens-clothing">
+              Men's
+            </Link>
+          </li>
+          <li>
+            <Link className="category-link" to="/categories/womens-clothing">
+              Women's
+            </Link>
+          </li>
+          <li>
+            <Link className="category-link" to="/categories/electronics">
+              Electronics
+            </Link>
+          </li>
+          <li>
+            <Link className="category-link" to="/categories/jewelery">
+              Jewelery
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <About />
     </div>
   );
 }

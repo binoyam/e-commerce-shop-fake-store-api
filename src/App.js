@@ -122,7 +122,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
 
-          <Route path="/home" element={<HomePage products={products} />} />
+          <Route
+            path="/home"
+            element={<HomePage products={products} addToCart={addToCart} />}
+          />
 
           <Route
             path="/search-result"
@@ -188,7 +191,6 @@ function App() {
           <Route path="/about" element={<About />} />
 
           <Route path="/contact" element={<Contact />} />
-          
         </Routes>
       </main>
 

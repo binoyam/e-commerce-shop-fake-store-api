@@ -7,10 +7,10 @@ import Arrow from "../../Assets/Images/arrow-left.svg";
 import "./ProductDescription.css";
 
 function ProductDescription({ products, addToCart }) {
-  const { id } = useParams();
   // /* SELECTED PRODUCT STATE */
-  const [selectedProduct, setSelectedProduct] = useState([]);
   /* SELECTED QUANTITY STATE */
+  const [selectedProduct, setSelectedProduct] = useState([]);
+  const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const productId = parseInt(id);
   const foundProduct = products.find((product) => product.id === productId);
@@ -18,7 +18,7 @@ function ProductDescription({ products, addToCart }) {
     if (foundProduct) {
       setSelectedProduct(foundProduct);
     }
-  }, [foundProduct]);
+  }, [id, selectedProduct, foundProduct]);
 
   /* helper Function to set quantity back to 1 and add to cart */
   const handleAddToCart = () => {

@@ -2,7 +2,7 @@
 .cart-drop-down {
   position: absolute;
   visibility: hidden;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
   opacity: 0;
   right: 100px;
   top: 0px;
@@ -158,10 +158,9 @@
 /* CHECKOUT BUTTON */
 .checkout-btn {
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 6px;
   width: calc(100% - 20px);
   height: 40px;
   border: none;
