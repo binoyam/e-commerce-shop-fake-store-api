@@ -1,7 +1,7 @@
 import "./TrendingProducts.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ProductItem from "../Product-Item/ProductItem";
+import TopProducts from "./TopProducts";
 
 function TrendingProducts({ products, addToCart }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -50,11 +50,9 @@ function TrendingProducts({ products, addToCart }) {
           </div>
         ))}
       </div>
-     
-
           <div className="trending-products-list">
             {topProducts.map((product) => (
-              <ProductItem key={product.id} product={product} addToCart={addToCart} />
+              <TopProducts key={product.id} product={product} addToCart={addToCart} />
             ))}
           </div>
     </section>
