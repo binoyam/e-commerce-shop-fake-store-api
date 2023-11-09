@@ -107,7 +107,7 @@ function App() {
     if (searchResults.length > 0) {
       navigate("/search-result");
     }
-  }, [searchResults]);
+  }, [searchResults, navigate]);
 
   return (
     <div className="App">

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./HomePage.css";
 import Hero from "../../components/Hero/Hero";
 import TrendingProducts from "../../components/TrendingProducts/TrendingProducts";
-import About from "../AboutPage/About";
 
 function HomePage({ products, addToCart }) {
   return (
@@ -48,7 +47,6 @@ function HomePage({ products, addToCart }) {
           </li>
         </ul>
       </div>
-      <About />
     </div>
   );
 }
