@@ -2,6 +2,7 @@ import "./TrendingProducts.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TopProducts from "./TopProducts";
+import ProductItem from "../Product-Item/ProductItem";
 
 function TrendingProducts({ products, addToCart }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,14 +29,16 @@ function TrendingProducts({ products, addToCart }) {
   }, [topProducts.length]);
   return (
     <section className="trending-products-section">
- <h1 className="trending-header">Trending Products</h1>
+      <h1 className="trending-header">Trending Products</h1>
       <div className="slide-wrapper">
         {topProducts.map((product, index) => (
           <div
             key={product.id}
             className={`slider-item ${index === currentSlide ? "active" : ""}`}
           >
-            <h3 className="trending-title">{product.title.slice(0, 20)}</h3>
+            <h3 className="trending-prodcut-title">
+              {product.title.slice(0, 30)}
+            </h3>
             <div className="rating">
               Customer rating:{" "}
               <span className="rating-value">{product.rating.rate}</span> / 5
@@ -50,11 +53,15 @@ function TrendingProducts({ products, addToCart }) {
           </div>
         ))}
       </div>
-          <div className="trending-products-list">
-            {topProducts.map((product) => (
-              <TopProducts key={product.id} product={product} addToCart={addToCart} />
-            ))}
-          </div>
+      <div className="trending-products-list">
+        {topProducts.map((product) => (
+          <TopProducts
+            key={product.id}
+            product={product}
+            addToCart={addToCart}
+          />
+        ))}
+      </div>
     </section>
   );
 }

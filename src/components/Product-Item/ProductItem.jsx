@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import "./ProductItem.css";
+import './ProductItem.css'
 import CartIcon from "../../Assets/Images/icon-cart-btn.svg";
+
+
 
 function ProductItem({ product, addToCart }) {
   return (
@@ -22,5 +24,4 @@ function ProductItem({ product, addToCart }) {
     </article>
   );
 }
-//product id 15 needs attention
 export default ProductItem;

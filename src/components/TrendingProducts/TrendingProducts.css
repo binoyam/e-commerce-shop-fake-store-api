@@ -1,21 +1,46 @@
 /* TOPPROUCTS SLIDER CONTAINER */
 .trending-products-section {
   width: 100%;
-  /* background-color: #333; */
   margin-bottom: 30px;
   background-image: url(../../Assets/Images/about-page-bg.jpg);
   background-size: cover;
   background-position: center;
+  /* text-align: center; */
+}
+/* TRENDING PRODUCTS HEADER */
+.trending-header {
+  /* display: inline-block; */
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  margin: 0 auto;
+  line-height: normal;
+  padding: 10px;
+  letter-spacing: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3.5s steps(16) 1s 1 normal both;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+  10% {
+    background-color: #ed9121;
+  }
 }
 /* SLIDE BOX */
 .slide-wrapper {
-  width: 30%;
+  width: 450px;
   height: 400px;
   overflow: hidden;
   background-color: #0f0f0f94;
   border: 3px solid #ed9121;
-  /* border-bottom: none; */
-  margin: 0 auto;
+  margin: 20px auto;
   cursor: pointer;
   position: relative;
 }
@@ -41,7 +66,7 @@
   opacity: 1;
 }
 /* PRODUCT NAME */
-.trending-title {
+.trending-prodcut-title {
   display: block;
   font-size: 25px;
   color: #ffffff;
@@ -108,24 +133,9 @@
 }
 .trending-products-list {
   display: flex;
-  gap: 5px;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* gap: 5px; */
   padding: 15px 5px;
-}
-.trending-header {
-  color: #fff;
-  font-size: 50px;
-  margin: 20px auto;
-  white-space: nowrap; 
-  border-right: 5px solid #000; 
-  overflow: hidden; 
-  animation: typing 3.5s steps(16) 1s 1 normal both;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 41%;
-  }
 }
