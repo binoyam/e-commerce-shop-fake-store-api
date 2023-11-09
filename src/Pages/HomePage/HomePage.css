@@ -67,6 +67,9 @@
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 5px;
+  white-space: nowrap; 
+  border-right: 5px solid #000; 
+  overflow: hidden; 
 }
 
 /* HOME PAGE CATEGORY SELECTION */

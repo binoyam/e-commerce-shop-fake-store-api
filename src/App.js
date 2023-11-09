@@ -120,7 +120,7 @@ function App() {
 
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
+          <Route exact path="/" element={<Navigate to="/home" />} />
 
           <Route
             path="/home"

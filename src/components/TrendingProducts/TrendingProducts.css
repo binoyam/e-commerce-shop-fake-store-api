@@ -4,8 +4,8 @@
   /* background-color: #333; */
   margin-bottom: 30px;
   background-image: url(../../Assets/Images/about-page-bg.jpg);
-background-size: cover;
-background-position: center;
+  background-size: cover;
+  background-position: center;
 }
 /* SLIDE BOX */
 .slide-wrapper {
@@ -106,15 +106,26 @@ background-position: center;
   color: #ffffff;
   border: 1px solid #333;
 }
-.trending-products-list{
+.trending-products-list {
   display: flex;
   gap: 5px;
-  padding:15px 5px;
+  padding: 15px 5px;
 }
-.trending-header{
-  font-size: 50px;
-  letter-spacing: 10px;
+.trending-header {
   color: #fff;
-  text-align: center;
-  margin: 20px 0;
+  font-size: 50px;
+  margin: 20px auto;
+  white-space: nowrap; 
+  border-right: 5px solid #000; 
+  overflow: hidden; 
+  animation: typing 3.5s steps(16) 1s 1 normal both;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 41%;
+  }
 }
