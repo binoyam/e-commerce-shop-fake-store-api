@@ -3,6 +3,7 @@ import "./TopProducts.css";
 import CartIcon from "../../Assets/Images/icon-cart-btn.svg";
 
 function TopProducts({ product, addToCart }) {
+    // instead of using compoent twice...
   return (
     <article className="top-product-box" key={product.id}>
       <h3 className="top-product-title">{product.title.slice(0, 10)}</h3>
