@@ -1,7 +1,7 @@
 import "./TrendingProducts.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ProductList from "../ProductList/ProductList";
+import ProductItem from "../Product-Item/ProductItem";
 
 function TrendingProducts({ products, addToCart }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,6 +28,7 @@ function TrendingProducts({ products, addToCart }) {
   }, [topProducts.length]);
   return (
     <section className="trending-products-section">
+ <h1 className="trending-header">Trending Products</h1>
       <div className="slide-wrapper">
         {topProducts.map((product, index) => (
           <div
@@ -49,7 +50,13 @@ function TrendingProducts({ products, addToCart }) {
           </div>
         ))}
       </div>
-          <ProductList products={topProducts} addToCart={addToCart} />
+     
+
+          <div className="trending-products-list">
+            {topProducts.map((product) => (
+              <ProductItem key={product.id} product={product} addToCart={addToCart} />
+            ))}
+          </div>
     </section>
   );
 }
