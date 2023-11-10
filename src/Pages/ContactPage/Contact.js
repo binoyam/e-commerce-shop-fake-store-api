@@ -18,9 +18,7 @@ function Contact() {
 
   return (
     <div className="contact-page">
-      <div className="contact-page-header">
         <h1 className="contact-page-header-text">Contact Us</h1>
-      </div>
       {isSubmitted ? (
         <div className="submit-message-container">
           <p className="submit-message">
