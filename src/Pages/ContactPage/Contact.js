@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Contact.css";
-
+import UserIcon from "../../Assets/Images/user-name-icon.svg";
+import EmailIcon from "../../Assets/Images/email-icon.svg";
+import MsgIcon from "../../Assets/Images/message-icon.svg";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -22,7 +24,7 @@ function Contact() {
       {isSubmitted ? (
         <div className="submit-message-container">
           <p className="submit-message">
-            Thank you for contacting us! We will get back to you soon.
+            Thank you for contacting us! <br /> We will get back to you soon.
           </p>
         </div>
       ) : (
@@ -30,9 +32,11 @@ function Contact() {
           <form className="contact-form" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name">Name</label>
+              <img src={UserIcon} alt="name" />
               <input
                 type="text"
                 id="name"
+                placeholder="Enter your name..."
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -41,9 +45,12 @@ function Contact() {
 
             <div>
               <label htmlFor="email">Email</label>
+              <img src={EmailIcon} alt="name" />
+
               <input
                 type="email"
                 id="email"
+                placeholder="Enter your email..."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -52,8 +59,11 @@ function Contact() {
 
             <div>
               <label htmlFor="message">Message</label>
+              <img src={MsgIcon} alt="name" />
+
               <textarea
                 id="message"
+                placeholder="Write your message to us, thanks."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
