@@ -17,6 +17,7 @@ import SearchResult from "./Pages/SearchResultPage/SearchResult";
 import About from "./Pages/AboutPage/About";
 import Contact from "./Pages/ContactPage/Contact";
 import ProductList from "./components/ProductList/ProductList";
+import PrivacyPolicy from "./Pages/PrivacyPolicyPage/PrivacyPolicy";
 
 function App() {
   /* ALL PRODUCTS STATE */
@@ -187,10 +188,12 @@ function App() {
             path="/payment"
             element={<PaymentPage cartItems={cartItems} />}
           />
-
+        
           <Route path="/about" element={<About />} />
 
           <Route path="/contact" element={<Contact />} />
+
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </main>
 

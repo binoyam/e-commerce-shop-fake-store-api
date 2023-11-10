@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Contact.css";
 import UserIcon from "../../Assets/Images/user-name-icon.svg";
 import EmailIcon from "../../Assets/Images/email-icon.svg";
@@ -10,20 +10,29 @@ function Contact() {
   const [message, setMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+/* MAKE SUBMIT MESSAGE DISAPPEAR AFTER 7 SECONDS */
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsSubmitted(true);
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setName("");
+      setEmail("");
+      setMessage("");
+    }, 7000);
   };
 
+// console.log(name);
+// console.log(email);
+// console.log(message);
   return (
     <div className="contact-page">
       <h1 className="contact-page-header-text">Contact Us</h1>
       {isSubmitted ? (
         <div className="submit-message-container">
           <p className="submit-message">
-            Thank you for contacting us! <br />{" "}
-            <span>We will get back to you soon.</span>
+            Dear {name},<br /> Thank you for contacting us!
+            <br /> <span>We will get back to you soon.</span>
           </p>
         </div>
       ) : (

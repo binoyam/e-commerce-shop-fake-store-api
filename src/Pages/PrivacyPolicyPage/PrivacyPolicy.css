@@ -1,0 +1,5 @@
+.privacy-policy-page {
+    width: 100%;
+    height: calc(100vh - 135px);
+    background-color: aliceblue;
+  }

@@ -13,13 +13,14 @@
 /* HEADER TEXT */
 .contact-page-header-text {
   position: absolute;
-  top: -25px;
-  left: 20px;
-  color: rgb(49, 18, 18);
-  font-size: 35px;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(0, 0, 0);
+  font-size: 55px;
   font-weight: 700;
-  letter-spacing: 10px;
-  text-shadow: 2px 2px 0 #ffffff, 4px 4px 0 rgb(255, 255, 255),
+  letter-spacing: 15px;
+  text-shadow: 2px 2px 0 #ffffff, 4px 4px 0 rgba(255, 208, 0, 0),
     6px 6px 0 #000000, 8px 8px 0 #ffffff93;
 }
 /* FORM CONTAINER / SUBMIT MESSAGE CONTAINER */
@@ -37,7 +38,6 @@
   flex-direction: column;
   justify-content: space-around;
   border-radius: 15px 15px 40px 0px;
-
 }
 ::placeholder {
   font-size: 14px;
@@ -76,10 +76,15 @@
   padding: 5px 5px 5px 30px;
   width: 100%;
   height: 30px;
-  border: 1px solid #ed9121;
+  border: 1px solid transparent;
   outline: none;
   background-color: #ffffff;
   border-radius: 3px 3px 5px 0px;
+}
+#email:focus,
+#name:focus,
+#message:focus {
+  border: 1px solid #333;
 }
 /* TEXTAREA  */
 #message {
@@ -99,8 +104,8 @@
 .submit-btn {
   width: 70%;
   margin: 20px auto;
-  padding: 5px 5px 5px 25px;
-  height: 30px;
+  padding: 10px;
+  height: 35px;
   border: none;
   outline: none;
   background-color: cadetblue;
@@ -111,10 +116,12 @@
   font-size: 14px;
   font-weight: 700;
 }
+.submit-btn:hover{
+  background-color: #333;
+}
 /* AFTER-SUBMIT MESSGAE */
 .submit-message-container {
-  width: 450px;
-  margin-top: -30%;
+  width: 100%;
 }
 .submit-message {
   text-align: center;
@@ -122,11 +129,11 @@
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 3px;
-  border-radius: 3px;
   background-color: #ed9121d3;
-  padding: 20px 0 10px;
+  padding: 100px 10px;
 }
-.submit-message span{
-  font-size: 16px;
-  letter-spacing: 0;
+.submit-message span {
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 1px;
 }

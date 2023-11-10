@@ -13,7 +13,7 @@ function Footer() {
             <a href="/contact">Contact Us</a>
           </li>
           <li>
-            <a href="#privacy-policy">Privacy Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
           </li>
         </ul>
       </div>
