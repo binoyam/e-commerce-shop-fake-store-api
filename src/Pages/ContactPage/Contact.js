@@ -18,11 +18,12 @@ function Contact() {
 
   return (
     <div className="contact-page">
-        <h1 className="contact-page-header-text">Contact Us</h1>
+      <h1 className="contact-page-header-text">Contact Us</h1>
       {isSubmitted ? (
         <div className="submit-message-container">
           <p className="submit-message">
-            Thank you for contacting us! <br /> We will get back to you soon.
+            Thank you for contacting us! <br />{" "}
+            <span>We will get back to you soon.</span>
           </p>
         </div>
       ) : (
@@ -61,7 +62,7 @@ function Contact() {
 
               <textarea
                 id="message"
-                placeholder="Write your message to us, thanks."
+                placeholder="Write your thoughts..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required

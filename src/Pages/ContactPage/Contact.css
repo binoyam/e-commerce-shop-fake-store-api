@@ -13,31 +13,36 @@
 /* HEADER TEXT */
 .contact-page-header-text {
   position: absolute;
-  top: 0;
-  right: 0;
-  color: rgb(0, 0, 0);
-  font-size: 60px;
-  font-weight: 900;
+  top: -25px;
+  left: 20px;
+  color: rgb(49, 18, 18);
+  font-size: 35px;
+  font-weight: 700;
   letter-spacing: 10px;
   text-shadow: 2px 2px 0 #ffffff, 4px 4px 0 rgb(255, 255, 255),
     6px 6px 0 #000000, 8px 8px 0 #ffffff93;
 }
 /* FORM CONTAINER / SUBMIT MESSAGE CONTAINER */
-.form-container,
-.submit-message-container {
+.form-container {
   width: 500px;
-  position: relative;
+  height: 400px;
 }
 /* FORM / SUBMIT MESSAGE */
-.contact-form,
-.submit-message {
+.contact-form {
   width: 100%;
+  height: 100%;
   background-color: #ed9121b0;
-  height: max-content;
-  padding: 20px;
-  justify-content: space-around;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  border-radius: 15px 15px 40px 0px;
+
+}
+::placeholder {
+  font-size: 14px;
+  color: #333333ab;
+  font-weight: 400;
 }
 /* FORM CHILDREN */
 .contact-form div {
@@ -45,7 +50,6 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
   position: relative;
 }
 /* ICONS */
@@ -54,41 +58,42 @@
   height: 15px;
   position: absolute;
   top: 27.5px;
-  left: 5px;
+  left: 7.5px;
 }
 /* FORM INPUT LABLE */
 .contact-form div label {
   color: #fff;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 3px;
   margin-left: 5px;
   height: 20px;
 }
 /* EMAIL/NAME INPUT */
 #email,
 #name {
-  font-size: 16px;
-  padding: 5px 5px 5px 25px;
+  font-size: 14px;
+  padding: 5px 5px 5px 30px;
   width: 100%;
   height: 30px;
-  border: none;
+  border: 1px solid #ed9121;
   outline: none;
-  background-color: #fff;
-  border-radius: 5px;
+  background-color: #ffffff;
+  border-radius: 3px 3px 5px 0px;
 }
 /* TEXTAREA  */
 #message {
-  font-size: 16px;
-  padding: 5px 5px 5px 25px;
+  font-size: 14px;
+  padding: 5px 5px 5px 30px;
   width: 100%;
-  min-width: 70%;
+  min-width: 100%;
   max-width: 100%;
   min-height: 50px;
-  max-height: 70px;
-  border: none;
+  max-height: 100px;
+  border: 1px solid #ed9121;
   outline: none;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 3px 3px 5px 0px;
 }
 /* SUBMIT BUTTON */
 .submit-btn {
@@ -106,14 +111,22 @@
   font-size: 14px;
   font-weight: 700;
 }
-/* SUBMIT MESSGAE */
+/* AFTER-SUBMIT MESSGAE */
+.submit-message-container {
+  width: 450px;
+  margin-top: -30%;
+}
 .submit-message {
   text-align: center;
   color: #fff;
   font-size: 20px;
-  letter-spacing: 5px;
-  margin-top: 50px;
-  border-radius: 10px;
-  background-color: #ed9121;
-  line-height: 2;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  background-color: #ed9121d3;
+  padding: 20px 0 10px;
+}
+.submit-message span{
+  font-size: 16px;
+  letter-spacing: 0;
 }
