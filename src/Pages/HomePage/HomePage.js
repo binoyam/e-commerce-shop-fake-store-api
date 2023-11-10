@@ -18,7 +18,7 @@ function HomePage({ products, addToCart }) {
       <TrendingProducts products={products} addToCart={addToCart} />
 
       <div className="home-category-section">
-        <h2 className="category-header">Our Product Categories</h2>
+        <h2 className="category-header">Categories</h2>
         <ul className="home-page-category-list">
           <li>
             <Link className="category-link" to="/categories/all">
@@ -47,7 +47,6 @@ function HomePage({ products, addToCart }) {
           </li>
         </ul>
       </div>
-      
     </div>
   );
 }

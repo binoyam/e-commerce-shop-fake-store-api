@@ -79,9 +79,10 @@
 }
 /* CATEGORY SECTION HEADER */
 .category-header {
+  text-transform: uppercase;
   font-size: 30px;
   color: #ffffff;
-  letter-spacing: 10px;
+  letter-spacing: 15px;
   margin: 20px 0;
 }
 /* CATEGORY LIST */
@@ -91,6 +92,7 @@
   justify-content: space-between;
   gap: 20px;
 }
+
 /* CATEGORY LIST ITEM */
 .category-link {
   font-size: 30px;
@@ -103,6 +105,7 @@
   border-radius: 4px;
   transition: all 0.4s ease;
 }
+
 .category-link:hover {
   background-color: cadetblue;
   color: #fff;

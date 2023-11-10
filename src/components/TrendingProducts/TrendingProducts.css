@@ -33,36 +33,32 @@
   10% {
     background-color: #ed9121;
   }
-  20%{
+  20% {
     background-color: #ff0000;
-
   }
   30% {
     background-color: #ed9121;
   }
-  40%{
+  40% {
     background-color: #ff0000;
-
   }
   50% {
     background-color: #ed9121;
   }
-  60%{
+  60% {
     background-color: #ff0000;
-
   }
   70% {
     background-color: #ed9121;
   }
-  80%{
+  80% {
     background-color: #ff0000;
-
   }
   90% {
     background-color: #ed9121;
   }
-  100%{
-    background-color:none;
+  100% {
+    background-color: none;
     color: #ed9121;
   }
 }
@@ -112,8 +108,8 @@
   font-weight: 600;
 }
 .rating-value {
-  font-weight: 700;
-  color: green;
+  font-weight: 900;
+  color: #ed9121;
 }
 /* PRODUCT IMAGE */
 .img-div {
