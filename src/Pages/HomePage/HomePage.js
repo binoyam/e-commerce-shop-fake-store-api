@@ -47,6 +47,7 @@ function HomePage({ products, addToCart }) {
           </li>
         </ul>
       </div>
+      
     </div>
   );
 }

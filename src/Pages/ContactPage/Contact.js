@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import './Contact.css'
+import "./Contact.css";
+import FormImg from '../../Assets/Images/contact-us-bg-1-medium.jpg'
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -8,19 +9,25 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     setIsSubmitted(true);
   };
 
   return (
     <div className="contact-page">
-      <h1>Contact Us</h1>
+      <div className="contact-page-header">
+        <h1 className="contact-page-header-text">Contact Us</h1>
+      </div>
       {isSubmitted ? (
-        <p>Thank you for contacting us! We will get back to you soon.</p>
+        <p className="submit-message">
+          Thank you for contacting us! We will get back to you soon.
+        </p>
       ) : (
-        <form onSubmit={handleSubmit}>
+       <div className="form-wrapper">
+        <img src={FormImg} alt="message" />
+       <form className="contact-form" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="name">Name:</label>
+            <label htmlFor="name">Name</label>
             <input
               type="text"
               id="name"
@@ -31,7 +38,7 @@ function Contact() {
           </div>
 
           <div>
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               id="email"
@@ -42,7 +49,7 @@ function Contact() {
           </div>
 
           <div>
-            <label htmlFor="message">Message:</label>
+            <label htmlFor="message">Message</label>
             <textarea
               id="message"
               value={message}
@@ -51,8 +58,11 @@ function Contact() {
             ></textarea>
           </div>
 
-          <button type="submit">Submit</button>
+          <button className="submit-btn" type="submit">
+            Submit
+          </button>
         </form>
+       </div> 
       )}
     </div>
   );
