@@ -8,20 +8,35 @@
   background-color: #ffffff;
 }
 /* CHECKOUT HEADER*/
-.checkout-header{
+.checkout-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+}
+.current-total-div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  background-color: #000000c9;
+  color: #f0d4b2;
+}
+.current-total-pre {
+  color: #ffffff;
+}
+.current-total {
+  color: cadetblue;
 }
 .checkout-header-text {
-  text-align: right;
   display: block;
-  font-weight: 700;
-  font-size: 18px;
-  margin-bottom: 5px;
 }
 .checkout-amount {
   color: cadetblue;
+}
+.current-total-pre {
+  font-size: 18px;
 }
 /* LIST HEADER */
 .chk-out-list-header {

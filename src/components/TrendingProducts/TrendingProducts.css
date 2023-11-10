@@ -2,24 +2,25 @@
 .trending-products-section {
   width: 100%;
   margin-bottom: 30px;
-  background-image: url(../../Assets/Images/about-page-bg.jpg);
+  background-image: url(../../Assets/Images/trending-products-bg-small.jpg);
   background-size: cover;
   background-position: center;
-  /* text-align: center; */
+  background-repeat: no-repeat;
 }
 /* TRENDING PRODUCTS HEADER */
 .trending-header {
-  /* display: inline-block; */
   text-align: center;
   color: #fff;
-  font-size: 50px;
+  font-size: 60px;
   margin: 0 auto;
-  line-height: normal;
   padding: 10px;
   letter-spacing: 20px;
+  text-transform: uppercase;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 3.5s steps(16) 1s 1 normal both;
+  border-bottom: 5px solid #ed9121;
+  border-top: 5px solid #ed9121;
+  animation: typing 3.5s steps(16) 1s 5 normal both;
 }
 
 @keyframes typing {
@@ -31,6 +32,38 @@
   }
   10% {
     background-color: #ed9121;
+  }
+  20%{
+    background-color: #ff0000;
+
+  }
+  30% {
+    background-color: #ed9121;
+  }
+  40%{
+    background-color: #ff0000;
+
+  }
+  50% {
+    background-color: #ed9121;
+  }
+  60%{
+    background-color: #ff0000;
+
+  }
+  70% {
+    background-color: #ed9121;
+  }
+  80%{
+    background-color: #ff0000;
+
+  }
+  90% {
+    background-color: #ed9121;
+  }
+  100%{
+    background-color:none;
+    color: #ed9121;
   }
 }
 /* SLIDE BOX */
@@ -134,7 +167,7 @@
 .trending-products-list {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   /* gap: 5px; */
   padding: 15px 5px;
