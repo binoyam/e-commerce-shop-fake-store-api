@@ -48,3 +48,72 @@
 
   //   }
   // });
+
+
+  <form onSubmit={handleSubmit}>
+  <div className="payment-methods">
+    <div>
+      <input type="radio" id="method" />
+      <div className="img-wrapper">
+        <img className="master" src={MasterCardLogo} alt="mastercard" />
+      </div>
+    </div>
+    <div>
+      <input type="radio" id="method" />
+      <div className="img-wrapper">
+        <img className="visa" src={VisaLogo} alt="visa" />
+      </div>
+    </div>
+    <div>
+      <input type="radio" id="method" />
+      <div className="img-wrapper">
+        <img className="paypal" src={PaypalLogo} alt="paypal" />
+      </div>
+    </div>
+    <div>
+      <input type="radio" id="method" />
+      <div className="img-wrapper">
+        <img className="bitcoin" src={BitcoinLogo} alt="bitcoin" />
+      </div>
+    </div>
+  </div>
+  <div className="form-group">
+    <label htmlFor="card-number" className="label">
+      Card Number:
+    </label>
+    <input
+      id="card-number"
+      className="input"
+      type="text"
+      value={cardNumber}
+      onChange={(e) => setCardNumber(e.target.value)}
+    />
+  </div>
+  <div className="form-group">
+    <label htmlFor="exp-date" className="label">
+      Expiry Date:
+    </label>
+    <input
+      id="exp-date"
+      className="input"
+      type="text"
+      value={expiryDate}
+      onChange={(e) => setExpiryDate(e.target.value)}
+    />
+  </div>
+  <div className="form-group">
+    <label htmlFor="cvc" className="label">
+      CVV:
+    </label>
+    <input
+      id="cvc"
+      className="input"
+      type="text"
+      value={cvv}
+      onChange={(e) => setCvv(e.target.value)}
+    />
+  </div>
+  <button className="pay-btn" type="submit">
+    Pay Now
+  </button>
+</form>

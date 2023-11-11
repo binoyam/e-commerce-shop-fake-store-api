@@ -14,8 +14,8 @@
   justify-content: space-between;
   font-size: 20px;
 }
-.payment-methods,
-.payment-methods div{
+.payment-methods
+{
   display: flex;
   align-items: center;
   gap: 10px;
@@ -36,30 +36,4 @@
   object-fit: contain;
   object-position: 50% 50%;
 }
-.form {
-  width: 400px;
-  margin: 0 auto;
-}
-.form-group {
-  margin-bottom: 1rem;
-}
-.label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-.input {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-.pay-btn {
-  background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1rem;
-  font-size: 16px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
+

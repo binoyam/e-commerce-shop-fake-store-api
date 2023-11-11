@@ -9,6 +9,7 @@ function PaymentPage({ cartItems }) {
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
+  const [selectedPayMethod, setSelectedPayMethod] = useState("creditcard");
 
   const TAX_RATE = 0.15;
   const calculateTotal = () => {
@@ -25,79 +26,44 @@ function PaymentPage({ cartItems }) {
     setExpiryDate("");
     setCvv("");
   };
+  const handlePayMethodChange = (tab) => {
+    setSelectedPayMethod(tab);
+  };
   return (
     <div className="payment-page">
       <div className="total-payment">
         <p className="ttl">Total</p>
         <p>${(calculateTotal() * TAX_RATE + calculateTotal()).toFixed(2)}</p>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className="payment-methods">
-          <div>
-            <input type="radio" id="method" />
-            <div className="img-wrapper">
-              <img className="master" src={MasterCardLogo} alt="mastercard" />
-            </div>
+      <div className="payment-methods">
+        <button
+          onClick={() => handlePayMethodChange("creditcard")}
+          className={selectedPayMethod === "creditcard" ? "active" : ""}
+        >
+          <div className="img-wrapper">
+            <img className="master" src={MasterCardLogo} alt="mastercard" />
           </div>
-          <div>
-            <input type="radio" id="method" />
-            <div className="img-wrapper">
-              <img className="visa" src={VisaLogo} alt="visa" />
-            </div>
-          </div>
-          <div>
-            <input type="radio" id="method" />
-            <div className="img-wrapper">
-              <img className="paypal" src={PaypalLogo} alt="paypal" />
-            </div>
-          </div>
-          <div>
-            <input type="radio" id="method" />
-            <div className="img-wrapper">
-              <img className="bitcoin" src={BitcoinLogo} alt="bitcoin" />
-            </div>
-          </div>
-        </div>
-        <div className="form-group">
-          <label htmlFor="card-number" className="label">
-            Card Number:
-          </label>
-          <input
-            id="card-number"
-            className="input"
-            type="text"
-            value={cardNumber}
-            onChange={(e) => setCardNumber(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="exp-date" className="label">
-            Expiry Date:
-          </label>
-          <input
-            id="exp-date"
-            className="input"
-            type="text"
-            value={expiryDate}
-            onChange={(e) => setExpiryDate(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="cvc" className="label">
-            CVV:
-          </label>
-          <input
-            id="cvc"
-            className="input"
-            type="text"
-            value={cvv}
-            onChange={(e) => setCvv(e.target.value)}
-          />
-        </div>
-        <button className="pay-btn" type="submit">
-          Pay Now
+          Credit Card
         </button>
-      </form>
+        <button
+          onClick={() => handlePayMethodChange("paypal")}
+          className={selectedPayMethod === "paypal" ? "active" : ""}
+        >
+          <div className="img-wrapper">
+            <img className="paypal" src={PaypalLogo} alt="paypal" />
+          </div>
+          PayPal
+        </button>
+        <button
+          onClick={() => handlePayMethodChange("bitcoin")}
+          className={selectedPayMethod === "bitcoin" ? "active" : ""}
+        >
+          <div className="img-wrapper">
+            <img className="bitcoin" src={BitcoinLogo} alt="bitcoin" />
+          </div>
+          Bitcoin
+        </button>
+      </div>
     </div>
   );
 }
