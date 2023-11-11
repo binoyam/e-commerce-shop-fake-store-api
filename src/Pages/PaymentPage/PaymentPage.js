@@ -6,10 +6,10 @@ import PaypalLogo from "../../Assets/Images/paypal-logo.svg";
 import BitcoinLogo from "../../Assets/Images/bitcoin-logo.svg";
 
 function PaymentPage({ cartItems }) {
-  const [cardNumber, setCardNumber] = useState("");
-  const [expiryDate, setExpiryDate] = useState("");
-  const [cvv, setCvv] = useState("");
   const [selectedPayMethod, setSelectedPayMethod] = useState("creditcard");
+  // const [cardNumber, setCardNumber] = useState("");
+  // const [expiryDate, setExpiryDate] = useState("");
+  // const [cvv, setCvv] = useState("");
 
   const TAX_RATE = 0.15;
   const calculateTotal = () => {
@@ -19,15 +19,15 @@ function PaymentPage({ cartItems }) {
     });
     return total;
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    setCardNumber("");
-    setExpiryDate("");
-    setCvv("");
-  };
-  const handlePayMethodChange = (tab) => {
-    setSelectedPayMethod(tab);
+  //   setCardNumber("");
+  //   setExpiryDate("");
+  //   setCvv("");
+  // };
+  const handlePayMethodChange = (method) => {
+    setSelectedPayMethod(method);
   };
   return (
     <div className="payment-page">
@@ -41,7 +41,7 @@ function PaymentPage({ cartItems }) {
           className={selectedPayMethod === "creditcard" ? "active" : ""}
         >
           <div className="img-wrapper">
-            <img className="master" src={MasterCardLogo} alt="mastercard" />
+            <img className="master-img" src={MasterCardLogo} alt="mastercard" />
           </div>
           Credit Card
         </button>
@@ -50,7 +50,7 @@ function PaymentPage({ cartItems }) {
           className={selectedPayMethod === "paypal" ? "active" : ""}
         >
           <div className="img-wrapper">
-            <img className="paypal" src={PaypalLogo} alt="paypal" />
+            <img className="paypal-img" src={PaypalLogo} alt="paypal" />
           </div>
           PayPal
         </button>
@@ -59,7 +59,7 @@ function PaymentPage({ cartItems }) {
           className={selectedPayMethod === "bitcoin" ? "active" : ""}
         >
           <div className="img-wrapper">
-            <img className="bitcoin" src={BitcoinLogo} alt="bitcoin" />
+            <img className="bitcoin-img" src={BitcoinLogo} alt="bitcoin" />
           </div>
           Bitcoin
         </button>
