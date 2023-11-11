@@ -5,27 +5,45 @@
   border-top-left-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
-.total-payment{
+.total-payment {
   margin: 10px auto;
- width: 400px;
+  width: 400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
 }
+.payment-methods,
+.payment-methods div{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.img-wrapper{
+  width: 90px;
+  height: 40px;
+  padding: 10px;
+  background-color: #007bff49;
 
-.form{
- width: 400px;
+}
+.master,
+.paypal,
+.visa,
+.bitcoin {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+.form {
+  width: 400px;
   margin: 0 auto;
 }
-.form-group{
+.form-group {
   margin-bottom: 1rem;
 }
-.label{
+.label {
   display: block;
   margin-bottom: 0.5rem;
 }

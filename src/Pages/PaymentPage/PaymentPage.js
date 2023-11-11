@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./PaymentPage.css";
-// import PpIcon from "../../Assets/paypal-icon.svg";
-// add icons and styling
+import VisaLogo from "../../Assets/Images/visa-logo.svg";
+import MasterCardLogo from "../../Assets/Images/mastercard-logo.svg";
+import PaypalLogo from "../../Assets/Images/paypal-logo.svg";
+import BitcoinLogo from "../../Assets/Images/bitcoin-logo.svg";
+
 function PaymentPage({ cartItems }) {
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
@@ -29,6 +32,32 @@ function PaymentPage({ cartItems }) {
         <p>${(calculateTotal() * TAX_RATE + calculateTotal()).toFixed(2)}</p>
       </div>
       <form onSubmit={handleSubmit}>
+        <div className="payment-methods">
+          <div>
+            <input type="radio" id="method" />
+            <div className="img-wrapper">
+              <img className="master" src={MasterCardLogo} alt="mastercard" />
+            </div>
+          </div>
+          <div>
+            <input type="radio" id="method" />
+            <div className="img-wrapper">
+              <img className="visa" src={VisaLogo} alt="visa" />
+            </div>
+          </div>
+          <div>
+            <input type="radio" id="method" />
+            <div className="img-wrapper">
+              <img className="paypal" src={PaypalLogo} alt="paypal" />
+            </div>
+          </div>
+          <div>
+            <input type="radio" id="method" />
+            <div className="img-wrapper">
+              <img className="bitcoin" src={BitcoinLogo} alt="bitcoin" />
+            </div>
+          </div>
+        </div>
         <div className="form-group">
           <label htmlFor="card-number" className="label">
             Card Number:
