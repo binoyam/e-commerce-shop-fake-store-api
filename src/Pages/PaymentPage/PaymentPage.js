@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./PaymentPage.css";
-import VisaLogo from "../../Assets/Images/visa-logo.svg";
 import MasterCardLogo from "../../Assets/Images/mastercard-logo.svg";
 import PaypalLogo from "../../Assets/Images/paypal-logo.svg";
 import BitcoinLogo from "../../Assets/Images/bitcoin-logo.svg";
+import CreditCardForm from "../../components/PaymentForms/CreditCardForm";
+import PayPalForm from "../../components/PaymentForms/PayPalForm";
+import BitcoinForm from "../../components/PaymentForms/BitcoinForm";
 
 function PaymentPage({ cartItems }) {
   const [selectedPayMethod, setSelectedPayMethod] = useState("creditcard");
@@ -63,6 +65,11 @@ function PaymentPage({ cartItems }) {
           </div>
           Bitcoin
         </button>
+      </div>
+      <div className="form-container">
+        {selectedPayMethod === "creditcard" && <CreditCardForm />}
+        {selectedPayMethod === "paypal" && <PayPalForm />}
+        {selectedPayMethod === "bitcoin" && <BitcoinForm />}
       </div>
     </div>
   );
