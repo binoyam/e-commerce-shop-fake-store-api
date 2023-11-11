@@ -2,7 +2,6 @@ import "./TrendingProducts.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TopProducts from "./TopProducts";
-import ProductItem from "../Product-Item/ProductItem";
 
 function TrendingProducts({ products, addToCart }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -36,7 +35,7 @@ function TrendingProducts({ products, addToCart }) {
             key={product.id}
             className={`slider-item ${index === currentSlide ? "active" : ""}`}
           >
-            <h3 className="trending-prodcut-title">
+            <h3 className="trending-product-title">
               {product.title.slice(0, 30)}
             </h3>
             <div className="rating">
