@@ -1,7 +1,7 @@
 .payment-page {
   width: 100%;
   min-height: calc(100vh - 135px);
-  padding: 20px;
+  padding: 20px 0;
   border-top-left-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #ffffff;
@@ -14,20 +14,46 @@
   justify-content: space-between;
   font-size: 20px;
 }
-.payment-methods
-{
+.payment-methods {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: antiquewhite;
+  padding: 20px;
+}
+.methods {
+  width: max-content;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
 }
-.img-wrapper{
-  width: 90px;
-  height: 40px;
-  padding: 10px;
-  background-color: #007bff49;
-
+#pay-method-btn {
+  width: 60px;
+  height: 30px;
+  color: black;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 3px 5px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  background-color: #007bff27;
+  border: 1px solid #333;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 0px #333;
+  transition: all 0.2s ease-in;
 }
-.master-img,
+#pay-method-btn:hover{
+  scale: 1.1;
+  box-shadow: 1px 1px 5px -1px #333;
+}
+.card-img,
 .paypal-img,
 .bitcoin-img {
   width: 100%;
@@ -35,4 +61,3 @@
   object-fit: contain;
   object-position: 50% 50%;
 }
-
