@@ -10,7 +10,7 @@ import BitcoinForm from "../../components/PaymentForms/BitcoinForm";
 function PaymentPage({ cartItems }) {
   const [selectedPayMethod, setSelectedPayMethod] = useState("creditcard");
 
-  const TAX_RATE = 0.15;
+  // const TAX_RATE = 0.15;
   const calculateTotal = () => {
     let total = 0;
     cartItems.forEach((item) => {
@@ -35,7 +35,9 @@ function PaymentPage({ cartItems }) {
             id="pay-method-btn"
             onClick={() => handlePayMethodChange("creditcard")}
             className={
-              selectedPayMethod === "method-btn creditcard" ? "active" : ""
+              selectedPayMethod === "creditcard"
+                ? "method-btn active"
+                : "method-btn"
             }
           >
             <img className="card-img" src={MasterCardLogo} alt="mastercard" />
@@ -44,7 +46,9 @@ function PaymentPage({ cartItems }) {
             id="pay-method-btn"
             onClick={() => handlePayMethodChange("paypal")}
             className={
-              selectedPayMethod === "method-btn paypal" ? "active" : ""
+              selectedPayMethod === "paypal"
+                ? "method-btn active"
+                : "method-btn"
             }
           >
             <img className="paypal-img" src={PaypalLogo} alt="paypal" />
@@ -53,15 +57,17 @@ function PaymentPage({ cartItems }) {
             id="pay-method-btn"
             onClick={() => handlePayMethodChange("bitcoin")}
             className={
-              selectedPayMethod === "method-btn bitcoin" ? "active" : ""
+              selectedPayMethod === "bitcoin"
+                ? "method-btn active"
+                : "method-btn"
             }
           >
             <img className="bitcoin-img" src={BitcoinLogo} alt="bitcoin" />
           </button>
         </div>
       </div>
-      
-      <div className="form-container">
+
+      <div className="payment-form-container">
         {selectedPayMethod === "creditcard" && <CreditCardForm />}
         {selectedPayMethod === "paypal" && <PayPalForm />}
         {selectedPayMethod === "bitcoin" && <BitcoinForm />}
