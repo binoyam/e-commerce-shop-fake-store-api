@@ -6,14 +6,7 @@
   border-bottom-right-radius: 15px;
   background-color: #ffffff;
 }
-.total-payment {
-  margin: 10px auto;
-  width: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 20px;
-}
+/* PAYMENT METHODS */
 .payment-methods {
   text-align: center;
   width: 100%;
@@ -24,6 +17,7 @@
   background-color: antiquewhite;
   padding: 20px;
 }
+/* METHODS/BUTTONS WRAPPER */
 .methods {
   width: max-content;
   margin: 0 auto;
@@ -31,14 +25,13 @@
   align-items: center;
   gap: 30px;
 }
+/* PAYMENT METHOD SELECTION METHOD */
 #pay-method-btn {
   width: 60px;
   height: 30px;
-  color: black;
   background-color: #fff;
   border-radius: 2px;
   padding: 3px 5px;
-  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content:center;
@@ -50,8 +43,15 @@
   transition: all 0.2s ease-in;
 }
 #pay-method-btn:hover{
-  scale: 1.1;
+  scale: 1.4;
   box-shadow: 1px 1px 5px -1px #333;
+}
+#pay-method-btn:active{
+  scale: 1.5;
+  border: 1px solid #fff;
+}
+.active{
+  border: 2px solid red;
 }
 .card-img,
 .paypal-img,
@@ -60,4 +60,10 @@
   height: 100%;
   object-fit: contain;
   object-position: 50% 50%;
+}
+/* PAYMENT FORM CONTAINER */
+.form-container{
+  width: 100%;
+  height: 500px;
+  background-color: #ddcbcb;
 }
