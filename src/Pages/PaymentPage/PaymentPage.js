@@ -69,8 +69,8 @@ function PaymentPage({ cartItems }) {
 
       <div className="payment-form-container">
         {selectedPayMethod === "creditcard" && <CreditCardForm />}
-        {selectedPayMethod === "paypal" && <PayPalForm />}
-        {selectedPayMethod === "bitcoin" && <BitcoinForm />}
+        {/* {selectedPayMethod === "paypal" && <PayPalForm />} */}
+        {/* {selectedPayMethod === "bitcoin" && <BitcoinForm />} */}
       </div>
     </div>
   );
