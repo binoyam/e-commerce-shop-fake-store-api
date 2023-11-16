@@ -14,9 +14,9 @@ function CreditCardForm() {
   };
   return (
     <form className="credit-card-form" onSubmit={handleSubmit}>
-      <div>
+      <div className="form-block">
         <label htmlFor="card-number" className="label">
-          Card Number:
+          Card Number
         </label>
         <input
           id="card-number"
@@ -29,7 +29,7 @@ function CreditCardForm() {
       <div className="exp-cvc-wrapper">
         <div>
           <label htmlFor="exp-date" className="label">
-            Expiry Date:
+            Expiry Date
           </label>
           <input
             id="exp-date"
@@ -41,7 +41,7 @@ function CreditCardForm() {
         </div>
         <div>
           <label htmlFor="cvc" className="label">
-            CVV:
+            CVV
           </label>
           <input
             id="cvc"

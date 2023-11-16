@@ -1,10 +1,30 @@
-.credit-card-form{
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  .exp-cvc-wrapper{
-    display: flex;
-    align-items: center;
-  }
+.credit-card-form {
+  max-width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: rgb(197, 197, 226);
+}
+.exp-cvc-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.exp-cvc-wrapper div {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.form-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#card-number,
+#exp-date,
+#cvc {
+  padding: 5px 10px;
+  /* font-size: 15px; */
+}
