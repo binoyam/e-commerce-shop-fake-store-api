@@ -5,12 +5,14 @@ function CreditCardForm() {
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
+  const [formFilled, setFormFilled] = useState(false)
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setCardNumber("");
     setExpiryDate("");
     setCvv("");
+    setFormFilled(true)
   };
   return (
     <form className="credit-card-form" onSubmit={handleSubmit}>
@@ -55,6 +57,7 @@ function CreditCardForm() {
       <button className="pay-btn" type="submit">
         Pay Now
       </button>
+      {formFilled && <AfterPayment />}
     </form>
   );
 }
