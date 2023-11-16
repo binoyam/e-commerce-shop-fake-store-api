@@ -41,7 +41,7 @@ function CreditCardForm() {
         </div>
         <div>
           <label htmlFor="cvc" className="label">
-            CVV
+            CVC
           </label>
           <input
             id="cvc"
