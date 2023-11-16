@@ -1,0 +1,10 @@
+.credit-card-form{
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .exp-cvc-wrapper{
+    display: flex;
+    align-items: center;
+  }

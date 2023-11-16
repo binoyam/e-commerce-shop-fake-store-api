@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import "./CreditCardForm.css";
 
 function CreditCardForm() {
   const [cardNumber, setCardNumber] = useState("");
@@ -12,8 +13,8 @@ function CreditCardForm() {
     setCvv("");
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
+    <form className="credit-card-form" onSubmit={handleSubmit}>
+      <div>
         <label htmlFor="card-number" className="label">
           Card Number:
         </label>
@@ -25,29 +26,31 @@ function CreditCardForm() {
           onChange={(e) => setCardNumber(e.target.value)}
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="exp-date" className="label">
-          Expiry Date:
-        </label>
-        <input
-          id="exp-date"
-          className="input"
-          type="text"
-          value={expiryDate}
-          onChange={(e) => setExpiryDate(e.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="cvc" className="label">
-          CVV:
-        </label>
-        <input
-          id="cvc"
-          className="input"
-          type="text"
-          value={cvv}
-          onChange={(e) => setCvv(e.target.value)}
-        />
+      <div className="exp-cvc-wrapper">
+        <div>
+          <label htmlFor="exp-date" className="label">
+            Expiry Date:
+          </label>
+          <input
+            id="exp-date"
+            className="input"
+            type="text"
+            value={expiryDate}
+            onChange={(e) => setExpiryDate(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="cvc" className="label">
+            CVV:
+          </label>
+          <input
+            id="cvc"
+            className="input"
+            type="text"
+            value={cvv}
+            onChange={(e) => setCvv(e.target.value)}
+          />
+        </div>
       </div>
       <button className="pay-btn" type="submit">
         Pay Now
