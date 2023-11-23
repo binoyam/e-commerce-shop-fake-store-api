@@ -5,14 +5,12 @@ function CreditCardForm() {
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
-  const [formFilled, setFormFilled] = useState(false)
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setCardNumber("");
     setExpiryDate("");
     setCvv("");
-    setFormFilled(true)
   };
   return (
     <form className="credit-card-form" onSubmit={handleSubmit}>
@@ -24,6 +22,7 @@ function CreditCardForm() {
           id="card-number"
           className="input"
           type="text"
+          required
           value={cardNumber}
           onChange={(e) => setCardNumber(e.target.value)}
         />
@@ -37,6 +36,7 @@ function CreditCardForm() {
             id="exp-date"
             className="input"
             type="text"
+            required
             value={expiryDate}
             onChange={(e) => setExpiryDate(e.target.value)}
           />
@@ -50,6 +50,7 @@ function CreditCardForm() {
             className="input"
             type="text"
             value={cvv}
+            required
             onChange={(e) => setCvv(e.target.value)  }
           />
         </div>
@@ -57,7 +58,6 @@ function CreditCardForm() {
       <button className="pay-btn" type="submit">
         Pay Now
       </button>
-      {formFilled && <AfterPayment />}
     </form>
   );
 }

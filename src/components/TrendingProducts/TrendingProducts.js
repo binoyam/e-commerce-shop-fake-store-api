@@ -26,6 +26,9 @@ function TrendingProducts({ products, addToCart }) {
       clearInterval(interval);
     };
   }, [topProducts.length]);
+  const handleAddToCart = (product) => {
+    addToCart(product, 1);
+  };
   return (
     <section className="trending-products-section">
       <h1 className="trending-header">Trending Products</h1>
@@ -57,7 +60,7 @@ function TrendingProducts({ products, addToCart }) {
           <TopProducts
             key={product.id}
             product={product}
-            addToCart={addToCart}
+            addToCart={handleAddToCart}
           />
         ))}
       </div>
