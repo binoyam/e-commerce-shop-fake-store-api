@@ -4,10 +4,9 @@
   min-height: 100vh;
   height: 100%;
   margin: 0 auto;
-  padding: 0 0px 40px;
+  padding: 0 20px 40px;
   position: relative; /* for footer */
-  overflow: auto;
-  /* scrollbar-gutter: stable both-edges; */
+  overflow: hidden;
 }
 .main-content {
   width: 100%;

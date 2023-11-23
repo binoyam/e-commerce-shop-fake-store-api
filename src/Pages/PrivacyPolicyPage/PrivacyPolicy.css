@@ -2,10 +2,10 @@
   width: 100%;
   height: calc(100vh - 140px);
   background-color: aliceblue;
-  padding: 50px;
+  padding: 30px;
 }
 .privacy-policy-page h1,
 .privacy-policy-page p {
   width: 60%;
-  margin: 30px auto;
+  margin: 20px auto;
 }
