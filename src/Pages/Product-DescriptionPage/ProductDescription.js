@@ -5,7 +5,8 @@ import PlusIcon from "../../Assets/Images/icon-plus.svg";
 import MinusIcon from "../../Assets/Images/icon-minus.svg";
 import Arrow from "../../Assets/Images/arrow-left.svg";
 import "./ProductDescription.css";
-
+/* SEARCH RESULTS NECCESSARY??, I THINK I SHOULD HAVE ANOTHER ROUTE FOR 
+PRODUCT SEARCH RESULT PAGE TO DISPLAY PRODUCT DESCRIPTION FROM THE SEARCH RESULTS */
 function ProductDescription({ searchResults, products, addToCart }) {
   // /* SELECTED PRODUCT STATE */
   /* SELECTED QUANTITY STATE */
