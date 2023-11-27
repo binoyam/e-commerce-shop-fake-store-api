@@ -6,20 +6,26 @@ import MinusIcon from "../../Assets/Images/icon-minus.svg";
 import Arrow from "../../Assets/Images/arrow-left.svg";
 import "./ProductDescription.css";
 
-function ProductDescription({ products, addToCart }) {
+function ProductDescription({ searchResults, products, addToCart }) {
   // /* SELECTED PRODUCT STATE */
   /* SELECTED QUANTITY STATE */
   const [selectedProduct, setSelectedProduct] = useState([]);
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
   const productId = parseInt(id);
-  const foundProduct = products.find((product) => product.id === productId);
+  const foundProduct =
+    products.find((product) => product.id === productId) ||
+    searchResults.find((product) => product.id === productId);
   useEffect(() => {
     if (foundProduct) {
       setSelectedProduct(foundProduct);
     }
   }, [id, selectedProduct, foundProduct]);
-
+  useEffect(() => {
+    if (searchResults) {
+      setSelectedProduct(foundProduct);
+    }
+  }, [id, selectedProduct, foundProduct]);
   /* helper Function to set quantity back to 1 and add to cart */
   const handleAddToCart = () => {
     addToCart(selectedProduct, quantity);

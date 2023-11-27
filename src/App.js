@@ -172,9 +172,10 @@ function App() {
             element={<ProductList products={products} addToCart={addToCart} />}
           />
           <Route
+            exact
             path="/products/:id"
             element={
-              <ProductDescription products={products} addToCart={addToCart} />
+              <ProductDescription searchResults={searchResults} products={products} addToCart={addToCart} />
             }
           />
 
@@ -188,7 +189,7 @@ function App() {
             path="/payment"
             element={<PaymentPage cartItems={cartItems} />}
           />
-        
+
           <Route path="/about" element={<About />} />
 
           <Route path="/contact" element={<Contact />} />
