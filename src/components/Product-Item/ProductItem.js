@@ -5,6 +5,7 @@ import CartIcon from "../../Assets/Images/icon-cart-btn.svg";
 
 
 function ProductItem({ product, addToCart }) {
+  console.log(product);
   return (
     <article className="product-box">
       <h3 className="product-title">{product.title.slice(0, 20)}</h3>
